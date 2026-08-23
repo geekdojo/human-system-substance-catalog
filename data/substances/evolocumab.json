@@ -1,0 +1,110 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "evolocumab",
+  "name": "Evolocumab",
+  "aka": [
+    "Repatha"
+  ],
+  "class": "PCSK9-directed monoclonal antibody",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 140,
+    "amount_high": 420,
+    "unit": "mg",
+    "cadence": "biweekly"
+  },
+  "description": "A fully human monoclonal antibody against PCSK9, approved to reduce cardiovascular events and to lower LDL cholesterol including in familial hypercholesterolaemia.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "LDL receptor recycling restored by PCSK9 blockade, lowering LDL cholesterol and event rate.",
+      "evidence": [
+        "livertox:NBK548469"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "ldl_c",
+      "why": "The direct index of the effect; reductions are large and fast.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:evolocumab"
+      ]
+    },
+    {
+      "marker_key": "apob",
+      "why": "Counts atherogenic particles at the low LDL-C values this drug produces, where the mass estimate degrades.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:evolocumab"
+      ]
+    },
+    {
+      "marker_key": "ldl_p",
+      "why": "Particle concentration by NMR, read where the calculated LDL-C is too low to be reliable.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:evolocumab"
+      ]
+    },
+    {
+      "marker_key": "lpa",
+      "why": "PCSK9 inhibition lowers Lp(a) modestly, unlike statins.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:evolocumab"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:evolocumab",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Evolocumab",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK548469",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548469/",
+      "title": "LiverTox: Evolocumab",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "unitox:EVOLOCUMAB",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"EVOLOCUMAB\". Ternary ratings — cardio:No, liver:No, renal:No, heme:No, fertility:No, pulm:No, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "evolocumab",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Evolocumab",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

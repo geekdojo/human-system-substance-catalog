@@ -1,0 +1,142 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "spironolactone",
+  "name": "Spironolactone",
+  "aka": [
+    "Aldactone",
+    "CaroSpir"
+  ],
+  "class": "Mineralocorticoid receptor antagonist with antiandrogen activity",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 25,
+    "amount_high": 200,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A potassium-sparing mineralocorticoid receptor antagonist approved for heart failure, hypertension, oedema and primary hyperaldosteronism. It also antagonises the androgen receptor, which is the basis of off-label dermatological and gender-affirming use.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Mineralocorticoid receptor antagonism in heart failure and hypertension; the labelled indication.",
+      "evidence": [
+        "openfda:08738ad4-1607-4d55-af71-6790477353bd",
+        "livertox:NBK547921"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Hyperkalaemia is the characteristic labelled risk and can be fatal.",
+      "evidence": [
+        "openfda:08738ad4-1607-4d55-af71-6790477353bd",
+        "unitox:SPIRONOLACTONE"
+      ]
+    },
+    {
+      "key": "gonads",
+      "relation": "burdens",
+      "note": "Androgen receptor antagonism and gynaecomastia are labelled off-target effects.",
+      "evidence": [
+        "openfda:08738ad4-1607-4d55-af71-6790477353bd"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is reported.",
+      "evidence": [
+        "livertox:NBK547921",
+        "unitox:SPIRONOLACTONE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "potassium",
+      "why": "Hyperkalaemia is the characteristic labelled risk; this is the defining monitoring parameter.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:08738ad4-1607-4d55-af71-6790477353bd"
+      ]
+    },
+    {
+      "marker_key": "creatinine",
+      "why": "Renal function governs potassium handling on this drug.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:08738ad4-1607-4d55-af71-6790477353bd"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Labelled contraindication thresholds are expressed in filtration terms.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:08738ad4-1607-4d55-af71-6790477353bd"
+      ]
+    },
+    {
+      "marker_key": "testosterone_total",
+      "why": "Androgen receptor antagonism is a labelled off-target effect.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:08738ad4-1607-4d55-af71-6790477353bd"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:spironolactone",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Spironolactone",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00143",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00143 \"Spironolactone\": vLess-DILI-concern (severity class 2). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK547921",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547921/",
+      "title": "LiverTox: Spironolactone",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:08738ad4-1607-4d55-af71-6790477353bd",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=08738ad4-1607-4d55-af71-6790477353bd",
+      "title": "FDA Structured Product Label: Spironolactone",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 08738ad4-1607-4d55-af71-6790477353bd, effective 20251119. 142 label record(s) matched."
+    },
+    {
+      "id": "unitox:SPIRONOLACTONE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"SPIRONOLACTONE\". Ternary ratings — cardio:Less, liver:Less, renal:Most, heme:Most, fertility:Most, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

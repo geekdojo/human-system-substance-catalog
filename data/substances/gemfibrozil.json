@@ -1,0 +1,144 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "gemfibrozil",
+  "name": "Gemfibrozil",
+  "aka": [
+    "Lopid"
+  ],
+  "class": "PPAR-alpha agonist (fibrate)",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 600,
+    "amount_high": 1200,
+    "unit": "mg",
+    "cadence": "twice_daily"
+  },
+  "description": "A fibrate approved for severe hypertriglyceridaemia and for reduction of coronary heart disease risk in a specific dyslipidaemic population. Its statin interaction is more pronounced than that of fenofibrate.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Triglyceride reduction; the labelled indication.",
+      "evidence": [
+        "openfda:05bfbcdc-03ab-4fba-9582-980602410ef9",
+        "livertox:NBK547926"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation and cholelithiasis are labelled.",
+      "evidence": [
+        "openfda:05bfbcdc-03ab-4fba-9582-980602410ef9",
+        "livertox:NBK547926",
+        "dilirank:LT00020",
+        "unitox:GEMFIBROZIL"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Marked myopathy risk when combined with a statin; labelled.",
+      "evidence": [
+        "openfda:05bfbcdc-03ab-4fba-9582-980602410ef9"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Haemoglobin and leukocyte decline are labelled early in therapy.",
+      "evidence": [
+        "openfda:05bfbcdc-03ab-4fba-9582-980602410ef9",
+        "unitox:GEMFIBROZIL"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "triglycerides",
+      "why": "The direct index of effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:05bfbcdc-03ab-4fba-9582-980602410ef9"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Labelled transaminase elevation.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:05bfbcdc-03ab-4fba-9582-980602410ef9",
+        "livertox:NBK547926"
+      ]
+    },
+    {
+      "marker_key": "ck",
+      "why": "Marked myopathy risk in statin combination.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:05bfbcdc-03ab-4fba-9582-980602410ef9"
+      ]
+    },
+    {
+      "marker_key": "hemoglobin",
+      "why": "Labelled decline in the first months of therapy.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:05bfbcdc-03ab-4fba-9582-980602410ef9"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:gemfibrozil",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Gemfibrozil",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00020",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00020 \"Gemfibrozil\": vMost-DILI-concern (severity class 4). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK547926",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547926/",
+      "title": "LiverTox: Gemfibrozil",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:05bfbcdc-03ab-4fba-9582-980602410ef9",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05bfbcdc-03ab-4fba-9582-980602410ef9",
+      "title": "FDA Structured Product Label: Gemfibrozil",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 05bfbcdc-03ab-4fba-9582-980602410ef9, effective 20210618. 44 label record(s) matched."
+    },
+    {
+      "id": "unitox:GEMFIBROZIL",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"GEMFIBROZIL\". Ternary ratings — cardio:Less, liver:Most, renal:Most, heme:Most, fertility:Most, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

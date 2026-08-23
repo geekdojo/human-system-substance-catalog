@@ -1,0 +1,110 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "melatonin",
+  "name": "Melatonin",
+  "aka": [
+    "N-acetyl-5-methoxytryptamine"
+  ],
+  "class": "Pineal indoleamine chronobiotic",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral",
+    "sublingual"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 0.5,
+    "amount_high": 5,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "The pineal hormone that signals biological night, sold in the United States as a dietary supplement and regulated as a prescription medicine in several other countries. Product content has repeatedly been found to differ substantially from label claim.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Chronobiotic signalling at MT1 and MT2 receptors shifting sleep timing; the intended effect.",
+      "evidence": [
+        "pubmed:34493186",
+        "pubmed:28460563",
+        "curation:melatonin"
+      ]
+    },
+    {
+      "key": "gonads",
+      "relation": "confounds",
+      "note": "Reported effects on reproductive hormone timing; the signal is weak and contested.",
+      "evidence": [
+        "curation:melatonin"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "who5",
+      "why": "Sleep and affect are coupled; the accessible instrument.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:melatonin"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:melatonin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Melatonin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK548519",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548519/",
+      "title": "LiverTox: Melatonin",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:03dc86d3-575f-4c65-b06d-2613efbcd943",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03dc86d3-575f-4c65-b06d-2613efbcd943",
+      "title": "FDA Structured Product Label: GUNA-GERIATRICS",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 03dc86d3-575f-4c65-b06d-2613efbcd943, effective 20181222. 49 label record(s) matched."
+    },
+    {
+      "id": "pubmed:28460563",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28460563/",
+      "title": "A review of sleep disorders and melatonin.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 28460563 (Neurol Res, 2017 Jun) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:34493186",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34493186/",
+      "title": "Treatment of Circadian Rhythm Sleep-Wake Disorders.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 34493186 (Curr Neuropharmacol, 2022) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Melatonin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

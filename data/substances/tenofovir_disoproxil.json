@@ -1,0 +1,151 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "tenofovir_disoproxil",
+  "name": "Tenofovir disoproxil fumarate",
+  "aka": [
+    "Viread",
+    "TDF"
+  ],
+  "class": "Nucleotide reverse transcriptase inhibitor",
+  "category": "antiviral",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 300,
+    "amount_high": 300,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A nucleotide analogue reverse transcriptase inhibitor approved for HIV-1 and chronic hepatitis B, and used in pre-exposure prophylaxis. Carries a boxed warning for post-treatment hepatitis B exacerbation.",
+  "systems": [
+    {
+      "key": "blood",
+      "relation": "acts_on",
+      "note": "Reverse transcriptase inhibition; the labelled antiviral indication.",
+      "evidence": [
+        "openfda:08a30772-02fc-4f63-e063-6394a90afd43",
+        "livertox:NBK548917"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Proximal tubulopathy and Fanconi syndrome are labelled and are the characteristic toxicity.",
+      "evidence": [
+        "openfda:08a30772-02fc-4f63-e063-6394a90afd43",
+        "unitox:TENOFOVIR DISOPROXIL FUMARATE"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Bone mineral density loss is labelled.",
+      "evidence": [
+        "openfda:08a30772-02fc-4f63-e063-6394a90afd43"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Boxed warning for severe post-treatment hepatitis B exacerbation.",
+      "evidence": [
+        "openfda:08a30772-02fc-4f63-e063-6394a90afd43",
+        "livertox:NBK548917",
+        "unitox:TENOFOVIR DISOPROXIL FUMARATE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "creatinine",
+      "why": "Proximal tubulopathy is the characteristic labelled toxicity.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:08a30772-02fc-4f63-e063-6394a90afd43"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Labelled renal monitoring and dose adjustment.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:08a30772-02fc-4f63-e063-6394a90afd43"
+      ]
+    },
+    {
+      "marker_key": "uacr",
+      "why": "Tubular proteinuria precedes the filtration fall.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:tenofovir_disoproxil"
+      ]
+    },
+    {
+      "marker_key": "bmd_t_score",
+      "why": "Labelled bone mineral density loss.",
+      "cadence_days": 730,
+      "evidence": [
+        "openfda:08a30772-02fc-4f63-e063-6394a90afd43"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Boxed hepatitis B exacerbation warning.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:08a30772-02fc-4f63-e063-6394a90afd43"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:tenofovir_disoproxil",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Tenofovir disoproxil fumarate",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT02224",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT02224 \"Tenofovir disoproxil fumarate\": vLess-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548917",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548917/",
+      "title": "LiverTox: Tenofovir",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:08a30772-02fc-4f63-e063-6394a90afd43",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=08a30772-02fc-4f63-e063-6394a90afd43",
+      "title": "FDA Structured Product Label: Tenofovir Disoproxil Fumarate",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 08a30772-02fc-4f63-e063-6394a90afd43, effective 20251009. 68 label record(s) matched."
+    },
+    {
+      "id": "unitox:TENOFOVIR DISOPROXIL FUMARATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"TENOFOVIR DISOPROXIL FUMARATE\". Ternary ratings — cardio:No, liver:Most, renal:Most, heme:Less, fertility:Less, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

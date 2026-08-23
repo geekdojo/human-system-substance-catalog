@@ -1,0 +1,155 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "fenofibrate",
+  "name": "Fenofibrate",
+  "aka": [
+    "Tricor",
+    "Lipofen",
+    "Fenoglide"
+  ],
+  "class": "PPAR-alpha agonist (fibrate)",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 48,
+    "amount_high": 160,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A peroxisome proliferator-activated receptor alpha agonist approved for severe hypertriglyceridaemia and for mixed dyslipidaemia.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Triglyceride reduction through PPAR-alpha agonism; the labelled indication.",
+      "evidence": [
+        "openfda:00c2f942-e839-46fc-948a-f8e2fa79ccd1",
+        "livertox:NBK548607"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation and, rarely, chronic active hepatitis are labelled.",
+      "evidence": [
+        "openfda:00c2f942-e839-46fc-948a-f8e2fa79ccd1",
+        "livertox:NBK548607",
+        "dilirank:LT00098",
+        "unitox:FENOFIBRATE"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "confounds",
+      "note": "Reversibly raises serum creatinine without reducing measured filtration; the eGFR reading is misleading.",
+      "evidence": [
+        "openfda:00c2f942-e839-46fc-948a-f8e2fa79ccd1",
+        "unitox:FENOFIBRATE"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Myopathy risk, higher when combined with a statin.",
+      "evidence": [
+        "openfda:00c2f942-e839-46fc-948a-f8e2fa79ccd1"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "triglycerides",
+      "why": "The direct index of the effect the drug is given for.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00c2f942-e839-46fc-948a-f8e2fa79ccd1"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Labelled transaminase elevation and rare chronic active hepatitis.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00c2f942-e839-46fc-948a-f8e2fa79ccd1",
+        "livertox:NBK548607",
+        "dilirank:LT00098"
+      ]
+    },
+    {
+      "marker_key": "creatinine",
+      "why": "Reversibly raised without a true fall in filtration; the value must be read against that.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00c2f942-e839-46fc-948a-f8e2fa79ccd1"
+      ]
+    },
+    {
+      "marker_key": "cystatin_c",
+      "why": "Filtration marker not affected by the creatinine artefact this drug produces.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:fenofibrate"
+      ]
+    },
+    {
+      "marker_key": "ck",
+      "why": "Myopathy risk, amplified in statin combination.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00c2f942-e839-46fc-948a-f8e2fa79ccd1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:fenofibrate",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Fenofibrate",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00098",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00098 \"Fenofibrate\": vLess-DILI-concern (severity class 3). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548607",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548607/",
+      "title": "LiverTox: Fenofibrate",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:00c2f942-e839-46fc-948a-f8e2fa79ccd1",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00c2f942-e839-46fc-948a-f8e2fa79ccd1",
+      "title": "FDA Structured Product Label: Fenofibrate",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00c2f942-e839-46fc-948a-f8e2fa79ccd1, effective 20240429. 136 label record(s) matched."
+    },
+    {
+      "id": "unitox:FENOFIBRATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"FENOFIBRATE\". Ternary ratings — cardio:Most, liver:Most, renal:Most, heme:Most, fertility:No, pulm:Most, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

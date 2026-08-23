@@ -1,0 +1,133 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "sitagliptin",
+  "name": "Sitagliptin",
+  "aka": [
+    "Januvia"
+  ],
+  "class": "DPP-4 inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 25,
+    "amount_high": 100,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A dipeptidyl peptidase-4 inhibitor that raises endogenous incretin levels, approved for type 2 diabetes. Renally cleared with labelled dose reduction in renal impairment.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Incretin degradation blocked, raising endogenous GLP-1; the labelled indication.",
+      "evidence": [
+        "openfda:0098dec4-f0e5-45d5-8aa4-5d0faf9ab142",
+        "livertox:NBK548083"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Renally cleared; dose reduction is labelled in renal impairment.",
+      "evidence": [
+        "openfda:0098dec4-f0e5-45d5-8aa4-5d0faf9ab142",
+        "unitox:SITAGLIPTIN"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is reported.",
+      "evidence": [
+        "livertox:NBK548083",
+        "unitox:SITAGLIPTIN"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Severe joint pain is labelled for the class.",
+      "evidence": [
+        "openfda:0098dec4-f0e5-45d5-8aa4-5d0faf9ab142"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "Direct index of glycaemic effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0098dec4-f0e5-45d5-8aa4-5d0faf9ab142"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Labelled renal dose adjustment.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0098dec4-f0e5-45d5-8aa4-5d0faf9ab142"
+      ]
+    },
+    {
+      "marker_key": "lipase",
+      "why": "Pancreatitis is labelled for the class.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:0098dec4-f0e5-45d5-8aa4-5d0faf9ab142"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:sitagliptin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Sitagliptin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01251",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01251 \"Sitagliptin phosphate\": vLess-DILI-concern (severity class 4). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548083",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548083/",
+      "title": "LiverTox: Sitagliptin",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:0098dec4-f0e5-45d5-8aa4-5d0faf9ab142",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0098dec4-f0e5-45d5-8aa4-5d0faf9ab142",
+      "title": "FDA Structured Product Label: ZITUVIMET",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0098dec4-f0e5-45d5-8aa4-5d0faf9ab142, effective 20260812. 36 label record(s) matched."
+    },
+    {
+      "id": "unitox:SITAGLIPTIN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"SITAGLIPTIN\". Ternary ratings — cardio:Less, liver:Less, renal:Most, heme:No, fertility:Less, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

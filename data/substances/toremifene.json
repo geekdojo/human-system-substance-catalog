@@ -1,0 +1,117 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "toremifene",
+  "name": "Toremifene",
+  "aka": [
+    "Fareston"
+  ],
+  "class": "Selective estrogen receptor modulator",
+  "category": "serm",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 60,
+    "amount_high": 60,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A selective estrogen receptor modulator approved for metastatic breast cancer in postmenopausal women with estrogen-receptor-positive disease.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Estrogen receptor modulation is the intended pharmacology.",
+      "evidence": [
+        "openfda:2cab8dd1-3a10-48e6-86ce-0e5275ed49e5",
+        "livertox:NBK548338"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Boxed warning for QT prolongation.",
+      "evidence": [
+        "openfda:2cab8dd1-3a10-48e6-86ce-0e5275ed49e5",
+        "unitox:TOREMIFENE CITRATE"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is reported.",
+      "evidence": [
+        "livertox:NBK548338",
+        "unitox:TOREMIFENE CITRATE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Reported transaminase elevation.",
+      "cadence_days": 180,
+      "evidence": [
+        "livertox:NBK548338"
+      ]
+    },
+    {
+      "marker_key": "calcium_serum",
+      "why": "Hypercalcaemia is labelled in the metastatic population.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:2cab8dd1-3a10-48e6-86ce-0e5275ed49e5"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:toremifene",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Toremifene",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00158",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00158 \"Toremifene citrate\": Ambiguous-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548338",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548338/",
+      "title": "LiverTox: Toremifene",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:2cab8dd1-3a10-48e6-86ce-0e5275ed49e5",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2cab8dd1-3a10-48e6-86ce-0e5275ed49e5",
+      "title": "FDA Structured Product Label: Fareston",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 2cab8dd1-3a10-48e6-86ce-0e5275ed49e5, effective 20241113. 3 label record(s) matched."
+    },
+    {
+      "id": "unitox:TOREMIFENE CITRATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"TOREMIFENE CITRATE\". Ternary ratings — cardio:Most, liver:Most, renal:No, heme:Less, fertility:Most, pulm:Less, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

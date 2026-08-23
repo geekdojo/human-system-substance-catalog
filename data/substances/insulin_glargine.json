@@ -1,0 +1,133 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "insulin_glargine",
+  "name": "Insulin glargine",
+  "aka": [
+    "Lantus",
+    "Basaglar",
+    "Toujeo",
+    "Semglee"
+  ],
+  "class": "Long-acting basal insulin analogue",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 10,
+    "amount_high": 60,
+    "unit": "units",
+    "cadence": "daily"
+  },
+  "description": "A long-acting basal insulin analogue that precipitates at physiological pH to give a flat 24-hour profile, approved for type 1 and type 2 diabetes.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Replaces basal insulin; the labelled indication.",
+      "evidence": [
+        "openfda:0ad21db3-2b1c-4ed9-a687-bdd6a74d0aae",
+        "livertox:NBK548016"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Insulin drives potassium intracellularly; hypokalaemia is labelled.",
+      "evidence": [
+        "openfda:0ad21db3-2b1c-4ed9-a687-bdd6a74d0aae"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Weight gain is a labelled effect of insulin therapy.",
+      "evidence": [
+        "openfda:0ad21db3-2b1c-4ed9-a687-bdd6a74d0aae"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "Direct index of glycaemic control.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:0ad21db3-2b1c-4ed9-a687-bdd6a74d0aae"
+      ]
+    },
+    {
+      "marker_key": "glucose_fasting",
+      "why": "Basal insulin is titrated against the fasting value.",
+      "cadence_days": 30,
+      "evidence": [
+        "openfda:0ad21db3-2b1c-4ed9-a687-bdd6a74d0aae"
+      ]
+    },
+    {
+      "marker_key": "potassium",
+      "why": "Labelled intracellular potassium shift.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0ad21db3-2b1c-4ed9-a687-bdd6a74d0aae"
+      ]
+    },
+    {
+      "marker_key": "c_peptide",
+      "why": "Distinguishes endogenous secretion from the injected analogue, which C-peptide assays do not detect.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:insulin_glargine"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:insulin_glargine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Insulin glargine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK548016",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548016/",
+      "title": "LiverTox: Insulin",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:0ad21db3-2b1c-4ed9-a687-bdd6a74d0aae",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0ad21db3-2b1c-4ed9-a687-bdd6a74d0aae",
+      "title": "FDA Structured Product Label: BASAGLAR KwikPen",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0ad21db3-2b1c-4ed9-a687-bdd6a74d0aae, effective 20260616. 17 label record(s) matched."
+    },
+    {
+      "id": "unitox:INSULIN GLARGINE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"INSULIN GLARGINE\". Ternary ratings — cardio:Less, liver:No, renal:Less, heme:No, fertility:Less, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "dilirank",
+      "queried": "Insulin glargine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,111 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "icosapent_ethyl",
+  "name": "Icosapent ethyl",
+  "aka": [
+    "Vascepa"
+  ],
+  "class": "Purified eicosapentaenoic acid ethyl ester",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 2,
+    "amount_high": 4,
+    "unit": "g",
+    "cadence": "daily"
+  },
+  "description": "A highly purified ethyl ester of eicosapentaenoic acid without docosahexaenoic acid, approved for severe hypertriglyceridaemia and for cardiovascular risk reduction in a specified statin-treated population.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Triglyceride reduction and cardiovascular event reduction; the labelled indications.",
+      "evidence": [
+        "openfda:019cc0ac-0c2f-426d-996a-6d932f954443"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Bleeding risk and a labelled increase in atrial fibrillation.",
+      "evidence": [
+        "openfda:019cc0ac-0c2f-426d-996a-6d932f954443",
+        "unitox:ICOSAPENT ETHYL"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "triglycerides",
+      "why": "The direct index of the labelled effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:019cc0ac-0c2f-426d-996a-6d932f954443"
+      ]
+    },
+    {
+      "marker_key": "omega3_index",
+      "why": "The membrane-incorporation index of the fatty acid supplied.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:icosapent_ethyl"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Labelled monitoring in hepatic impairment.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:019cc0ac-0c2f-426d-996a-6d932f954443"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:icosapent_ethyl",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Icosapent ethyl",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:019cc0ac-0c2f-426d-996a-6d932f954443",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=019cc0ac-0c2f-426d-996a-6d932f954443",
+      "title": "FDA Structured Product Label: ICOSAPENT ETHYL",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 019cc0ac-0c2f-426d-996a-6d932f954443, effective 20260430. 29 label record(s) matched."
+    },
+    {
+      "id": "unitox:ICOSAPENT ETHYL",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"ICOSAPENT ETHYL\". Ternary ratings — cardio:Most, liver:Less, renal:No, heme:Most, fertility:Most, pulm:No, oto:No, derm:No. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Icosapent",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Icosapent ethyl",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

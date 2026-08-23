@@ -1,0 +1,103 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "lixisenatide",
+  "name": "Lixisenatide",
+  "aka": [
+    "Adlyxin"
+  ],
+  "class": "GLP-1 receptor agonist",
+  "category": "glp1",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 10,
+    "amount_high": 20,
+    "unit": "mcg",
+    "cadence": "daily"
+  },
+  "description": "A short-acting prandial GLP-1 receptor agonist for type 2 diabetes.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "GLP-1 receptor agonism, weighted toward postprandial glycaemia.",
+      "evidence": [
+        "openfda:4bba538b-cf7c-4310-ae8f-cb711ed21bcc",
+        "livertox:NBK548285"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Renally cleared; renal impairment is labelled.",
+      "evidence": [
+        "openfda:4bba538b-cf7c-4310-ae8f-cb711ed21bcc"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "Direct index of glycaemic effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:4bba538b-cf7c-4310-ae8f-cb711ed21bcc"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Renal clearance.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:4bba538b-cf7c-4310-ae8f-cb711ed21bcc"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:lixisenatide",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Lixisenatide",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK548285",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548285/",
+      "title": "LiverTox: Lixisenatide",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:4bba538b-cf7c-4310-ae8f-cb711ed21bcc",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4bba538b-cf7c-4310-ae8f-cb711ed21bcc",
+      "title": "FDA Structured Product Label: Soliqua 100/33",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 4bba538b-cf7c-4310-ae8f-cb711ed21bcc, effective 20260318. 1 label record(s) matched."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Lixisenatide",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Lixisenatide",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

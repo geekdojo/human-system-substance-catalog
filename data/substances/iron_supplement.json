@@ -1,0 +1,159 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "iron_supplement",
+  "name": "Iron",
+  "aka": [
+    "ferrous sulfate",
+    "ferrous bisglycinate",
+    "iron bisglycinate"
+  ],
+  "class": "Essential mineral, oral iron salt",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 18,
+    "amount_high": 65,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "Oral iron salts used to replete iron stores. There is no regulated excretory route for iron, so supplementation without a demonstrated deficiency risks accumulation, particularly in undiagnosed haemochromatosis.",
+  "systems": [
+    {
+      "key": "blood",
+      "relation": "acts_on",
+      "note": "Repletion of iron stores for erythropoiesis; the intended effect.",
+      "evidence": [
+        "pubmed:36728680",
+        "pubmed:29032957",
+        "curation:iron_supplement"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Iron accumulates hepatically and has no regulated excretory route.",
+      "evidence": [
+        "pubmed:36728680",
+        "pubmed:29032957",
+        "curation:iron_supplement"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "ferritin",
+      "why": "The storage index and the value supplementation is titrated against.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:iron_supplement"
+      ]
+    },
+    {
+      "marker_key": "transferrin_saturation",
+      "why": "Distinguishes repletion from iron overload, which ferritin alone does not.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:iron_supplement"
+      ]
+    },
+    {
+      "marker_key": "iron_serum",
+      "why": "The numerator of transferrin saturation; read with TIBC rather than alone.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:iron_supplement"
+      ]
+    },
+    {
+      "marker_key": "tibc",
+      "why": "The denominator of transferrin saturation.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:iron_supplement"
+      ]
+    },
+    {
+      "marker_key": "hemoglobin",
+      "why": "The functional endpoint of iron repletion.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:iron_supplement"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Iron accumulates hepatically with no excretory route.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:iron_supplement"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:iron_supplement",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Iron",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK548214",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548214/",
+      "title": "LiverTox: Iron",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:3a749d62-0e20-0c15-e063-6394a90ac1a8",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3a749d62-0e20-0c15-e063-6394a90ac1a8",
+      "title": "FDA Structured Product Label: FERRUM SULPHURICUM",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 3a749d62-0e20-0c15-e063-6394a90ac1a8, effective 20250721. 5 label record(s) matched."
+    },
+    {
+      "id": "pubmed:29032957",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29032957/",
+      "title": "Iron absorption from oral iron supplements given on consecutive versus alternate days and as single morning doses versus twice-daily split dosing in iron-depleted women: two open-label, randomised controlled trials.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 29032957 (Lancet Haematol, 2017 Nov) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:36728680",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36728680/",
+      "title": "The effects of oral ferrous bisglycinate supplementation on hemoglobin and ferritin concentrations in adults and children: a systematic review and meta-analysis of randomized controlled trials.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 36728680 (Nutr Rev, 2023 Jul 10) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Ferrous sulfate",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Ferrous sulfate",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

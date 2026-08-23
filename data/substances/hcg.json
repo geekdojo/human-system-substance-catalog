@@ -1,0 +1,130 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "hcg",
+  "name": "Chorionic gonadotropin",
+  "aka": [
+    "hCG",
+    "Pregnyl",
+    "Novarel",
+    "Ovidrel"
+  ],
+  "class": "Human chorionic gonadotropin (LH receptor agonist)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "intramuscular",
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 500,
+    "amount_high": 2000,
+    "unit": "units",
+    "cadence": "twice_weekly"
+  },
+  "description": "A placental glycoprotein hormone that agonises the LH receptor, approved for prepubertal cryptorchidism, hypogonadotropic hypogonadism in males and ovulation induction in females. Carries a boxed warning against use for weight loss.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "LH receptor agonism driving testicular steroidogenesis; the labelled indication.",
+      "evidence": [
+        "openfda:312ee87a-c6c3-6111-e063-6394a90ad8d7"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Raised endogenous testosterone carries the same erythrocytosis concern as exogenous androgen.",
+      "evidence": [
+        "curation:hcg"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "burdens",
+      "note": "Raised endogenous androgen reaches prostatic tissue.",
+      "evidence": [
+        "curation:hcg"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "testosterone_total",
+      "why": "The effect the drug is given for.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:312ee87a-c6c3-6111-e063-6394a90ad8d7"
+      ]
+    },
+    {
+      "marker_key": "estradiol",
+      "why": "Intratesticular aromatisation rises markedly under hCG stimulation.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:hcg"
+      ]
+    },
+    {
+      "marker_key": "hematocrit",
+      "why": "Raised endogenous androgen carries the class erythrocytosis concern.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:hcg"
+      ]
+    },
+    {
+      "marker_key": "psa_total",
+      "why": "Raised endogenous androgen reaches prostatic tissue.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:hcg"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:hcg",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Chorionic gonadotropin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:312ee87a-c6c3-6111-e063-6394a90ad8d7",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=312ee87a-c6c3-6111-e063-6394a90ad8d7",
+      "title": "FDA Structured Product Label: Chorionic Gonadotropin",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 312ee87a-c6c3-6111-e063-6394a90ad8d7, effective 20250325. 2 label record(s) matched."
+    },
+    {
+      "id": "unitox:CHORIONIC GONADOTROPIN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"CHORIONIC GONADOTROPIN\". Ternary ratings — cardio:Less, liver:No, renal:No, heme:Less, fertility:No, pulm:Less, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Chorionic Gonadotropin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Chorionic gonadotropin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

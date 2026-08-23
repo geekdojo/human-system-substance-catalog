@@ -1,0 +1,83 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "collagen_peptides",
+  "name": "Collagen peptides",
+  "aka": [
+    "hydrolysed collagen",
+    "collagen hydrolysate"
+  ],
+  "class": "Hydrolysed collagen protein",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 10,
+    "amount_high": 15,
+    "unit": "g",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "Enzymatically hydrolysed animal collagen, rich in glycine, proline and hydroxyproline, taken for connective tissue and skin. It is an incomplete protein and does not substitute for dietary protein targets.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Taken for connective tissue, tendon and skin; the intended effect.",
+      "evidence": [
+        "pubmed:41804623",
+        "curation:collagen_peptides"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "bun",
+      "why": "An incomplete protein taken in gram quantities contributes to nitrogen load.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:collagen_peptides"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:collagen_peptides",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Collagen peptides",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:02095fb4-70d0-4871-b6b2-e058e75351d4",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02095fb4-70d0-4871-b6b2-e058e75351d4",
+      "title": "FDA Structured Product Label: JBA Collagen-B Chicken Essence",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 02095fb4-70d0-4871-b6b2-e058e75351d4, effective 20260429. 23 label record(s) matched."
+    },
+    {
+      "id": "pubmed:41804623",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41804623/",
+      "title": "Oral Use of Collagen Supplements in Dermatology.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 41804623 (Acta Dermatovenerol Croat, 2025 Sep) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Collagen",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

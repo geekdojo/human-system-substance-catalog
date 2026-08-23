@@ -1,0 +1,107 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "semax",
+  "name": "Semax",
+  "aka": [
+    "Met-Glu-His-Phe-Pro-Gly-Pro",
+    "ACTH(4-7)-PGP"
+  ],
+  "class": "Synthetic ACTH(4-10) analogue heptapeptide",
+  "category": "nootropic",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "intranasal",
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 300,
+    "amount_high": 900,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A synthetic analogue of a fragment of adrenocorticotropic hormone with the corticotropic activity removed, registered as a medicine in Russia for stroke and cognitive indications. It has no FDA approval and no approved US labelling. Registered in Russia. No FDA approval; no US labelling exists.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Taken for cognitive and neuroprotective effect via BDNF modulation; the intended effect.",
+      "evidence": [
+        "pubmed:14556513",
+        "pubmed:16635254",
+        "curation:semax"
+      ]
+    },
+    {
+      "key": "pituitary",
+      "relation": "confounds",
+      "note": "Derived from an ACTH fragment; corticotropic activity is reported absent but the assay relationship is uncharacterised in humans.",
+      "evidence": [
+        "curation:semax"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "cortisol_am",
+      "why": "ACTH-fragment origin; confirms the absence of corticotropic activity claimed for it.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:semax"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "The only accessible instrument for the cognitive and affective effect claimed.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:semax"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:semax",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Semax",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:14556513",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14556513/",
+      "title": "The heptapeptide SEMAX stimulates BDNF expression in different areas of the rat brain in vivo.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 14556513 (Dokl Biol Sci, 2003 Jul-Aug) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:16635254",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16635254/",
+      "title": "Semax, an analogue of adrenocorticotropin (4-10), binds specifically and increases levels of brain-derived neurotrophic factor protein in rat basal forebrain.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 16635254 (J Neurochem, 2006 Apr) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "semax",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Semax",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

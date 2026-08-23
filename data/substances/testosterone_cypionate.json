@@ -1,0 +1,201 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "testosterone_cypionate",
+  "name": "Testosterone cypionate",
+  "aka": [
+    "Depo-Testosterone"
+  ],
+  "class": "Androgen ester (Schedule III)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "intramuscular",
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 50,
+    "amount_high": 200,
+    "unit": "mg",
+    "cadence": "weekly"
+  },
+  "description": "A long-chain ester of testosterone in oil, approved for testosterone replacement in males with primary or hypogonadotropic hypogonadism. A Schedule III controlled substance in the United States.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Androgen replacement is the labelled indication; placed on the gonads by intended effect.",
+      "evidence": [
+        "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Lean-mass accrual is an intended and labelled effect of androgen replacement.",
+      "evidence": [
+        "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Erythrocytosis is a labelled risk of exogenous androgen.",
+      "evidence": [
+        "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b",
+        "unitox:TESTOSTERONE CYPIONATE"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "burdens",
+      "note": "Prostatic growth and rising PSA are labelled.",
+      "evidence": [
+        "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Androgen class hepatic effects; the ester route lowers but does not remove the concern.",
+      "evidence": [
+        "unitox:TESTOSTERONE CYPIONATE"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Blood pressure rise and cardiovascular signals are labelled.",
+      "evidence": [
+        "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b",
+        "unitox:TESTOSTERONE CYPIONATE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "testosterone_total",
+      "why": "The direct index of replacement adequacy; labelled monitoring parameter.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b"
+      ]
+    },
+    {
+      "marker_key": "testosterone_free",
+      "why": "Interprets total testosterone against SHBG.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b"
+      ]
+    },
+    {
+      "marker_key": "estradiol",
+      "why": "Testosterone aromatises; estradiol drives several androgen-therapy effects.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:testosterone_cypionate"
+      ]
+    },
+    {
+      "marker_key": "hematocrit",
+      "why": "Erythrocytosis is the labelled haematological risk.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b"
+      ]
+    },
+    {
+      "marker_key": "hemoglobin",
+      "why": "Read with haematocrit for the erythrocytosis signal.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b"
+      ]
+    },
+    {
+      "marker_key": "rbc",
+      "why": "Completes the red-cell picture behind the labelled erythrocytosis risk.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b"
+      ]
+    },
+    {
+      "marker_key": "psa_total",
+      "why": "Labelled prostate monitoring for men on androgen replacement.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b"
+      ]
+    },
+    {
+      "marker_key": "lh",
+      "why": "Exogenous androgen suppresses gonadotropins; documents axis shutdown.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:testosterone_cypionate"
+      ]
+    },
+    {
+      "marker_key": "shbg",
+      "why": "Sets the bound/free testosterone split.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:testosterone_cypionate"
+      ]
+    },
+    {
+      "marker_key": "hdl_c",
+      "why": "Exogenous androgen suppresses HDL cholesterol.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:testosterone_cypionate"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:testosterone_cypionate",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Testosterone cypionate",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b",
+      "title": "FDA Structured Product Label: Testosterone Cypionate",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 1e2f2ed8-7a1c-4d89-aa00-d8a422c8e70b, effective 20251112. 41 label record(s) matched."
+    },
+    {
+      "id": "unitox:TESTOSTERONE CYPIONATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"TESTOSTERONE CYPIONATE\". Ternary ratings — cardio:Most, liver:Less, renal:Less, heme:Most, fertility:Most, pulm:Most, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Testosterone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Testosterone cypionate",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

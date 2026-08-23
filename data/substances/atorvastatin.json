@@ -1,0 +1,159 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "atorvastatin",
+  "name": "Atorvastatin",
+  "aka": [
+    "Lipitor"
+  ],
+  "class": "HMG-CoA reductase inhibitor (statin)",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 10,
+    "amount_high": 80,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A high-intensity synthetic statin approved for hyperlipidaemia and cardiovascular risk reduction. Hepatically metabolised via CYP3A4.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Inhibition of hepatic HMG-CoA reductase lowering LDL cholesterol and cardiovascular event rate; placed on the heart by intended effect rather than on the liver where the enzyme sits.",
+      "evidence": [
+        "openfda:00afce9b-48c9-487a-a738-e359c005c707",
+        "livertox:NBK548236"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is a labelled class effect and the liver is the site of the enzyme, not the target.",
+      "evidence": [
+        "openfda:00afce9b-48c9-487a-a738-e359c005c707",
+        "livertox:NBK548236",
+        "dilirank:LT00258",
+        "unitox:ATORVASTATIN CALCIUM"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Myopathy and, rarely, rhabdomyolysis are labelled class effects.",
+      "evidence": [
+        "openfda:00afce9b-48c9-487a-a738-e359c005c707"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "A small increase in incident diabetes is a labelled class effect.",
+      "evidence": [
+        "openfda:00afce9b-48c9-487a-a738-e359c005c707"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "ldl_c",
+      "why": "The direct index of the effect the drug is given for.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00afce9b-48c9-487a-a738-e359c005c707"
+      ]
+    },
+    {
+      "marker_key": "apob",
+      "why": "Counts atherogenic particles, which LDL-C mass does not.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:atorvastatin"
+      ]
+    },
+    {
+      "marker_key": "non_hdl_c",
+      "why": "Sums every atherogenic particle and is computable from a standard panel.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:atorvastatin"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Labelled class transaminase elevation.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00afce9b-48c9-487a-a738-e359c005c707",
+        "livertox:NBK548236"
+      ]
+    },
+    {
+      "marker_key": "ck",
+      "why": "Myopathy is the labelled class effect; CK is the operative marker when muscle symptoms appear.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00afce9b-48c9-487a-a738-e359c005c707"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "Labelled small increase in incident diabetes.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00afce9b-48c9-487a-a738-e359c005c707"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:atorvastatin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Atorvastatin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00258",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00258 \"Atorvastatin calcium\": vMost-DILI-concern (severity class 5). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548236",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548236/",
+      "title": "LiverTox: Atorvastatin",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:00afce9b-48c9-487a-a738-e359c005c707",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00afce9b-48c9-487a-a738-e359c005c707",
+      "title": "FDA Structured Product Label: Atorvastatin calcium",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00afce9b-48c9-487a-a738-e359c005c707, effective 20250828. 258 label record(s) matched."
+    },
+    {
+      "id": "unitox:ATORVASTATIN CALCIUM",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"ATORVASTATIN CALCIUM\". Ternary ratings — cardio:Less, liver:Most, renal:Less, heme:No, fertility:Most, pulm:Less, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

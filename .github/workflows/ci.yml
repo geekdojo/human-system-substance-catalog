@@ -1,0 +1,86 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  # release.yml calls this workflow as its gate: a release cannot be cut from data
+  # that does not validate.
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: validate, test and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Validation is separated from the test run so a data error reads as a data error
+      # in the job log rather than as an assertion failure buried in a test name.
+      - name: Validate data (schema, marker keys, licence gate, placement rules)
+        run: npm run check
+
+      - name: Test with coverage (>= 70% required)
+        run: npm test
+
+      - name: Build the bundle
+        id: build
+        run: |
+          npm run build
+          BUNDLE=$(ls dist/catalog-*.json | head -1)
+          echo "bundle=$BUNDLE" >> "$GITHUB_OUTPUT"
+          echo "version=$(node -p "require('./$BUNDLE').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Verify the published sha256 matches a recomputation
+        run: |
+          BUNDLE='${{ steps.build.outputs.bundle }}'
+          node -e '
+            const fs = require("fs"), crypto = require("crypto");
+            const b = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+            const { sha256: published, published_at, ...body } = b;
+            const canon = v => Array.isArray(v) ? v.map(canon)
+              : (v && typeof v === "object")
+                ? Object.fromEntries(Object.keys(v).sort().map(k => [k, canon(v[k])]))
+                : v;
+            const actual = crypto.createHash("sha256").update(JSON.stringify(canon(body))).digest("hex");
+            if (actual !== published) { console.error(`sha256 mismatch\n  published ${published}\n  actual    ${actual}`); process.exit(1); }
+            console.log(`sha256 verified: ${actual}`);
+            console.log(`substances: ${b.substance_count}, markers: ${b.marker_keys.length}, version: ${b.version}`);
+            if (b.substance_count < 120) { console.error("substance_count is below the 120 floor"); process.exit(1); }
+          ' "$BUNDLE"
+
+      - name: Assert no off-allowlist licence reached the bundle
+        run: |
+          node -e '
+            const b = require("./" + process.argv[1]);
+            const ALLOW = ["CC0-1.0", "CC-BY-4.0", "public-domain", "own-curation"];
+            const bad = [];
+            for (const s of b.substances) for (const src of s.sources)
+              if (!ALLOW.includes(src.license)) bad.push(`${s.key}: ${src.id} -> ${src.license}`);
+            if (bad.length) { console.error("LICENCE GATE FAILED:\n" + bad.join("\n")); process.exit(1); }
+            console.log(`licence gate: OK across ${b.substances.length} substances`);
+          ' '${{ steps.build.outputs.bundle }}'
+
+      - name: Upload dist
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalog-${{ steps.build.outputs.version }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30

@@ -1,0 +1,128 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "vitamin_d3",
+  "name": "Vitamin D3 (cholecalciferol)",
+  "aka": [
+    "cholecalciferol",
+    "vitamin D"
+  ],
+  "class": "Secosteroid prohormone",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 1000,
+    "amount_high": 5000,
+    "unit": "IU",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "The animal form of vitamin D, hydroxylated in liver and kidney to the active hormone calcitriol. Sold as a dietary supplement; high-dose prescription ergocalciferol is separately available.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Calcium and bone homeostasis and broader endocrine signalling; the intended effect.",
+      "evidence": [
+        "pubmed:22552031",
+        "pubmed:32704098",
+        "curation:vitamin_d3"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Hypercalcaemia and nephrocalcinosis at sustained excessive intake.",
+      "evidence": [
+        "pubmed:22552031",
+        "pubmed:32704098",
+        "curation:vitamin_d3"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "vitamin_d_25oh",
+      "why": "The storage form and the direct index of intake and status.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:22552031",
+        "pubmed:32704098",
+        "curation:vitamin_d3"
+      ]
+    },
+    {
+      "marker_key": "calcium_serum",
+      "why": "Hypercalcaemia is the toxicity of excess.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:vitamin_d3"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:vitamin_d3",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Vitamin D3 (cholecalciferol)",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK548094",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548094/",
+      "title": "LiverTox: Vitamin D",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:038fe2e7-dc16-485c-b5fb-746db7231347",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=038fe2e7-dc16-485c-b5fb-746db7231347",
+      "title": "FDA Structured Product Label: PNV-DHA",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 038fe2e7-dc16-485c-b5fb-746db7231347, effective 20260723. 40 label record(s) matched."
+    },
+    {
+      "id": "pubmed:22552031",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22552031/",
+      "title": "Comparison of vitamin D2 and vitamin D3 supplementation in raising serum 25-hydroxyvitamin D status: a systematic review and meta-analysis.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 22552031 (Am J Clin Nutr, 2012 Jun) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:32704098",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32704098/",
+      "title": "Vitamin D supplementation: cholecalciferol, calcifediol, and calcitriol.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 32704098 (Eur J Clin Nutr, 2020 Nov) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Cholecalciferol",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Cholecalciferol",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "levothyroxine",
+  "name": "Levothyroxine sodium",
+  "aka": [
+    "Synthroid",
+    "Levoxyl",
+    "Euthyrox",
+    "Unithroid",
+    "Tirosint"
+  ],
+  "class": "Synthetic thyroxine (T4)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral",
+    "intravenous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 25,
+    "amount_high": 200,
+    "unit": "mcg",
+    "cadence": "daily"
+  },
+  "description": "Synthetic levorotatory thyroxine, approved for hypothyroidism and for TSH suppression in thyroid cancer. Carries a boxed warning against use for weight loss.",
+  "systems": [
+    {
+      "key": "thyroid",
+      "relation": "acts_on",
+      "note": "Replaces thyroidal thyroxine output; the labelled indication.",
+      "evidence": [
+        "openfda:008de8fd-150f-4022-8ccb-c8bfa94875c7"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Over-replacement causes tachyarrhythmia; boxed warning against non-hypothyroid use.",
+      "evidence": [
+        "openfda:008de8fd-150f-4022-8ccb-c8bfa94875c7",
+        "unitox:LEVOTHYROXINE SODIUM"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Over-replacement causes bone density loss and lean-tissue catabolism.",
+      "evidence": [
+        "openfda:008de8fd-150f-4022-8ccb-c8bfa94875c7"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "tsh",
+      "why": "The labelled titration parameter and the most sensitive index of replacement adequacy.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:008de8fd-150f-4022-8ccb-c8bfa94875c7"
+      ]
+    },
+    {
+      "marker_key": "ft4",
+      "why": "Confirms the achieved thyroxine level when TSH is ambiguous.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:008de8fd-150f-4022-8ccb-c8bfa94875c7"
+      ]
+    },
+    {
+      "marker_key": "ft3",
+      "why": "Reads peripheral conversion, which T4-only replacement does not control.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:levothyroxine"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:levothyroxine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Levothyroxine sodium",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01072",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01072 \"Levothyroxine sodium\": vLess-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:008de8fd-150f-4022-8ccb-c8bfa94875c7",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=008de8fd-150f-4022-8ccb-c8bfa94875c7",
+      "title": "FDA Structured Product Label: Levothyroxine sodium",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 008de8fd-150f-4022-8ccb-c8bfa94875c7, effective 20260324. 285 label record(s) matched."
+    },
+    {
+      "id": "unitox:LEVOTHYROXINE SODIUM",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"LEVOTHYROXINE SODIUM\". Ternary ratings — cardio:Most, liver:No, renal:No, heme:No, fertility:Less, pulm:No, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Levothyroxine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

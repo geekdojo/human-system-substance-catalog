@@ -1,0 +1,156 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "testosterone_undecanoate",
+  "name": "Testosterone undecanoate",
+  "aka": [
+    "Aveed",
+    "Jatenzo",
+    "Kyzatrex",
+    "Tlando"
+  ],
+  "class": "Long-chain androgen ester (Schedule III)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "intramuscular",
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 750,
+    "amount_high": 1000,
+    "unit": "mg",
+    "cadence": "quarterly"
+  },
+  "description": "A very long-chain ester of testosterone, marketed as a long-interval intramuscular depot (Aveed) and as oral formulations absorbed by the lymphatic route (Jatenzo, Kyzatrex, Tlando). A Schedule III controlled substance.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Androgen replacement is the labelled indication.",
+      "evidence": [
+        "openfda:4b0b92e9-6d3c-a0e5-e1c7-342999f72580"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Lean-mass accrual is an intended effect.",
+      "evidence": [
+        "openfda:4b0b92e9-6d3c-a0e5-e1c7-342999f72580"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Erythrocytosis is labelled.",
+      "evidence": [
+        "openfda:4b0b92e9-6d3c-a0e5-e1c7-342999f72580",
+        "unitox:TESTOSTERONE UNDECANOATE"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "burdens",
+      "note": "Prostatic growth and rising PSA are labelled.",
+      "evidence": [
+        "openfda:4b0b92e9-6d3c-a0e5-e1c7-342999f72580"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "The oral presentations carry a boxed warning for blood pressure rise.",
+      "evidence": [
+        "openfda:4b0b92e9-6d3c-a0e5-e1c7-342999f72580",
+        "unitox:TESTOSTERONE UNDECANOATE"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Androgen class hepatic effects; oral presentations add first-pass exposure.",
+      "evidence": [
+        "unitox:TESTOSTERONE UNDECANOATE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "testosterone_total",
+      "why": "Labelled monitoring parameter.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:4b0b92e9-6d3c-a0e5-e1c7-342999f72580"
+      ]
+    },
+    {
+      "marker_key": "hematocrit",
+      "why": "Labelled erythrocytosis risk.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:4b0b92e9-6d3c-a0e5-e1c7-342999f72580"
+      ]
+    },
+    {
+      "marker_key": "psa_total",
+      "why": "Labelled prostate monitoring.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:4b0b92e9-6d3c-a0e5-e1c7-342999f72580"
+      ]
+    },
+    {
+      "marker_key": "estradiol",
+      "why": "Aromatisation of the administered androgen.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:testosterone_undecanoate"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:testosterone_undecanoate",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Testosterone undecanoate",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:4b0b92e9-6d3c-a0e5-e1c7-342999f72580",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4b0b92e9-6d3c-a0e5-e1c7-342999f72580",
+      "title": "FDA Structured Product Label: Tlando",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 4b0b92e9-6d3c-a0e5-e1c7-342999f72580, effective 20260225. 4 label record(s) matched."
+    },
+    {
+      "id": "unitox:TESTOSTERONE UNDECANOATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"TESTOSTERONE UNDECANOATE\". Ternary ratings — cardio:Most, liver:Less, renal:Less, heme:Most, fertility:Most, pulm:Less, oto:No, derm:No. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Testosterone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Testosterone undecanoate",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "bpc_157",
+  "name": "BPC-157",
+  "aka": [
+    "Body Protection Compound 157",
+    "PL 14736",
+    "pentadecapeptide BPC 157"
+  ],
+  "class": "Synthetic pentadecapeptide derived from a gastric juice protein",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "subcutaneous",
+    "oral",
+    "intramuscular"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 200,
+    "amount_high": 500,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A synthetic 15-amino-acid sequence corresponding to a fragment of human gastric juice protein BPC. Evidence is overwhelmingly preclinical, in rodent injury models. It has no FDA-approved product, no approved labelling, and appears on the FDA Category 2 bulk-substances list, which bars its use in compounding. No FDA label exists. Placed on the FDA 503A Category 2 bulk drug substances list. Not equivalent to any approved drug.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Taken for connective-tissue and soft-tissue repair; this is the intended effect, evidenced almost entirely in rodent models.",
+      "evidence": [
+        "pubmed:30915550",
+        "pubmed:34267654",
+        "curation:bpc_157"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "No human safety data and no product-quality control; hepatic effect in humans is uncharacterised.",
+      "evidence": [
+        "curation:bpc_157"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "No human pharmacokinetic or clearance data exist.",
+      "evidence": [
+        "curation:bpc_157"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "No human safety record exists; baseline and interval hepatic panels are the only available surveillance.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:bpc_157"
+      ]
+    },
+    {
+      "marker_key": "creatinine",
+      "why": "No human clearance data exist.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:bpc_157"
+      ]
+    },
+    {
+      "marker_key": "crp_hs",
+      "why": "The only accessible index of the systemic inflammatory effect claimed for it.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:bpc_157"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:bpc_157",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: BPC-157",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:30915550",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30915550/",
+      "title": "Gastric pentadecapeptide body protection compound BPC 157 and its role in accelerating musculoskeletal soft tissue healing.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 30915550 (Cell Tissue Res, 2019 Aug) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:34267654",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34267654/",
+      "title": "Stable Gastric Pentadecapeptide BPC 157 and Wound Healing.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 34267654 (Front Pharmacol, 2021) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "BPC-157",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "livertox",
+      "queried": "BPC-157",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "BPC-157",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "BPC-157",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

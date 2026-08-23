@@ -1,0 +1,110 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "amlodipine",
+  "name": "Amlodipine",
+  "aka": [
+    "Norvasc"
+  ],
+  "class": "Dihydropyridine calcium channel blocker",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 2.5,
+    "amount_high": 10,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A long-acting dihydropyridine calcium channel blocker approved for hypertension and chronic stable and vasospastic angina.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Arterial smooth muscle relaxation lowering blood pressure and relieving angina; the labelled indications.",
+      "evidence": [
+        "openfda:003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+        "livertox:NBK548585"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Extensively hepatically metabolised; transaminase elevation is reported.",
+      "evidence": [
+        "openfda:003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+        "livertox:NBK548585",
+        "unitox:AMLODIPINE BESYLATE"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Dose-dependent peripheral oedema is the characteristic labelled adverse effect.",
+      "evidence": [
+        "openfda:003dd1ec-16f8-4f96-b6a8-c4689d35892a"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Extensive hepatic metabolism with reported transaminase elevation.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+        "livertox:NBK548585"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:amlodipine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Amlodipine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00175",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00175 \"Amlodipine besylate\": vLess-DILI-concern (severity class 5). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548585",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548585/",
+      "title": "LiverTox: Amlodipine",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=003dd1ec-16f8-4f96-b6a8-c4689d35892a",
+      "title": "FDA Structured Product Label: Amlodipine Besylate",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 003dd1ec-16f8-4f96-b6a8-c4689d35892a, effective 20260420. 176 label record(s) matched."
+    },
+    {
+      "id": "unitox:AMLODIPINE BESYLATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"AMLODIPINE BESYLATE\". Ternary ratings — cardio:Most, liver:Less, renal:No, heme:Less, fertility:No, pulm:Less, oto:Less, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

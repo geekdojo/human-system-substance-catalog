@@ -1,0 +1,153 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "tamoxifen",
+  "name": "Tamoxifen",
+  "aka": [
+    "Nolvadex",
+    "Soltamox"
+  ],
+  "class": "Selective estrogen receptor modulator",
+  "category": "serm",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 10,
+    "amount_high": 40,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A selective estrogen receptor modulator approved for the treatment and risk reduction of breast cancer. Antagonist at breast tissue, partial agonist at bone and endometrium.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Estrogen receptor modulation is the intended pharmacology; in males it raises gonadotropins and testosterone.",
+      "evidence": [
+        "openfda:1e6ff055-590c-41e6-9530-1fdf04cdbd02",
+        "livertox:NBK548902"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Hepatic steatosis and transaminase elevation are documented.",
+      "evidence": [
+        "livertox:NBK548902",
+        "dilirank:LT00152",
+        "unitox:TAMOXIFEN CITRATE"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Boxed warning for thromboembolic events in the risk-reduction population.",
+      "evidence": [
+        "openfda:1e6ff055-590c-41e6-9530-1fdf04cdbd02",
+        "unitox:TAMOXIFEN CITRATE"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Boxed warning includes stroke and pulmonary embolism.",
+      "evidence": [
+        "openfda:1e6ff055-590c-41e6-9530-1fdf04cdbd02",
+        "unitox:TAMOXIFEN CITRATE"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "confounds",
+      "note": "Partial agonism at bone alters bone density readings independently of any bone agent.",
+      "evidence": [
+        "curation:tamoxifen"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Documented hepatic steatosis and transaminase elevation.",
+      "cadence_days": 180,
+      "evidence": [
+        "livertox:NBK548902",
+        "dilirank:LT00152"
+      ]
+    },
+    {
+      "marker_key": "testosterone_total",
+      "why": "In males, gonadotropin release raises endogenous testosterone.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:tamoxifen"
+      ]
+    },
+    {
+      "marker_key": "lh",
+      "why": "The mechanism by which the SERM raises endogenous androgen.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:tamoxifen"
+      ]
+    },
+    {
+      "marker_key": "estradiol",
+      "why": "Estradiol rises as the axis is driven; the assay reads total, not receptor occupancy.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:tamoxifen"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:tamoxifen",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Tamoxifen",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00152",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00152 \"Tamoxifen citrate\": vMost-DILI-concern (severity class 8). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548902",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548902/",
+      "title": "LiverTox: Tamoxifen",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:1e6ff055-590c-41e6-9530-1fdf04cdbd02",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1e6ff055-590c-41e6-9530-1fdf04cdbd02",
+      "title": "FDA Structured Product Label: SOLTAMOX",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 1e6ff055-590c-41e6-9530-1fdf04cdbd02, effective 20211129. 13 label record(s) matched."
+    },
+    {
+      "id": "unitox:TAMOXIFEN CITRATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"TAMOXIFEN CITRATE\". Ternary ratings — cardio:Most, liver:Most, renal:No, heme:Most, fertility:Most, pulm:Most, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

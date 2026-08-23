@@ -1,0 +1,126 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "ramelteon",
+  "name": "Ramelteon",
+  "aka": [
+    "Rozerem"
+  ],
+  "class": "Melatonin MT1/MT2 receptor agonist",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 8,
+    "amount_high": 8,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A selective melatonin MT1 and MT2 receptor agonist approved for sleep-onset insomnia. Not a controlled substance.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Melatonin receptor agonism shortening sleep latency; the labelled indication.",
+      "evidence": [
+        "openfda:00f0fbda-eb62-4f79-ae9c-286b31eca733",
+        "livertox:NBK548437"
+      ]
+    },
+    {
+      "key": "pituitary",
+      "relation": "burdens",
+      "note": "Decreased testosterone and increased prolactin are labelled endocrine effects.",
+      "evidence": [
+        "openfda:00f0fbda-eb62-4f79-ae9c-286b31eca733"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Extensive first-pass metabolism; not recommended in severe hepatic impairment.",
+      "evidence": [
+        "openfda:00f0fbda-eb62-4f79-ae9c-286b31eca733",
+        "livertox:NBK548437",
+        "unitox:RAMELTEON"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "prolactin",
+      "why": "Labelled prolactin elevation.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00f0fbda-eb62-4f79-ae9c-286b31eca733"
+      ]
+    },
+    {
+      "marker_key": "testosterone_total",
+      "why": "Labelled testosterone reduction.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00f0fbda-eb62-4f79-ae9c-286b31eca733"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Extensive first-pass metabolism with a labelled hepatic restriction.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00f0fbda-eb62-4f79-ae9c-286b31eca733",
+        "livertox:NBK548437"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:ramelteon",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Ramelteon",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01217",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01217 \"Ramelteon\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548437",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548437/",
+      "title": "LiverTox: Ramelteon",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:00f0fbda-eb62-4f79-ae9c-286b31eca733",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00f0fbda-eb62-4f79-ae9c-286b31eca733",
+      "title": "FDA Structured Product Label: Ramelteon",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00f0fbda-eb62-4f79-ae9c-286b31eca733, effective 20260507. 41 label record(s) matched."
+    },
+    {
+      "id": "unitox:RAMELTEON",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"RAMELTEON\". Ternary ratings — cardio:No, liver:Most, renal:No, heme:No, fertility:Most, pulm:No, oto:No, derm:No. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

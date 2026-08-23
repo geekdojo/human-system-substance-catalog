@@ -1,0 +1,147 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "ibutamoren",
+  "name": "Ibutamoren",
+  "aka": [
+    "MK-677",
+    "MK-0677",
+    "Nutrobal"
+  ],
+  "class": "Orally active ghrelin receptor agonist",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 10,
+    "amount_high": 25,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A non-peptide orally active growth hormone secretagogue at the ghrelin receptor. It was investigated clinically and never approved; it is sold for laboratory research use and is prohibited in sport. Investigated and never approved. No FDA label exists.",
+  "systems": [
+    {
+      "key": "pituitary",
+      "relation": "acts_on",
+      "note": "Ghrelin receptor agonism raising pulsatile GH and IGF-1; placed on the pituitary by intended effect.",
+      "evidence": [
+        "pubmed:9467534",
+        "pubmed:35716382",
+        "curation:ibutamoren"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Sought for lean mass and appetite; fluid retention is a recognised trial effect.",
+      "evidence": [
+        "pubmed:9467534",
+        "pubmed:35716382",
+        "curation:ibutamoren"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Trials show rising fasting glucose and falling insulin sensitivity.",
+      "evidence": [
+        "pubmed:9467534",
+        "pubmed:35716382",
+        "curation:ibutamoren"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Fluid retention and reports of raised heart failure risk in an older trial population.",
+      "evidence": [
+        "pubmed:9467534",
+        "pubmed:35716382",
+        "curation:ibutamoren"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "igf1",
+      "why": "The index of achieved GH exposure; no approved dosing reference exists.",
+      "cadence_days": 90,
+      "evidence": [
+        "pubmed:9467534",
+        "pubmed:35716382",
+        "curation:ibutamoren"
+      ]
+    },
+    {
+      "marker_key": "glucose_fasting",
+      "why": "Trial-documented worsening of fasting glucose.",
+      "cadence_days": 90,
+      "evidence": [
+        "pubmed:9467534",
+        "pubmed:35716382",
+        "curation:ibutamoren"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "Integrated glycaemic effect of sustained GH elevation.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:ibutamoren"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:ibutamoren",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Ibutamoren",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:35716382",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35716382/",
+      "title": "Characterization of growth hormone secretagogue small molecule ibutamoren (MK-0677) and its possible metabolites in thoroughbred horses for doping control.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 35716382 (Rapid Commun Mass Spectrom, 2022 Sep 30) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:9467534",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9467534/",
+      "title": "MK-677, an orally active growth hormone secretagogue, reverses diet-induced catabolism.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 9467534 (J Clin Endocrinol Metab, 1998 Feb) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "ibutamoren",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Ibutamoren",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Ibutamoren",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,122 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "psyllium",
+  "name": "Psyllium husk",
+  "aka": [
+    "Metamucil",
+    "ispaghula"
+  ],
+  "class": "Soluble viscous fibre",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 10,
+    "unit": "g",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "Soluble mucilaginous fibre from Plantago ovata seed husk. It carries an FDA-authorised health claim for coronary heart disease risk reduction through cholesterol lowering, and is also an approved OTC bulk laxative.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "LDL cholesterol reduction through bile acid sequestration; the basis of the authorised health claim.",
+      "evidence": [
+        "pubmed:33762150",
+        "pubmed:30239559",
+        "curation:psyllium"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Bulk laxative effect is the approved OTC indication.",
+      "evidence": [
+        "openfda:04e2cb67-b092-47ee-9463-cf30ab2fb2a5",
+        "curation:psyllium"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Blunts postprandial glucose excursion.",
+      "evidence": [
+        "pubmed:33762150",
+        "pubmed:30239559",
+        "curation:psyllium"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "ldl_c",
+      "why": "The cholesterol endpoint behind the authorised health claim.",
+      "cadence_days": 365,
+      "evidence": [
+        "pubmed:33762150",
+        "pubmed:30239559",
+        "curation:psyllium"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "Blunted postprandial excursion is a documented effect of viscous fibre.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:psyllium"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:psyllium",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Psyllium husk",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:04e2cb67-b092-47ee-9463-cf30ab2fb2a5",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04e2cb67-b092-47ee-9463-cf30ab2fb2a5",
+      "title": "FDA Structured Product Label: Unflavored Organic Natural Fiber",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 04e2cb67-b092-47ee-9463-cf30ab2fb2a5, effective 20250130. 38 label record(s) matched."
+    },
+    {
+      "id": "pubmed:30239559",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30239559/",
+      "title": "Effect of psyllium (Plantago ovata) fiber on LDL cholesterol and alternative lipid targets, non-HDL cholesterol and apolipoprotein B: a systematic review and meta-analysis of randomized controlled trials.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 30239559 (Am J Clin Nutr, 2018 Nov 1) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:33762150",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33762150/",
+      "title": "The effects of foods on LDL cholesterol levels: A systematic review of the accumulated evidence from systematic reviews and meta-analyses of randomized controlled trials.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 33762150 (Nutr Metab Cardiovasc Dis, 2021 May 6) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Psyllium",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

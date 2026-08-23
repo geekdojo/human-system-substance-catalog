@@ -1,0 +1,151 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "dhea",
+  "name": "Dehydroepiandrosterone",
+  "aka": [
+    "DHEA",
+    "prasterone"
+  ],
+  "class": "Adrenal androgen precursor",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral",
+    "transdermal"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 25,
+    "amount_high": 100,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "An adrenal steroid that serves as a precursor to testosterone and estradiol. Sold in the United States as a dietary supplement; a vaginal insert form (prasterone, Intrarosa) is separately FDA-approved. Prohibited in sport.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Converted peripherally to testosterone and estradiol; taken for that androgenic effect.",
+      "evidence": [
+        "pubmed:31517876",
+        "pubmed:37941864",
+        "curation:dhea"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Oral supplement with first-pass hepatic exposure and limited product-quality control.",
+      "evidence": [
+        "curation:dhea"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "burdens",
+      "note": "Downstream androgen conversion reaches prostatic tissue.",
+      "evidence": [
+        "curation:dhea"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "dhea_s",
+      "why": "The stable circulating form and the direct index of intake.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:31517876",
+        "pubmed:37941864",
+        "curation:dhea"
+      ]
+    },
+    {
+      "marker_key": "testosterone_total",
+      "why": "Downstream conversion product.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:dhea"
+      ]
+    },
+    {
+      "marker_key": "estradiol",
+      "why": "Downstream aromatisation product.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:dhea"
+      ]
+    },
+    {
+      "marker_key": "psa_total",
+      "why": "Androgen conversion reaches prostatic tissue.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:dhea"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:dhea",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Dehydroepiandrosterone",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:2201816f-ddd6-4ef1-e063-6394a90aae4b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2201816f-ddd6-4ef1-e063-6394a90aae4b",
+      "title": "FDA Structured Product Label: R13 ADRENAL",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 2201816f-ddd6-4ef1-e063-6394a90aae4b, effective 20250108. 5 label record(s) matched."
+    },
+    {
+      "id": "pubmed:31517876",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31517876/",
+      "title": "An investigation into the stress-relieving and pharmacological actions of an ashwagandha (Withania somnifera) extract: A randomized, double-blind, placebo-controlled study.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 31517876 (Medicine (Baltimore), 2019 Sep) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:37941864",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37941864/",
+      "title": "Dehydroepiandrosterone (DHEA) Supplementation in Rheumatic Diseases: A Systematic Review.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 37941864 (Mediterr J Rheumatol, 2023 Sep) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "unitox:PRASTERONE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"PRASTERONE\". Ternary ratings — cardio:No, liver:No, renal:No, heme:No, fertility:No, pulm:No, oto:No, derm:No. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Dehydroepiandrosterone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Prasterone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

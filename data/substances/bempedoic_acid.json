@@ -1,0 +1,144 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "bempedoic_acid",
+  "name": "Bempedoic acid",
+  "aka": [
+    "Nexletol",
+    "Nexlizet"
+  ],
+  "class": "ATP-citrate lyase inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 180,
+    "amount_high": 180,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A prodrug activated only in the liver that inhibits ATP-citrate lyase upstream of HMG-CoA reductase, approved for LDL cholesterol lowering and cardiovascular risk reduction. Its liver-restricted activation avoids the skeletal muscle exposure of statins.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Cholesterol synthesis inhibition upstream of HMG-CoA reductase; the labelled indication.",
+      "evidence": [
+        "openfda:3fa2108c-0300-47b8-9d34-f762af7c93c6",
+        "livertox:NBK593301"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Hyperuricaemia and gout are labelled; the drug competes for renal urate transport.",
+      "evidence": [
+        "openfda:3fa2108c-0300-47b8-9d34-f762af7c93c6",
+        "unitox:BEMPEDOIC ACID"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Tendon rupture is labelled.",
+      "evidence": [
+        "openfda:3fa2108c-0300-47b8-9d34-f762af7c93c6"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is labelled.",
+      "evidence": [
+        "openfda:3fa2108c-0300-47b8-9d34-f762af7c93c6",
+        "livertox:NBK593301",
+        "unitox:BEMPEDOIC ACID"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "ldl_c",
+      "why": "The direct index of effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:3fa2108c-0300-47b8-9d34-f762af7c93c6"
+      ]
+    },
+    {
+      "marker_key": "uric_acid",
+      "why": "Hyperuricaemia and gout are labelled and mechanistically specific to this drug.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:3fa2108c-0300-47b8-9d34-f762af7c93c6"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Labelled transaminase elevation.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:3fa2108c-0300-47b8-9d34-f762af7c93c6",
+        "livertox:NBK593301"
+      ]
+    },
+    {
+      "marker_key": "apob",
+      "why": "Counts atherogenic particles.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:bempedoic_acid"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:bempedoic_acid",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Bempedoic acid",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT03635",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT03635 \"Bempedoic acid\": Ambiguous-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK593301",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK593301/",
+      "title": "LiverTox: Bempedoic Acid",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:3fa2108c-0300-47b8-9d34-f762af7c93c6",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3fa2108c-0300-47b8-9d34-f762af7c93c6",
+      "title": "FDA Structured Product Label: Nexlizet",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 3fa2108c-0300-47b8-9d34-f762af7c93c6, effective 20260625. 2 label record(s) matched."
+    },
+    {
+      "id": "unitox:BEMPEDOIC ACID",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"BEMPEDOIC ACID\". Ternary ratings — cardio:Less, liver:Most, renal:Most, heme:Most, fertility:Less, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,132 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "fluoxymesterone",
+  "name": "Fluoxymesterone",
+  "aka": [
+    "Halotestin",
+    "Androxy"
+  ],
+  "class": "17-alpha-alkylated androgen (Schedule III)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 2,
+    "amount_high": 20,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A halogenated 17-alpha-alkylated androgen approved for testosterone replacement in males and for palliation of breast carcinoma in females. A Schedule III controlled substance.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Androgen replacement is a labelled indication.",
+      "evidence": [
+        "curation:fluoxymesterone"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Anabolic effect on lean tissue.",
+      "evidence": [
+        "curation:fluoxymesterone"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "17-alpha-alkylation confers direct hepatotoxicity; boxed peliosis hepatis warning.",
+      "evidence": [
+        "curation:fluoxymesterone"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Adverse lipid shift is labelled.",
+      "evidence": [
+        "curation:fluoxymesterone"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "burdens",
+      "note": "Androgenic stimulation of prostatic tissue.",
+      "evidence": [
+        "curation:fluoxymesterone"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Boxed hepatic warning for the 17-alkyl structure.",
+      "cadence_days": 60,
+      "evidence": [
+        "curation:fluoxymesterone"
+      ]
+    },
+    {
+      "marker_key": "hdl_c",
+      "why": "Labelled adverse lipid shift.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:fluoxymesterone"
+      ]
+    },
+    {
+      "marker_key": "testosterone_total",
+      "why": "Replacement adequacy.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:fluoxymesterone"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:fluoxymesterone",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Fluoxymesterone",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT02031",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT02031 \"Fluoxymesterone\": Ambiguous-DILI-concern (severity class 8). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "fluoxymesterone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "livertox",
+      "queried": "Fluoxymesterone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Fluoxymesterone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

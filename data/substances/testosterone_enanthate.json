@@ -1,0 +1,165 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "testosterone_enanthate",
+  "name": "Testosterone enanthate",
+  "aka": [
+    "Delatestryl",
+    "Xyosted"
+  ],
+  "class": "Androgen ester (Schedule III)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "intramuscular",
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 50,
+    "amount_high": 200,
+    "unit": "mg",
+    "cadence": "weekly"
+  },
+  "description": "A long-chain ester of testosterone in oil, approved for testosterone replacement in males with hypogonadism, including a subcutaneous auto-injector presentation (Xyosted). A Schedule III controlled substance.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Androgen replacement is the labelled indication.",
+      "evidence": [
+        "openfda:82a98132-9d5f-40a5-8c4f-f52f2a5de60e"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Lean-mass accrual is an intended effect.",
+      "evidence": [
+        "openfda:82a98132-9d5f-40a5-8c4f-f52f2a5de60e"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Erythrocytosis is labelled.",
+      "evidence": [
+        "openfda:82a98132-9d5f-40a5-8c4f-f52f2a5de60e",
+        "unitox:TESTOSTERONE ENANTHATE"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "burdens",
+      "note": "Prostatic growth and rising PSA are labelled.",
+      "evidence": [
+        "openfda:82a98132-9d5f-40a5-8c4f-f52f2a5de60e"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Blood pressure rise carries a boxed warning on the Xyosted presentation.",
+      "evidence": [
+        "openfda:82a98132-9d5f-40a5-8c4f-f52f2a5de60e",
+        "unitox:TESTOSTERONE ENANTHATE"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Androgen class hepatic effects.",
+      "evidence": [
+        "unitox:TESTOSTERONE ENANTHATE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "testosterone_total",
+      "why": "Labelled monitoring parameter for replacement adequacy.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:82a98132-9d5f-40a5-8c4f-f52f2a5de60e"
+      ]
+    },
+    {
+      "marker_key": "hematocrit",
+      "why": "Labelled erythrocytosis risk.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:82a98132-9d5f-40a5-8c4f-f52f2a5de60e"
+      ]
+    },
+    {
+      "marker_key": "estradiol",
+      "why": "Aromatisation of the administered androgen.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:testosterone_enanthate"
+      ]
+    },
+    {
+      "marker_key": "psa_total",
+      "why": "Labelled prostate monitoring.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:82a98132-9d5f-40a5-8c4f-f52f2a5de60e"
+      ]
+    },
+    {
+      "marker_key": "lh",
+      "why": "Documents suppression of the endogenous axis.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:testosterone_enanthate"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:testosterone_enanthate",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Testosterone enanthate",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00223",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00223 \"Testosterone enanthate\": vMost-DILI-concern (severity class 8). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:82a98132-9d5f-40a5-8c4f-f52f2a5de60e",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=82a98132-9d5f-40a5-8c4f-f52f2a5de60e",
+      "title": "FDA Structured Product Label: TESTOSTERONE ENANTHATE",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 82a98132-9d5f-40a5-8c4f-f52f2a5de60e, effective 20260612. 3 label record(s) matched."
+    },
+    {
+      "id": "unitox:TESTOSTERONE ENANTHATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"TESTOSTERONE ENANTHATE\". Ternary ratings — cardio:Most, liver:Less, renal:No, heme:Most, fertility:Most, pulm:Less, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Testosterone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

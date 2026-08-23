@@ -1,0 +1,164 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "oxandrolone",
+  "name": "Oxandrolone",
+  "aka": [
+    "Oxandrin",
+    "Anavar"
+  ],
+  "class": "17-alpha-alkylated anabolic steroid (Schedule III)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 2.5,
+    "amount_high": 20,
+    "unit": "mg",
+    "cadence": "twice_daily"
+  },
+  "description": "An orally active 17-alpha-alkylated anabolic-androgenic steroid approved as adjunctive therapy for weight regain after weight loss following extensive surgery, chronic infection or severe trauma. A Schedule III controlled substance.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Androgen receptor agonism; the intended anabolic target.",
+      "evidence": [
+        "curation:oxandrolone"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Weight and lean-mass regain is the labelled indication.",
+      "evidence": [
+        "curation:oxandrolone"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "17-alpha-alkylation confers direct hepatotoxicity; peliosis hepatis carries a boxed warning.",
+      "evidence": [
+        "dilirank:LT00845"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Severe HDL suppression and LDL rise are labelled.",
+      "evidence": [
+        "curation:oxandrolone"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "burdens",
+      "note": "Androgenic stimulation of prostatic tissue.",
+      "evidence": [
+        "curation:oxandrolone"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "17-alpha-alkylated structure with a boxed hepatic warning.",
+      "cadence_days": 60,
+      "evidence": [
+        "dilirank:LT00845"
+      ]
+    },
+    {
+      "marker_key": "bilirubin_total",
+      "why": "Cholestatic injury is the characteristic 17-alkyl pattern.",
+      "cadence_days": 60,
+      "evidence": [
+        "curation:oxandrolone"
+      ]
+    },
+    {
+      "marker_key": "alp",
+      "why": "Alkaline phosphatase is the transaminase of the cholestatic pattern this class produces.",
+      "cadence_days": 60,
+      "evidence": [
+        "curation:oxandrolone"
+      ]
+    },
+    {
+      "marker_key": "ast",
+      "why": "Read with ALT to characterise the injury pattern.",
+      "cadence_days": 60,
+      "evidence": [
+        "curation:oxandrolone"
+      ]
+    },
+    {
+      "marker_key": "hdl_c",
+      "why": "Severe HDL suppression is labelled.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:oxandrolone"
+      ]
+    },
+    {
+      "marker_key": "ldl_c",
+      "why": "LDL elevation is labelled.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:oxandrolone"
+      ]
+    },
+    {
+      "marker_key": "lh",
+      "why": "Documents suppression of the endogenous axis.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:oxandrolone"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:oxandrolone",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Oxandrolone",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00845",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00845 \"Oxandrolone\": vMost-DILI-concern (severity class 8). FDA-authored, public domain."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "oxandrolone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "livertox",
+      "queried": "Oxandrolone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Oxandrolone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "tadalafil",
+  "name": "Tadalafil",
+  "aka": [
+    "Cialis",
+    "Adcirca"
+  ],
+  "class": "PDE5 inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 2.5,
+    "amount_high": 20,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A long-acting phosphodiesterase-5 inhibitor approved for erectile dysfunction, benign prostatic hyperplasia and, as Adcirca, pulmonary arterial hypertension.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "PDE5 inhibition producing vasodilation; the labelled mechanism across all three indications.",
+      "evidence": [
+        "openfda:00cbc656-768d-4995-bb6d-a0d4b32a248c",
+        "livertox:NBK547910"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "acts_on",
+      "note": "Relief of lower urinary tract symptoms in BPH is a labelled indication.",
+      "evidence": [
+        "openfda:00cbc656-768d-4995-bb6d-a0d4b32a248c"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Hepatically metabolised via CYP3A4; transaminase elevation is reported.",
+      "evidence": [
+        "livertox:NBK547910",
+        "unitox:TADALAFIL"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Dose adjustment is labelled in renal impairment.",
+      "evidence": [
+        "openfda:00cbc656-768d-4995-bb6d-a0d4b32a248c",
+        "unitox:TADALAFIL"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Hepatic metabolism with reported transaminase elevation.",
+      "cadence_days": 365,
+      "evidence": [
+        "livertox:NBK547910"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Labelled dose adjustment in renal impairment.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00cbc656-768d-4995-bb6d-a0d4b32a248c"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:tadalafil",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Tadalafil",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01129",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01129 \"Tadalafil\": vLess-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK547910",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547910/",
+      "title": "LiverTox: Tadalafil",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:00cbc656-768d-4995-bb6d-a0d4b32a248c",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00cbc656-768d-4995-bb6d-a0d4b32a248c",
+      "title": "FDA Structured Product Label: tadalafil",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00cbc656-768d-4995-bb6d-a0d4b32a248c, effective 20241016. 141 label record(s) matched."
+    },
+    {
+      "id": "unitox:TADALAFIL",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"TADALAFIL\". Ternary ratings — cardio:Most, liver:Less, renal:Less, heme:Most, fertility:Less, pulm:Most, oto:Most, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

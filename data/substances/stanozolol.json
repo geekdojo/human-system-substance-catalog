@@ -1,0 +1,164 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "stanozolol",
+  "name": "Stanozolol",
+  "aka": [
+    "Winstrol"
+  ],
+  "class": "17-alpha-alkylated anabolic steroid (Schedule III)",
+  "category": "hormone",
+  "regulatory_status": "unscheduled",
+  "routes": [
+    "oral",
+    "intramuscular"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 2,
+    "amount_high": 10,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A 17-alpha-alkylated anabolic-androgenic steroid formerly approved in the United States for hereditary angioedema. The US human product has been discontinued; it remains a Schedule III controlled substance and is prohibited in sport.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Androgen receptor agonism; the intended anabolic target.",
+      "evidence": [
+        "pubmed:10976299",
+        "pubmed:40040852",
+        "curation:stanozolol"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Sought for lean mass without the fluid retention of aromatising androgens.",
+      "evidence": [
+        "curation:stanozolol"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "17-alpha-alkylation confers direct hepatotoxicity, well documented for this compound.",
+      "evidence": [
+        "pubmed:10976299",
+        "pubmed:40040852"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Severe HDL suppression is characteristic.",
+      "evidence": [
+        "pubmed:10976299",
+        "pubmed:40040852",
+        "curation:stanozolol"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "17-alpha-alkylated structure with a documented cholestatic injury pattern.",
+      "cadence_days": 60,
+      "evidence": [
+        "pubmed:10976299",
+        "pubmed:40040852"
+      ]
+    },
+    {
+      "marker_key": "bilirubin_total",
+      "why": "Cholestatic injury is the characteristic pattern.",
+      "cadence_days": 60,
+      "evidence": [
+        "pubmed:10976299",
+        "pubmed:40040852"
+      ]
+    },
+    {
+      "marker_key": "ggt",
+      "why": "Separates a hepatobiliary ALP rise from a bone one.",
+      "cadence_days": 60,
+      "evidence": [
+        "pubmed:10976299",
+        "pubmed:40040852"
+      ]
+    },
+    {
+      "marker_key": "hdl_c",
+      "why": "Severe HDL suppression.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:stanozolol"
+      ]
+    },
+    {
+      "marker_key": "lh",
+      "why": "Documents suppression of the endogenous axis.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:stanozolol"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:stanozolol",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Stanozolol",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:10976299",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10976299/",
+      "title": "Hepatotoxicity of stanozolol in cats.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 10976299 (J Am Vet Med Assoc, 2000 Sep 1) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:40040852",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40040852/",
+      "title": "Stanozolol-induced Liver Injury: A Distinctive Cholestatic Clinical and Biochemical Phenotype at Presentation.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 40040852 (J Clin Exp Hepatol, 2025 May-Jun) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "stanozolol",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "livertox",
+      "queried": "Stanozolol",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Stanozolol",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Stanozolol",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

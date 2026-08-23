@@ -1,0 +1,102 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "menotropins",
+  "name": "Menotropins",
+  "aka": [
+    "hMG",
+    "Menopur",
+    "Repronex"
+  ],
+  "class": "Human menopausal gonadotropin (FSH + LH activity)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "subcutaneous",
+    "intramuscular"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 75,
+    "amount_high": 450,
+    "unit": "units",
+    "cadence": "daily"
+  },
+  "description": "Purified urinary gonadotropin preparation carrying both FSH and LH activity, approved for ovulation induction and, in males, for spermatogenesis in hypogonadotropic hypogonadism after hCG priming.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "FSH activity driving Sertoli-cell support of spermatogenesis; the labelled male indication.",
+      "evidence": [
+        "openfda:22c8db95-c3db-1770-8086-31356fbabe35"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "fsh",
+      "why": "The activity the preparation supplies.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:22c8db95-c3db-1770-8086-31356fbabe35"
+      ]
+    },
+    {
+      "marker_key": "sperm_concentration",
+      "why": "Spermatogenesis is the labelled male endpoint.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:22c8db95-c3db-1770-8086-31356fbabe35"
+      ]
+    },
+    {
+      "marker_key": "testosterone_total",
+      "why": "Read with the gonadotropins when characterising the axis.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:menotropins"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:menotropins",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Menotropins",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:22c8db95-c3db-1770-8086-31356fbabe35",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=22c8db95-c3db-1770-8086-31356fbabe35",
+      "title": "FDA Structured Product Label: Menopur",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 22c8db95-c3db-1770-8086-31356fbabe35, effective 20180531. 1 label record(s) matched."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Menotropins",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Menotropins",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Menotropins",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,179 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "prednisone",
+  "name": "Prednisone",
+  "aka": [
+    "Deltasone",
+    "Rayos"
+  ],
+  "class": "Systemic glucocorticoid (prodrug)",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 60,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A synthetic glucocorticoid prodrug converted hepatically to prednisolone, approved across a very wide range of inflammatory, allergic and autoimmune conditions. Prolonged use suppresses the hypothalamic-pituitary-adrenal axis.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Broad anti-inflammatory and immunosuppressive glucocorticoid action; the labelled indications.",
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05"
+      ]
+    },
+    {
+      "key": "pituitary",
+      "relation": "burdens",
+      "note": "Prolonged use suppresses the HPA axis; abrupt withdrawal precipitates adrenal insufficiency.",
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Steroid-induced hyperglycaemia is labelled and often marked.",
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Bone density loss, muscle catabolism and central fat redistribution are labelled.",
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Leukocytosis with a neutrophil shift is expected and confounds infection assessment.",
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05",
+        "unitox:PREDNISONE"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Hepatic conversion is required; hepatic steatosis is reported with prolonged use.",
+      "evidence": [
+        "unitox:PREDNISONE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "glucose_fasting",
+      "why": "Steroid-induced hyperglycaemia is labelled and often marked.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "Integrated glycaemic effect of sustained glucocorticoid exposure.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05"
+      ]
+    },
+    {
+      "marker_key": "cortisol_am",
+      "why": "HPA axis suppression; the value that governs how a taper can proceed.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05"
+      ]
+    },
+    {
+      "marker_key": "bmd_t_score",
+      "why": "Labelled bone density loss.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05"
+      ]
+    },
+    {
+      "marker_key": "lean_mass",
+      "why": "Labelled muscle catabolism and central fat redistribution.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05"
+      ]
+    },
+    {
+      "marker_key": "wbc",
+      "why": "Expected leukocytosis confounds any infection assessment on the board.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05"
+      ]
+    },
+    {
+      "marker_key": "potassium",
+      "why": "Mineralocorticoid activity drives potassium loss.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0060b86b-0b79-4c54-a7be-97683a933a05"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:prednisone",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Prednisone",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00180",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00180 \"Prednisone\": vLess-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:0060b86b-0b79-4c54-a7be-97683a933a05",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0060b86b-0b79-4c54-a7be-97683a933a05",
+      "title": "FDA Structured Product Label: PredniSONE",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0060b86b-0b79-4c54-a7be-97683a933a05, effective 20230831. 239 label record(s) matched."
+    },
+    {
+      "id": "unitox:PREDNISONE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"PREDNISONE\". Ternary ratings — cardio:Most, liver:Less, renal:Less, heme:Less, fertility:Most, pulm:Less, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Prednisone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,110 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "ghk_cu",
+  "name": "GHK-Cu",
+  "aka": [
+    "copper tripeptide-1",
+    "Gly-His-Lys copper"
+  ],
+  "class": "Copper-binding tripeptide",
+  "category": "peptide",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "topical",
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 1,
+    "amount_high": 3,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A naturally occurring tripeptide that chelates copper(II), used topically as a cosmetic ingredient and injected without approval. Topical cosmetic use is regulated as a cosmetic, not as a drug; there is no FDA-approved injectable product. Cosmetic ingredient status for topical use. No FDA-approved injectable product exists.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Taken for dermal and connective-tissue remodelling; the intended effect.",
+      "evidence": [
+        "pubmed:18644225",
+        "pubmed:10383745",
+        "curation:ghk_cu"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Injected use delivers a copper load with no approved dosing reference.",
+      "evidence": [
+        "curation:ghk_cu"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "copper_serum",
+      "why": "The compound delivers copper; a copper load is the specific, distinguishing concern.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:ghk_cu"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Copper accumulates hepatically and there is no approved injectable dosing reference.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:ghk_cu"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:ghk_cu",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: GHK-Cu",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:57a8c34a-d6c9-c03e-e063-6394a90a7af1",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=57a8c34a-d6c9-c03e-e063-6394a90a7af1",
+      "title": "FDA Structured Product Label: MELAO GHK-Cu PEPTIDE SUNSCREEN",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 57a8c34a-d6c9-c03e-e063-6394a90a7af1, effective 20260729. 1 label record(s) matched."
+    },
+    {
+      "id": "pubmed:10383745",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10383745/",
+      "title": "Expression and activation of matrix metalloproteinases in wounds: modulation by the tripeptide-copper complex glycyl-L-histidyl-L-lysine-Cu2+.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 10383745 (J Invest Dermatol, 1999 Jun) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:18644225",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18644225/",
+      "title": "The human tri-peptide GHK and tissue remodeling.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 18644225 (J Biomater Sci Polym Ed, 2008) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "GHK-Cu",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

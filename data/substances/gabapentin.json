@@ -1,0 +1,118 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "gabapentin",
+  "name": "Gabapentin",
+  "aka": [
+    "Neurontin",
+    "Gralise"
+  ],
+  "class": "Alpha-2-delta calcium channel subunit ligand",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 3600,
+    "unit": "mg",
+    "cadence": "three_times_daily"
+  },
+  "description": "A ligand at the alpha-2-delta subunit of voltage-gated calcium channels, approved for postherpetic neuralgia and as adjunctive therapy for partial seizures. Off-label use for sleep and anxiety is widespread.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Alpha-2-delta ligand action; the labelled indications and the basis of off-label sedative use.",
+      "evidence": [
+        "openfda:01b810b7-f4c8-4412-bbc5-b9220d8770d8",
+        "livertox:NBK548252"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Cleared unchanged by the kidney; dose adjustment is labelled and accumulation causes toxicity.",
+      "evidence": [
+        "openfda:01b810b7-f4c8-4412-bbc5-b9220d8770d8",
+        "unitox:GABAPENTIN"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "DRESS with hepatic involvement is labelled; the drug is not hepatically metabolised.",
+      "evidence": [
+        "openfda:01b810b7-f4c8-4412-bbc5-b9220d8770d8",
+        "livertox:NBK548252"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Cleared unchanged renally; labelled dose adjustment depends on this value.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:01b810b7-f4c8-4412-bbc5-b9220d8770d8"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "Labelled suicidal behaviour signal for antiepileptic drugs.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:01b810b7-f4c8-4412-bbc5-b9220d8770d8"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:gabapentin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Gabapentin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00300",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00300 \"Gabapentin\": vLess-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548252",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548252/",
+      "title": "LiverTox: Gabapentin",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:01b810b7-f4c8-4412-bbc5-b9220d8770d8",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01b810b7-f4c8-4412-bbc5-b9220d8770d8",
+      "title": "FDA Structured Product Label: Gabapentin",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 01b810b7-f4c8-4412-bbc5-b9220d8770d8, effective 20240402. 405 label record(s) matched."
+    },
+    {
+      "id": "unitox:GABAPENTIN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"GABAPENTIN\". Ternary ratings — cardio:No, liver:No, renal:Less, heme:Less, fertility:No, pulm:Most, oto:Less, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

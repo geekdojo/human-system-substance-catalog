@@ -1,0 +1,108 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "oseltamivir",
+  "name": "Oseltamivir",
+  "aka": [
+    "Tamiflu"
+  ],
+  "class": "Influenza neuraminidase inhibitor",
+  "category": "antiviral",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 75,
+    "amount_high": 150,
+    "unit": "mg",
+    "cadence": "twice_daily"
+  },
+  "description": "An orally active influenza neuraminidase inhibitor approved for treatment and prophylaxis of influenza A and B.",
+  "systems": [
+    {
+      "key": "blood",
+      "relation": "acts_on",
+      "note": "Neuraminidase inhibition blocking viral release; the labelled indication.",
+      "evidence": [
+        "openfda:005b2784-e410-a50c-e063-6394a90a881c",
+        "livertox:NBK548268"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Renally cleared; dose adjustment is labelled.",
+      "evidence": [
+        "openfda:005b2784-e410-a50c-e063-6394a90a881c",
+        "unitox:OSELTAMIVIR PHOSPHATE"
+      ]
+    },
+    {
+      "key": "brain",
+      "relation": "burdens",
+      "note": "Neuropsychiatric events are labelled.",
+      "evidence": [
+        "openfda:005b2784-e410-a50c-e063-6394a90a881c"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Labelled renal dose adjustment.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:005b2784-e410-a50c-e063-6394a90a881c"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:oseltamivir",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Oseltamivir",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT02210",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT02210 \"Oseltamivir phosphate\": vLess-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548268",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548268/",
+      "title": "LiverTox: Oseltamivir",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:005b2784-e410-a50c-e063-6394a90a881c",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=005b2784-e410-a50c-e063-6394a90a881c",
+      "title": "FDA Structured Product Label: Oseltamivir Phosphate",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 005b2784-e410-a50c-e063-6394a90a881c, effective 20240515. 70 label record(s) matched."
+    },
+    {
+      "id": "unitox:OSELTAMIVIR PHOSPHATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"OSELTAMIVIR PHOSPHATE\". Ternary ratings — cardio:Less, liver:Less, renal:Less, heme:No, fertility:No, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

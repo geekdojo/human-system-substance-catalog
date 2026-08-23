@@ -1,0 +1,118 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "acyclovir",
+  "name": "Aciclovir",
+  "aka": [
+    "acyclovir",
+    "Zovirax"
+  ],
+  "class": "Nucleoside analogue antiviral",
+  "category": "antiviral",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral",
+    "intravenous",
+    "topical"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 200,
+    "amount_high": 800,
+    "unit": "mg",
+    "cadence": "three_times_daily"
+  },
+  "description": "A guanosine nucleoside analogue that inhibits herpesvirus DNA polymerase after viral thymidine kinase activation, approved for herpes simplex and varicella-zoster infections.",
+  "systems": [
+    {
+      "key": "blood",
+      "relation": "acts_on",
+      "note": "Viral DNA polymerase inhibition; the labelled antiviral indication.",
+      "evidence": [
+        "openfda:01ae85df-d1a0-44f7-b4c0-0ac74d2216d4",
+        "livertox:NBK548548"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Crystalline nephropathy, most marked with intravenous administration; labelled.",
+      "evidence": [
+        "openfda:01ae85df-d1a0-44f7-b4c0-0ac74d2216d4"
+      ]
+    },
+    {
+      "key": "brain",
+      "relation": "burdens",
+      "note": "Neurotoxicity in renal impairment is labelled.",
+      "evidence": [
+        "openfda:01ae85df-d1a0-44f7-b4c0-0ac74d2216d4"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "creatinine",
+      "why": "Crystalline nephropathy is the characteristic risk.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:01ae85df-d1a0-44f7-b4c0-0ac74d2216d4"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Labelled renal dose adjustment; neurotoxicity follows accumulation.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:01ae85df-d1a0-44f7-b4c0-0ac74d2216d4"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:acyclovir",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Aciclovir",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00041",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00041 \"Acyclovir\": vLess-DILI-concern (severity class 5). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548548",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548548/",
+      "title": "LiverTox: Acyclovir",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:01ae85df-d1a0-44f7-b4c0-0ac74d2216d4",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01ae85df-d1a0-44f7-b4c0-0ac74d2216d4",
+      "title": "FDA Structured Product Label: Acyclovir",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 01ae85df-d1a0-44f7-b4c0-0ac74d2216d4, effective 20240905. 183 label record(s) matched."
+    },
+    {
+      "id": "unitox:ACYCLOVIR",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"ACYCLOVIR\". Ternary ratings — cardio:No, liver:No, renal:No, heme:No, fertility:Less, pulm:No, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "l_theanine",
+  "name": "L-theanine",
+  "aka": [
+    "gamma-glutamylethylamide"
+  ],
+  "class": "Non-proteinogenic amino acid",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 400,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A non-proteinogenic amino acid found in tea leaves, marketed as a dietary supplement and typically taken with caffeine for its reported effect on subjective calm.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Taken for its effect on subjective calm and attention; the intended effect.",
+      "evidence": [
+        "pubmed:31758301",
+        "pubmed:31623400",
+        "curation:l_theanine"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "who5",
+      "why": "The accessible instrument for the affective effect claimed.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:l_theanine"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:l_theanine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: L-theanine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:31623400",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31623400/",
+      "title": "Effects of L-Theanine Administration on Stress-Related Symptoms and Cognitive Functions in Healthy Adults: A Randomized Controlled Trial.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 31623400 (Nutrients, 2019 Oct 3) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:31758301",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31758301/",
+      "title": "The Effects of Green Tea Amino Acid L-Theanine Consumption on the Ability to Manage Stress and Anxiety Levels: a Systematic Review.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 31758301 (Plant Foods Hum Nutr, 2020 Mar) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "theanine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Theanine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

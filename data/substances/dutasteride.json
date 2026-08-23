@@ -1,0 +1,156 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "dutasteride",
+  "name": "Dutasteride",
+  "aka": [
+    "Avodart"
+  ],
+  "class": "Dual type I/II 5-alpha-reductase inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 0.5,
+    "amount_high": 0.5,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A dual type I and type II 5-alpha-reductase inhibitor approved for benign prostatic hyperplasia, producing more complete dihydrotestosterone suppression than finasteride and with a much longer half-life.",
+  "systems": [
+    {
+      "key": "prostate",
+      "relation": "acts_on",
+      "note": "Reduction of prostatic dihydrotestosterone and prostate volume is the labelled indication.",
+      "evidence": [
+        "openfda:170f01fe-5048-413c-b4cd-8311e1a2728a",
+        "livertox:NBK548058"
+      ]
+    },
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Dual isoenzyme blockade of testosterone to DHT conversion.",
+      "evidence": [
+        "openfda:170f01fe-5048-413c-b4cd-8311e1a2728a"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "confounds",
+      "note": "Roughly halves serum PSA; labelled instruction is to double the measured value.",
+      "evidence": [
+        "openfda:170f01fe-5048-413c-b4cd-8311e1a2728a"
+      ]
+    },
+    {
+      "key": "brain",
+      "relation": "burdens",
+      "note": "Depression and sexual adverse effects appear in labelling.",
+      "evidence": [
+        "openfda:170f01fe-5048-413c-b4cd-8311e1a2728a"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Extensively hepatically metabolised; transaminase elevation is reported.",
+      "evidence": [
+        "livertox:NBK548058",
+        "unitox:DUTASTERIDE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "psa_total",
+      "why": "Serum PSA is roughly halved; the labelled instruction is to interpret against that.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:170f01fe-5048-413c-b4cd-8311e1a2728a"
+      ]
+    },
+    {
+      "marker_key": "psa_free_pct",
+      "why": "The free fraction is affected differently from total PSA, so the ratio is read alongside it.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:dutasteride"
+      ]
+    },
+    {
+      "marker_key": "testosterone_total",
+      "why": "Testosterone rises as conversion is blocked.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:dutasteride"
+      ]
+    },
+    {
+      "marker_key": "estradiol",
+      "why": "More testosterone is available for aromatisation.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:dutasteride"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Extensive hepatic metabolism with a very long half-life.",
+      "cadence_days": 365,
+      "evidence": [
+        "livertox:NBK548058"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:dutasteride",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Dutasteride",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01112",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01112 \"Dutasteride\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548058",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548058/",
+      "title": "LiverTox: Dutasteride",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:170f01fe-5048-413c-b4cd-8311e1a2728a",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=170f01fe-5048-413c-b4cd-8311e1a2728a",
+      "title": "FDA Structured Product Label: Dutasteride",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 170f01fe-5048-413c-b4cd-8311e1a2728a, effective 20260814. 24 label record(s) matched."
+    },
+    {
+      "id": "unitox:DUTASTERIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"DUTASTERIDE\". Ternary ratings — cardio:Less, liver:Less, renal:No, heme:No, fertility:Most, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,129 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "l_carnitine",
+  "name": "L-carnitine",
+  "aka": [
+    "levocarnitine",
+    "acetyl-L-carnitine"
+  ],
+  "class": "Quaternary amine fatty acid transporter cofactor",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 500,
+    "amount_high": 2000,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A quaternary amine required to shuttle long-chain fatty acids into the mitochondrion. Prescription levocarnitine is separately approved for primary and secondary carnitine deficiency. Oral supplementation raises gut-derived TMAO, whose cardiovascular significance is contested.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Fatty acid transport into the mitochondrion; the intended effect.",
+      "evidence": [
+        "pubmed:32958033",
+        "pubmed:23563705",
+        "curation:l_carnitine"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Gut microbial conversion to TMAO raises a contested cardiovascular concern.",
+      "evidence": [
+        "pubmed:32958033",
+        "pubmed:23563705",
+        "curation:l_carnitine"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "crp_hs",
+      "why": "The accessible inflammatory index relevant to the contested TMAO pathway.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:l_carnitine"
+      ]
+    },
+    {
+      "marker_key": "triglycerides",
+      "why": "Fatty acid handling is the pathway involved.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:l_carnitine"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:l_carnitine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: L-carnitine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01486",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01486 \"Levocarnitine\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:05ab18c1-fb01-48fa-8f05-0200bb8a5edf",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05ab18c1-fb01-48fa-8f05-0200bb8a5edf",
+      "title": "FDA Structured Product Label: Levocarnitine",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 05ab18c1-fb01-48fa-8f05-0200bb8a5edf, effective 20241227. 14 label record(s) matched."
+    },
+    {
+      "id": "pubmed:23563705",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23563705/",
+      "title": "Intestinal microbiota metabolism of L-carnitine, a nutrient in red meat, promotes atherosclerosis.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 23563705 (Nat Med, 2013 May) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:32958033",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32958033/",
+      "title": "The bright and the dark sides of L-carnitine supplementation: a systematic review.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 32958033 (J Int Soc Sports Nutr, 2020 Sep 21) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "unitox:LEVOCARNITINE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"LEVOCARNITINE\". Ternary ratings — cardio:No, liver:No, renal:Less, heme:No, fertility:No, pulm:Less, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Carnitine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,123 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "glipizide",
+  "name": "Glipizide",
+  "aka": [
+    "Glucotrol"
+  ],
+  "class": "Second-generation sulfonylurea",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 2.5,
+    "amount_high": 20,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A second-generation sulfonylurea that closes the beta-cell ATP-sensitive potassium channel to drive insulin secretion, approved for type 2 diabetes.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Glucose-independent insulin secretion from the beta cell; the labelled indication.",
+      "evidence": [
+        "openfda:00729e82-150a-464a-abe7-a3319721fbdb"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Cholestatic hepatic injury is documented.",
+      "evidence": [
+        "dilirank:LT00243",
+        "unitox:GLIPIZIDE"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Haemolytic anaemia is labelled, notably in G6PD deficiency.",
+      "evidence": [
+        "openfda:00729e82-150a-464a-abe7-a3319721fbdb",
+        "unitox:GLIPIZIDE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "Direct index of glycaemic effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00729e82-150a-464a-abe7-a3319721fbdb"
+      ]
+    },
+    {
+      "marker_key": "glucose_fasting",
+      "why": "Secretion is glucose-independent, so hypoglycaemia is the characteristic risk.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:00729e82-150a-464a-abe7-a3319721fbdb"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Documented cholestatic injury.",
+      "cadence_days": 365,
+      "evidence": [
+        "dilirank:LT00243"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:glipizide",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Glipizide",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00243",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00243 \"Glipizide\": vLess-DILI-concern (severity class 3). FDA-authored, public domain."
+    },
+    {
+      "id": "openfda:00729e82-150a-464a-abe7-a3319721fbdb",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00729e82-150a-464a-abe7-a3319721fbdb",
+      "title": "FDA Structured Product Label: Glipizide",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00729e82-150a-464a-abe7-a3319721fbdb, effective 20260319. 116 label record(s) matched."
+    },
+    {
+      "id": "unitox:GLIPIZIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"GLIPIZIDE\". Ternary ratings — cardio:Most, liver:Most, renal:Less, heme:Most, fertility:No, pulm:No, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Glipizide",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

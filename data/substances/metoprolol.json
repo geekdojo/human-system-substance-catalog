@@ -1,0 +1,134 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "metoprolol",
+  "name": "Metoprolol",
+  "aka": [
+    "Lopressor",
+    "Toprol-XL"
+  ],
+  "class": "Beta-1 selective adrenergic blocker",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral",
+    "intravenous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 25,
+    "amount_high": 200,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A cardioselective beta-1 adrenergic blocker approved for hypertension, angina and heart failure. Carries a boxed warning against abrupt discontinuation.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Beta-1 adrenergic blockade reducing rate and contractility; the labelled indications.",
+      "evidence": [
+        "openfda:01908d20-0e16-4410-bd27-1b6df162ede4",
+        "livertox:NBK547984"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "confounds",
+      "note": "Masks the adrenergic warning signs of hypoglycaemia and blunts the glycaemic recovery response.",
+      "evidence": [
+        "openfda:01908d20-0e16-4410-bd27-1b6df162ede4"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "CYP2D6-metabolised; transaminase elevation is reported.",
+      "evidence": [
+        "livertox:NBK547984",
+        "unitox:METOPROLOL SUCCINATE"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "confounds",
+      "note": "Suppresses heart rate, so resting heart rate no longer reads as a fitness signal.",
+      "evidence": [
+        "curation:metoprolol"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "glucose_fasting",
+      "why": "Masks the adrenergic warning signs of hypoglycaemia; labelled.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:01908d20-0e16-4410-bd27-1b6df162ede4"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Reported transaminase elevation.",
+      "cadence_days": 365,
+      "evidence": [
+        "livertox:NBK547984"
+      ]
+    },
+    {
+      "marker_key": "triglycerides",
+      "why": "Beta blockade adversely affects the lipid panel.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:metoprolol"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:metoprolol",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Metoprolol",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00946",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00946 \"Metoprolol succinate\": Ambiguous-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK547984",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547984/",
+      "title": "LiverTox: Metoprolol",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:01908d20-0e16-4410-bd27-1b6df162ede4",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01908d20-0e16-4410-bd27-1b6df162ede4",
+      "title": "FDA Structured Product Label: Metoprolol Succinate",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 01908d20-0e16-4410-bd27-1b6df162ede4, effective 20250401. 177 label record(s) matched."
+    },
+    {
+      "id": "unitox:METOPROLOL SUCCINATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"METOPROLOL SUCCINATE\". Ternary ratings — cardio:Most, liver:Less, renal:No, heme:Less, fertility:Less, pulm:Less, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

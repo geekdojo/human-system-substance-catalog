@@ -1,0 +1,122 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "raloxifene",
+  "name": "Raloxifene",
+  "aka": [
+    "Evista"
+  ],
+  "class": "Selective estrogen receptor modulator",
+  "category": "serm",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 60,
+    "amount_high": 60,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A selective estrogen receptor modulator approved for osteoporosis in postmenopausal women and for breast-cancer risk reduction. Agonist at bone, antagonist at breast and endometrium.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Bone mineral density preservation is the labelled indication.",
+      "evidence": [
+        "openfda:0f7d1f81-374f-4ad5-aea0-2f97abbe1dbf"
+      ]
+    },
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Estrogen receptor modulation is the intended pharmacology.",
+      "evidence": [
+        "openfda:0f7d1f81-374f-4ad5-aea0-2f97abbe1dbf"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Boxed warning for venous thromboembolism and fatal stroke.",
+      "evidence": [
+        "openfda:0f7d1f81-374f-4ad5-aea0-2f97abbe1dbf",
+        "unitox:RALOXIFENE HYDROCHLORIDE"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is reported.",
+      "evidence": [
+        "unitox:RALOXIFENE HYDROCHLORIDE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "bmd_t_score",
+      "why": "Bone density is the labelled efficacy endpoint.",
+      "cadence_days": 730,
+      "evidence": [
+        "openfda:0f7d1f81-374f-4ad5-aea0-2f97abbe1dbf"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Reported transaminase elevation.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:raloxifene"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:raloxifene",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Raloxifene",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00183",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00183 \"Raloxifene hydrochloride\": vLess-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:0f7d1f81-374f-4ad5-aea0-2f97abbe1dbf",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0f7d1f81-374f-4ad5-aea0-2f97abbe1dbf",
+      "title": "FDA Structured Product Label: Raloxifene Hydrochloride",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0f7d1f81-374f-4ad5-aea0-2f97abbe1dbf, effective 20240217. 20 label record(s) matched."
+    },
+    {
+      "id": "unitox:RALOXIFENE HYDROCHLORIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"RALOXIFENE HYDROCHLORIDE\". Ternary ratings — cardio:Most, liver:Less, renal:Less, heme:Most, fertility:Most, pulm:Most, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Raloxifene",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "clopidogrel",
+  "name": "Clopidogrel",
+  "aka": [
+    "Plavix"
+  ],
+  "class": "P2Y12 receptor antagonist (thienopyridine prodrug)",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 75,
+    "amount_high": 75,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A thienopyridine prodrug that irreversibly blocks the platelet P2Y12 receptor, approved for acute coronary syndrome and recent myocardial infarction, stroke or established peripheral arterial disease. Carries a boxed warning for diminished effectiveness in CYP2C19 poor metabolisers.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "P2Y12 blockade reducing atherothrombotic events; the labelled indication.",
+      "evidence": [
+        "openfda:0078fb3d-3595-4ae1-a059-1d5e81c879cf",
+        "livertox:NBK547946"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Bleeding is the dose-limiting effect; thrombotic thrombocytopenic purpura is labelled.",
+      "evidence": [
+        "openfda:0078fb3d-3595-4ae1-a059-1d5e81c879cf",
+        "unitox:CLOPIDOGREL BISULFATE"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "CYP2C19 activation is required; hepatic injury is documented.",
+      "evidence": [
+        "livertox:NBK547946",
+        "dilirank:LT01023",
+        "unitox:CLOPIDOGREL BISULFATE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hemoglobin",
+      "why": "Bleeding is the dose-limiting effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0078fb3d-3595-4ae1-a059-1d5e81c879cf"
+      ]
+    },
+    {
+      "marker_key": "platelets",
+      "why": "Labelled thrombotic thrombocytopenic purpura signal.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0078fb3d-3595-4ae1-a059-1d5e81c879cf"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Documented hepatic injury.",
+      "cadence_days": 365,
+      "evidence": [
+        "livertox:NBK547946",
+        "dilirank:LT01023"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:clopidogrel",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Clopidogrel",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01023",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01023 \"Clopidogrel bisulfate\": vLess-DILI-concern (severity class 7). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK547946",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547946/",
+      "title": "LiverTox: Clopidogrel",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:0078fb3d-3595-4ae1-a059-1d5e81c879cf",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0078fb3d-3595-4ae1-a059-1d5e81c879cf",
+      "title": "FDA Structured Product Label: Clopidogrel",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0078fb3d-3595-4ae1-a059-1d5e81c879cf, effective 20240517. 42 label record(s) matched."
+    },
+    {
+      "id": "unitox:CLOPIDOGREL BISULFATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"CLOPIDOGREL BISULFATE\". Ternary ratings — cardio:Less, liver:Less, renal:Less, heme:Most, fertility:No, pulm:Less, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

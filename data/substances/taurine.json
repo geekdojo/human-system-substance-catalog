@@ -1,0 +1,102 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "taurine",
+  "name": "Taurine",
+  "aka": [
+    "2-aminoethanesulfonic acid"
+  ],
+  "class": "Sulfonic amino acid",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 500,
+    "amount_high": 3000,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A conditionally essential sulfonic amino acid, abundant in heart and skeletal muscle, involved in bile salt conjugation, osmoregulation and calcium handling.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Taken for cardiac and metabolic effect; the intended effect.",
+      "evidence": [
+        "pubmed:19301095",
+        "pubmed:34443494",
+        "curation:taurine"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Also taken for skeletal-muscle and osmoregulatory effect.",
+      "evidence": [
+        "pubmed:19301095",
+        "pubmed:34443494",
+        "curation:taurine"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "triglycerides",
+      "why": "The metabolic endpoint most consistently reported.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:taurine"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:taurine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Taurine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:0f8a9ba9-e3e2-4910-ae63-5423d2b5dc5b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0f8a9ba9-e3e2-4910-ae63-5423d2b5dc5b",
+      "title": "FDA Structured Product Label: Taurine",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0f8a9ba9-e3e2-4910-ae63-5423d2b5dc5b, effective 20171128. 15 label record(s) matched."
+    },
+    {
+      "id": "pubmed:19301095",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19301095/",
+      "title": "Amino acids: metabolism, functions, and nutrition.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 19301095 (Amino Acids, 2009 May) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:34443494",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34443494/",
+      "title": "The Role of Taurine in Mitochondria Health: More Than Just an Antioxidant.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 34443494 (Molecules, 2021 Aug 13) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Taurine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

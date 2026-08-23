@@ -1,0 +1,154 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "canagliflozin",
+  "name": "Canagliflozin",
+  "aka": [
+    "Invokana"
+  ],
+  "class": "SGLT2 inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 300,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A sodium-glucose cotransporter 2 inhibitor approved for type 2 diabetes and diabetic nephropathy. Its SGLT1 cross-activity distinguishes it within the class.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Lowers glycaemia by increasing urinary glucose loss; the intended metabolic effect, placed on the pancreas as the glycaemic system.",
+      "evidence": [
+        "openfda:5f76e16f-0c24-454a-81af-4080b312c940"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "acts_on",
+      "note": "Diabetic nephropathy progression reduction is a labelled indication.",
+      "evidence": [
+        "openfda:5f76e16f-0c24-454a-81af-4080b312c940"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Euglycaemic diabetic ketoacidosis is labelled.",
+      "evidence": [
+        "openfda:5f76e16f-0c24-454a-81af-4080b312c940"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Bone mineral density loss and fracture risk are labelled for this agent.",
+      "evidence": [
+        "openfda:5f76e16f-0c24-454a-81af-4080b312c940"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Acute kidney injury and hyperkalaemia are labelled.",
+      "evidence": [
+        "openfda:5f76e16f-0c24-454a-81af-4080b312c940",
+        "unitox:CANAGLIFLOZIN"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "Direct index of glycaemic effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:5f76e16f-0c24-454a-81af-4080b312c940"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Labelled renal indication and acute kidney injury signal.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:5f76e16f-0c24-454a-81af-4080b312c940"
+      ]
+    },
+    {
+      "marker_key": "potassium",
+      "why": "Labelled hyperkalaemia.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:5f76e16f-0c24-454a-81af-4080b312c940"
+      ]
+    },
+    {
+      "marker_key": "bmd_t_score",
+      "why": "Bone density loss is labelled specifically for this agent.",
+      "cadence_days": 730,
+      "evidence": [
+        "openfda:5f76e16f-0c24-454a-81af-4080b312c940"
+      ]
+    },
+    {
+      "marker_key": "beta_hydroxybutyrate",
+      "why": "Labelled euglycaemic ketoacidosis.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:5f76e16f-0c24-454a-81af-4080b312c940"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:canagliflozin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Canagliflozin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT02899",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT02899 \"Canagliflozin\": vLess-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:5f76e16f-0c24-454a-81af-4080b312c940",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5f76e16f-0c24-454a-81af-4080b312c940",
+      "title": "FDA Structured Product Label: INVOKANA",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 5f76e16f-0c24-454a-81af-4080b312c940, effective 20260217. 5 label record(s) matched."
+    },
+    {
+      "id": "unitox:CANAGLIFLOZIN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"CANAGLIFLOZIN\". Ternary ratings — cardio:Less, liver:No, renal:Most, heme:Most, fertility:Less, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Canagliflozin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

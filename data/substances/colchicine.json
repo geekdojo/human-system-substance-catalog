@@ -1,0 +1,169 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "colchicine",
+  "name": "Colchicine",
+  "aka": [
+    "Colcrys",
+    "Mitigare",
+    "Lodoco"
+  ],
+  "class": "Tubulin polymerisation inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 0.5,
+    "amount_high": 1.2,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A tubulin-binding alkaloid approved for gout flares and prophylaxis, for familial Mediterranean fever, and as Lodoco for cardiovascular risk reduction. Its therapeutic index is narrow and it interacts strongly with CYP3A4 and P-glycoprotein inhibitors.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Suppression of neutrophil-driven inflammation; the labelled gout indication.",
+      "evidence": [
+        "openfda:0f69b9c6-8c00-45e2-b950-34dc5ae62352",
+        "livertox:NBK548068"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Cardiovascular risk reduction is a labelled indication in its own right.",
+      "evidence": [
+        "openfda:0f69b9c6-8c00-45e2-b950-34dc5ae62352"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Myelosuppression is labelled and is the serious toxicity in accumulation.",
+      "evidence": [
+        "openfda:0f69b9c6-8c00-45e2-b950-34dc5ae62352",
+        "unitox:COLCHICINE"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Myopathy and rhabdomyolysis are labelled, especially with statins.",
+      "evidence": [
+        "openfda:0f69b9c6-8c00-45e2-b950-34dc5ae62352"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Renally and hepatically cleared; dose reduction is labelled in impairment.",
+      "evidence": [
+        "openfda:0f69b9c6-8c00-45e2-b950-34dc5ae62352",
+        "unitox:COLCHICINE"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Hepatic impairment raises exposure; interaction with CYP3A4 inhibitors is labelled.",
+      "evidence": [
+        "openfda:0f69b9c6-8c00-45e2-b950-34dc5ae62352",
+        "livertox:NBK548068",
+        "unitox:COLCHICINE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "wbc",
+      "why": "Myelosuppression is the serious labelled toxicity in accumulation.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0f69b9c6-8c00-45e2-b950-34dc5ae62352"
+      ]
+    },
+    {
+      "marker_key": "neutrophils_absolute",
+      "why": "The operative count for the myelosuppression signal.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0f69b9c6-8c00-45e2-b950-34dc5ae62352"
+      ]
+    },
+    {
+      "marker_key": "ck",
+      "why": "Labelled myopathy and rhabdomyolysis, amplified with statins.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0f69b9c6-8c00-45e2-b950-34dc5ae62352"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Labelled dose reduction in renal impairment; the narrow index makes this consequential.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0f69b9c6-8c00-45e2-b950-34dc5ae62352"
+      ]
+    },
+    {
+      "marker_key": "crp_hs",
+      "why": "The inflammatory index behind the cardiovascular indication.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:colchicine"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:colchicine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Colchicine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00076",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00076 \"Colchicine\": Ambiguous-DILI-concern (severity class 6). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548068",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548068/",
+      "title": "LiverTox: Colchicine",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:0f69b9c6-8c00-45e2-b950-34dc5ae62352",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0f69b9c6-8c00-45e2-b950-34dc5ae62352",
+      "title": "FDA Structured Product Label: colchicine",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0f69b9c6-8c00-45e2-b950-34dc5ae62352, effective 20250701. 57 label record(s) matched."
+    },
+    {
+      "id": "unitox:COLCHICINE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"COLCHICINE\". Ternary ratings — cardio:Less, liver:Most, renal:Most, heme:Most, fertility:Less, pulm:No, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

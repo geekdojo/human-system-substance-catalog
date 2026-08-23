@@ -1,0 +1,155 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "ashwagandha",
+  "name": "Ashwagandha",
+  "aka": [
+    "Withania somnifera",
+    "KSM-66",
+    "Sensoril"
+  ],
+  "class": "Adaptogenic botanical (Withania somnifera root extract)",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 300,
+    "amount_high": 600,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A standardised root extract of Withania somnifera taken for stress and sleep. It is a recognised cause of herb-induced liver injury with a characteristic cholestatic pattern, and has documented effects on thyroid hormone levels.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Taken for stress, anxiety and sleep effect; the intended effect.",
+      "evidence": [
+        "curation:ashwagandha"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "A documented cause of herb-induced liver injury with a cholestatic pattern.",
+      "evidence": [
+        "livertox:NBK548536",
+        "curation:ashwagandha"
+      ]
+    },
+    {
+      "key": "thyroid",
+      "relation": "burdens",
+      "note": "Raises thyroid hormone levels and has precipitated thyrotoxicosis in case reports.",
+      "evidence": [
+        "livertox:NBK548536",
+        "curation:ashwagandha"
+      ]
+    },
+    {
+      "key": "gonads",
+      "relation": "confounds",
+      "note": "Reported testosterone effects are small and inconsistent but will move the reading.",
+      "evidence": [
+        "curation:ashwagandha"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Documented cholestatic herb-induced liver injury; the specific concern for this botanical.",
+      "cadence_days": 180,
+      "evidence": [
+        "livertox:NBK548536"
+      ]
+    },
+    {
+      "marker_key": "ggt",
+      "why": "Confirms a raised alkaline phosphatase is hepatobiliary, which is the reported injury pattern.",
+      "cadence_days": 180,
+      "evidence": [
+        "livertox:NBK548536"
+      ]
+    },
+    {
+      "marker_key": "bilirubin_total",
+      "why": "The reported injury pattern is cholestatic.",
+      "cadence_days": 180,
+      "evidence": [
+        "livertox:NBK548536"
+      ]
+    },
+    {
+      "marker_key": "tsh",
+      "why": "Documented thyroid hormone elevation and case reports of thyrotoxicosis.",
+      "cadence_days": 180,
+      "evidence": [
+        "livertox:NBK548536"
+      ]
+    },
+    {
+      "marker_key": "tpo_ab",
+      "why": "Separates a botanical-driven hormone rise from underlying autoimmune thyroid disease.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:ashwagandha"
+      ]
+    },
+    {
+      "marker_key": "ft4",
+      "why": "Read with TSH for the documented thyroid effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:ashwagandha"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:ashwagandha",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Ashwagandha",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK548536",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548536/",
+      "title": "LiverTox: Ashwagandha",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:44991952-c440-4a33-9423-a9369c8bab70",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=44991952-c440-4a33-9423-a9369c8bab70",
+      "title": "FDA Structured Product Label: Adrenal and DHEA",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 44991952-c440-4a33-9423-a9369c8bab70, effective 20211022. 1 label record(s) matched."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Ashwagandha",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "pubmed",
+      "queried": "ashwagandha Withania somnifera liver injury thyroid",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

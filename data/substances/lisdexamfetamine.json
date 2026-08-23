@@ -1,0 +1,130 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "lisdexamfetamine",
+  "name": "Lisdexamfetamine",
+  "aka": [
+    "Vyvanse"
+  ],
+  "class": "Amphetamine prodrug CNS stimulant (Schedule II)",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 20,
+    "amount_high": 70,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A lysine-conjugated prodrug of dextroamphetamine requiring enzymatic cleavage in blood, approved for attention-deficit hyperactivity disorder and moderate to severe binge eating disorder. A Schedule II controlled substance with a boxed warning for abuse and dependence.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Catecholamine release and reuptake inhibition; the labelled indications.",
+      "evidence": [
+        "openfda:0e024b69-567c-4b40-9c3e-a2daec34256c"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Blood pressure and heart rate elevation and sudden cardiac events are labelled.",
+      "evidence": [
+        "openfda:0e024b69-567c-4b40-9c3e-a2daec34256c",
+        "unitox:LISDEXAMFETAMINE DIMESYLATE"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Appetite suppression and weight loss are labelled.",
+      "evidence": [
+        "openfda:0e024b69-567c-4b40-9c3e-a2daec34256c"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is reported.",
+      "evidence": [
+        "unitox:LISDEXAMFETAMINE DIMESYLATE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "lean_mass",
+      "why": "Labelled appetite suppression and weight loss.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:0e024b69-567c-4b40-9c3e-a2daec34256c"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "Labelled psychiatric adverse reactions and the boxed dependence warning.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0e024b69-567c-4b40-9c3e-a2daec34256c"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Reported transaminase elevation.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:lisdexamfetamine"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:lisdexamfetamine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Lisdexamfetamine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00571",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00571 \"Lisdexamfetamine dimesylate\": Ambiguous-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:0e024b69-567c-4b40-9c3e-a2daec34256c",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0e024b69-567c-4b40-9c3e-a2daec34256c",
+      "title": "FDA Structured Product Label: Lisdexamfetamine Dimesylate",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0e024b69-567c-4b40-9c3e-a2daec34256c, effective 20260622. 28 label record(s) matched."
+    },
+    {
+      "id": "unitox:LISDEXAMFETAMINE DIMESYLATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"LISDEXAMFETAMINE DIMESYLATE\". Ternary ratings — cardio:Most, liver:Less, renal:No, heme:No, fertility:Less, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Lisdexamfetamine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

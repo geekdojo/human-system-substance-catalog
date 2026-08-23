@@ -1,0 +1,100 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "glycine",
+  "name": "Glycine",
+  "class": "Non-essential amino acid, inhibitory neurotransmitter",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 3,
+    "amount_high": 5,
+    "unit": "g",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "The simplest amino acid, an inhibitory neurotransmitter at the glycine receptor and a constituent of glutathione and collagen. Taken before sleep for its reported effect on sleep onset and core temperature.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Glycine receptor activity and reported effect on sleep onset; the intended effect.",
+      "evidence": [
+        "pubmed:28337245",
+        "pubmed:40418260",
+        "curation:glycine"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "acts_on",
+      "note": "A constituent amino acid of glutathione, often taken with cysteine for that purpose.",
+      "evidence": [
+        "pubmed:28337245",
+        "pubmed:40418260",
+        "curation:glycine"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "who5",
+      "why": "The accessible instrument for the sleep and affective effect claimed.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:glycine"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:glycine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Glycine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:1c55c61a-2692-4cd2-943b-78bbf03fd914",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1c55c61a-2692-4cd2-943b-78bbf03fd914",
+      "title": "FDA Structured Product Label: NADH Plus",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 1c55c61a-2692-4cd2-943b-78bbf03fd914, effective 20260430. 29 label record(s) matched."
+    },
+    {
+      "id": "pubmed:28337245",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28337245/",
+      "title": "Multifarious Beneficial Effect of Nonessential Amino Acid, Glycine: A Review.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 28337245 (Oxid Med Cell Longev, 2017) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:40418260",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40418260/",
+      "title": "Dietary Protocols to Promote and Improve Restful Sleep: A Narrative Review.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 40418260 (Nutr Rev, 2026 May 1) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "unitox:GLYCINE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"GLYCINE\". Ternary ratings — cardio:Most, liver:Most, renal:Less, heme:No, fertility:Less, pulm:Less, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

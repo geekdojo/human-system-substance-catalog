@@ -1,0 +1,110 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "hydroxyzine",
+  "name": "Hydroxyzine",
+  "aka": [
+    "Atarax",
+    "Vistaril"
+  ],
+  "class": "First-generation H1 antihistamine",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral",
+    "intramuscular"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 25,
+    "amount_high": 100,
+    "unit": "mg",
+    "cadence": "as_needed"
+  },
+  "description": "A first-generation piperazine H1 antihistamine approved for anxiety, pruritus and as a sedative premedication.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Central H1 antagonism producing sedation and anxiolysis; the labelled indication.",
+      "evidence": [
+        "openfda:09092888-0c18-501d-e063-6294a90aad67",
+        "livertox:NBK548128"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "QT prolongation is labelled.",
+      "evidence": [
+        "openfda:09092888-0c18-501d-e063-6294a90aad67",
+        "unitox:HYDROXYZINE HYDROCHLORIDE"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is reported.",
+      "evidence": [
+        "livertox:NBK548128"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Reported transaminase elevation.",
+      "cadence_days": 365,
+      "evidence": [
+        "livertox:NBK548128"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:hydroxyzine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Hydroxyzine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01437",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01437 \"Hydroxyzine hydrochloride\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548128",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548128/",
+      "title": "LiverTox: Hydroxyzine",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:09092888-0c18-501d-e063-6294a90aad67",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09092888-0c18-501d-e063-6294a90aad67",
+      "title": "FDA Structured Product Label: Hydroxyzine hydrochloride",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 09092888-0c18-501d-e063-6294a90aad67, effective 20241231. 147 label record(s) matched."
+    },
+    {
+      "id": "unitox:HYDROXYZINE HYDROCHLORIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"HYDROXYZINE HYDROCHLORIDE\". Ternary ratings — cardio:Most, liver:No, renal:No, heme:No, fertility:No, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

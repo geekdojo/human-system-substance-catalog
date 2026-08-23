@@ -1,0 +1,126 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "ghrp_2",
+  "name": "GHRP-2",
+  "aka": [
+    "Pralmorelin",
+    "KP-102"
+  ],
+  "class": "Growth hormone-releasing peptide (ghrelin receptor agonist)",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 300,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A synthetic hexapeptide growth hormone secretagogue. Licensed in Japan as a diagnostic agent for GH deficiency; it has no FDA-approved product for therapeutic use. No FDA label. Japanese diagnostic approval is not a US therapeutic approval.",
+  "systems": [
+    {
+      "key": "pituitary",
+      "relation": "acts_on",
+      "note": "Ghrelin receptor agonism at the somatotroph; placed on the pituitary by intended effect.",
+      "evidence": [
+        "pubmed:15230633",
+        "pubmed:20552695",
+        "curation:ghrp_2"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Sought for downstream anabolic effect.",
+      "evidence": [
+        "curation:ghrp_2"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Raised GH exposure antagonises insulin action.",
+      "evidence": [
+        "curation:ghrp_2"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "igf1",
+      "why": "The practical index of achieved GH exposure.",
+      "cadence_days": 90,
+      "evidence": [
+        "pubmed:15230633",
+        "pubmed:20552695",
+        "curation:ghrp_2"
+      ]
+    },
+    {
+      "marker_key": "cortisol_am",
+      "why": "Less selective than ipamorelin; cortisol and prolactin rise is described.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:15230633",
+        "pubmed:20552695",
+        "curation:ghrp_2"
+      ]
+    },
+    {
+      "marker_key": "prolactin",
+      "why": "Non-selective secretagogues raise prolactin.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:ghrp_2"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:ghrp_2",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: GHRP-2",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:15230633",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15230633/",
+      "title": "Pralmorelin: GHRP 2, GPA 748, growth hormone-releasing peptide 2, KP-102 D, KP-102 LN, KP-102D, KP-102LN.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 15230633 (Drugs R D, 2004) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:20552695",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20552695/",
+      "title": "Determination of growth hormone secretagogue pralmorelin (GHRP-2) and its metabolite in human urine by liquid chromatography/electrospray ionization tandem mass spectrometry.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 20552695 (Rapid Commun Mass Spectrom, 2010 Jul 30) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "pralmorelin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "GHRP-2",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

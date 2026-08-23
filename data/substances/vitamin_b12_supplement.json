@@ -1,0 +1,147 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "vitamin_b12_supplement",
+  "name": "Vitamin B12 (cobalamin)",
+  "aka": [
+    "methylcobalamin",
+    "cyanocobalamin"
+  ],
+  "class": "Cobalamin vitamin",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral",
+    "sublingual",
+    "intramuscular"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 500,
+    "amount_high": 1000,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A cobalt-containing vitamin required for methionine synthase and methylmalonyl-CoA mutase. Depletion is common on metformin, on acid suppression, and on plant-only diets.",
+  "systems": [
+    {
+      "key": "blood",
+      "relation": "acts_on",
+      "note": "Repletion of a cofactor required for erythropoiesis; the intended effect.",
+      "evidence": [
+        "pubmed:28925645",
+        "pubmed:40961307",
+        "curation:vitamin_b12_supplement"
+      ]
+    },
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Also repletes the cofactor whose deficiency causes subacute combined degeneration.",
+      "evidence": [
+        "pubmed:28925645",
+        "pubmed:40961307",
+        "curation:vitamin_b12_supplement"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "confounds",
+      "note": "Supplementation normalises the serum B12 level while a functional deficiency may persist; methylmalonic acid is the discriminating test.",
+      "evidence": [
+        "curation:vitamin_b12_supplement"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "vitamin_b12",
+      "why": "The direct index of intake, though it normalises before functional repletion.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:vitamin_b12_supplement"
+      ]
+    },
+    {
+      "marker_key": "mcv",
+      "why": "Macrocytosis resolves with repletion and is the accessible functional readout.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:vitamin_b12_supplement"
+      ]
+    },
+    {
+      "marker_key": "homocysteine",
+      "why": "Falls with functional B12 repletion.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:vitamin_b12_supplement"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:vitamin_b12_supplement",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Vitamin B12 (cobalamin)",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT02002",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT02002 \"Cyanocobalamin\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:038fe2e7-dc16-485c-b5fb-746db7231347",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=038fe2e7-dc16-485c-b5fb-746db7231347",
+      "title": "FDA Structured Product Label: PNV-DHA",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 038fe2e7-dc16-485c-b5fb-746db7231347, effective 20260723. 87 label record(s) matched."
+    },
+    {
+      "id": "pubmed:28925645",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28925645/",
+      "title": "Vitamin B12 Deficiency: Recognition and Management.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 28925645 (Am Fam Physician, 2017 Sep 15) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:40961307",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40961307/",
+      "title": "Vitamin B12 Deficiency: Common Questions and Answers.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 40961307 (Am Fam Physician, 2025 Sep) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "unitox:CYANOCOBALAMIN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"CYANOCOBALAMIN\". Ternary ratings — cardio:Less, liver:No, renal:No, heme:Most, fertility:No, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Vitamin B12",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,146 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "testosterone_gel",
+  "name": "Testosterone, transdermal gel",
+  "aka": [
+    "AndroGel",
+    "Testim",
+    "Fortesta",
+    "Vogelxo"
+  ],
+  "class": "Transdermal androgen (Schedule III)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "transdermal"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 20.25,
+    "amount_high": 81,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "Unesterified testosterone in a hydroalcoholic gel applied daily to the skin, approved for testosterone replacement in males with hypogonadism. Carries a boxed warning for secondary exposure of women and children by skin contact. A Schedule III controlled substance.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Androgen replacement is the labelled indication.",
+      "evidence": [
+        "openfda:03b9c0b1-5884-11e4-8ed6-0800200c9a66"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Lean-mass accrual is an intended effect.",
+      "evidence": [
+        "openfda:03b9c0b1-5884-11e4-8ed6-0800200c9a66"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Erythrocytosis is labelled, though generally less marked than with depot esters.",
+      "evidence": [
+        "openfda:03b9c0b1-5884-11e4-8ed6-0800200c9a66",
+        "unitox:TESTOSTERONE"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "burdens",
+      "note": "Prostatic growth and rising PSA are labelled.",
+      "evidence": [
+        "openfda:03b9c0b1-5884-11e4-8ed6-0800200c9a66"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Androgen class hepatic effects.",
+      "evidence": [
+        "unitox:TESTOSTERONE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "testosterone_total",
+      "why": "Labelled monitoring parameter; trough timing matters less than with depots.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:03b9c0b1-5884-11e4-8ed6-0800200c9a66"
+      ]
+    },
+    {
+      "marker_key": "hematocrit",
+      "why": "Labelled erythrocytosis risk.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:03b9c0b1-5884-11e4-8ed6-0800200c9a66"
+      ]
+    },
+    {
+      "marker_key": "psa_total",
+      "why": "Labelled prostate monitoring.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:03b9c0b1-5884-11e4-8ed6-0800200c9a66"
+      ]
+    },
+    {
+      "marker_key": "estradiol",
+      "why": "Transdermal delivery has a distinct aromatisation profile from depot esters.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:testosterone_gel"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:testosterone_gel",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Testosterone, transdermal gel",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:03b9c0b1-5884-11e4-8ed6-0800200c9a66",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03b9c0b1-5884-11e4-8ed6-0800200c9a66",
+      "title": "FDA Structured Product Label: Testopel",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 03b9c0b1-5884-11e4-8ed6-0800200c9a66, effective 20250717. 120 label record(s) matched."
+    },
+    {
+      "id": "unitox:TESTOSTERONE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"TESTOSTERONE\". Ternary ratings — cardio:Most, liver:Less, renal:No, heme:Most, fertility:Most, pulm:Most, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Testosterone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Testosterone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

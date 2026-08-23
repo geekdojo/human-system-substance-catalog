@@ -1,0 +1,144 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "sertraline",
+  "name": "Sertraline",
+  "aka": [
+    "Zoloft"
+  ],
+  "class": "Selective serotonin reuptake inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 25,
+    "amount_high": 200,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A selective serotonin reuptake inhibitor approved for major depressive disorder, obsessive-compulsive disorder, panic disorder, PTSD, social anxiety disorder and premenstrual dysphoric disorder. Carries a boxed warning for suicidality in young people.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Serotonin reuptake inhibition; the labelled indications.",
+      "evidence": [
+        "openfda:00179766-980b-44b0-99d3-1fee2bb27e37",
+        "livertox:NBK548513"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Hyponatraemia from SIADH is labelled for the SSRI class.",
+      "evidence": [
+        "openfda:00179766-980b-44b0-99d3-1fee2bb27e37"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation and rare hepatic injury are documented.",
+      "evidence": [
+        "livertox:NBK548513",
+        "dilirank:LT00625",
+        "unitox:SERTRALINE HYDROCHLORIDE"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Impaired platelet aggregation and bleeding risk are labelled.",
+      "evidence": [
+        "openfda:00179766-980b-44b0-99d3-1fee2bb27e37",
+        "unitox:SERTRALINE HYDROCHLORIDE"
+      ]
+    },
+    {
+      "key": "gonads",
+      "relation": "burdens",
+      "note": "Sexual dysfunction is a labelled and common class effect.",
+      "evidence": [
+        "openfda:00179766-980b-44b0-99d3-1fee2bb27e37",
+        "unitox:SERTRALINE HYDROCHLORIDE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "sodium",
+      "why": "Labelled hyponatraemia from SIADH.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00179766-980b-44b0-99d3-1fee2bb27e37"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Documented transaminase elevation and rare hepatic injury.",
+      "cadence_days": 365,
+      "evidence": [
+        "livertox:NBK548513",
+        "dilirank:LT00625"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "Boxed suicidality warning; the labelled monitoring obligation.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:00179766-980b-44b0-99d3-1fee2bb27e37"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:sertraline",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Sertraline",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00625",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00625 \"Sertraline hydrochloride\": vLess-DILI-concern (severity class 3). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548513",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548513/",
+      "title": "LiverTox: Sertraline",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:00179766-980b-44b0-99d3-1fee2bb27e37",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00179766-980b-44b0-99d3-1fee2bb27e37",
+      "title": "FDA Structured Product Label: Sertraline Hydrochloride",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00179766-980b-44b0-99d3-1fee2bb27e37, effective 20191101. 137 label record(s) matched."
+    },
+    {
+      "id": "unitox:SERTRALINE HYDROCHLORIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"SERTRALINE HYDROCHLORIDE\". Ternary ratings — cardio:Most, liver:Most, renal:No, heme:Most, fertility:Less, pulm:Most, oto:Less, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

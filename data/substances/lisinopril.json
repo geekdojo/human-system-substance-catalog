@@ -1,0 +1,137 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "lisinopril",
+  "name": "Lisinopril",
+  "aka": [
+    "Zestril",
+    "Prinivil"
+  ],
+  "class": "ACE inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 40,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "An angiotensin-converting enzyme inhibitor approved for hypertension, heart failure and post-myocardial-infarction survival. Carries a boxed warning for foetal toxicity.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Blood pressure and afterload reduction through ACE inhibition; the labelled indications.",
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b",
+        "livertox:NBK548860"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Efferent arteriolar dilation reduces filtration pressure; creatinine rise and hyperkalaemia are labelled.",
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b",
+        "unitox:LISINOPRIL"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Cholestatic hepatitis progressing to hepatic necrosis carries a labelled warning.",
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b",
+        "livertox:NBK548860",
+        "dilirank:LT01492",
+        "unitox:LISINOPRIL"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "potassium",
+      "why": "Hyperkalaemia is a labelled and common effect of ACE inhibition.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b"
+      ]
+    },
+    {
+      "marker_key": "creatinine",
+      "why": "Expected early rise from reduced filtration pressure; a large rise is not expected.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "The filtration estimate the labelled cautions are expressed against.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Labelled cholestatic hepatitis warning.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b",
+        "livertox:NBK548860"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:lisinopril",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Lisinopril",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01492",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01492 \"Lisinopril\": vLess-DILI-concern (severity class 3). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548860",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548860/",
+      "title": "LiverTox: Lisinopril",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00b266d9-ac4a-e931-e063-6294a90a6a0b",
+      "title": "FDA Structured Product Label: Lisinopril and Hydrochlorothiazide",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00b266d9-ac4a-e931-e063-6294a90a6a0b, effective 20260602. 230 label record(s) matched."
+    },
+    {
+      "id": "unitox:LISINOPRIL",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"LISINOPRIL\". Ternary ratings — cardio:Most, liver:Most, renal:Most, heme:Most, fertility:No, pulm:Less, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

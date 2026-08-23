@@ -1,0 +1,119 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "emtricitabine",
+  "name": "Emtricitabine",
+  "aka": [
+    "Emtriva",
+    "FTC"
+  ],
+  "class": "Nucleoside reverse transcriptase inhibitor",
+  "category": "antiviral",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 200,
+    "amount_high": 200,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A cytidine analogue reverse transcriptase inhibitor approved for HIV-1, almost always given in fixed-dose combination. Carries a boxed warning for post-treatment hepatitis B exacerbation.",
+  "systems": [
+    {
+      "key": "blood",
+      "relation": "acts_on",
+      "note": "Reverse transcriptase inhibition; the labelled antiviral indication.",
+      "evidence": [
+        "openfda:0476d7eb-1024-4821-bbe7-abaacfda32a2",
+        "livertox:NBK548261"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Renally cleared; dose adjustment is labelled.",
+      "evidence": [
+        "openfda:0476d7eb-1024-4821-bbe7-abaacfda32a2",
+        "unitox:EMTRICITABINE"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Boxed warning for post-treatment hepatitis B exacerbation and for lactic acidosis with hepatomegaly.",
+      "evidence": [
+        "openfda:0476d7eb-1024-4821-bbe7-abaacfda32a2",
+        "livertox:NBK548261",
+        "unitox:EMTRICITABINE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Labelled renal dose adjustment.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0476d7eb-1024-4821-bbe7-abaacfda32a2"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Boxed hepatitis B exacerbation and hepatic steatosis warnings.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0476d7eb-1024-4821-bbe7-abaacfda32a2"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:emtricitabine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Emtricitabine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00515",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00515 \"Emtricitabine\": Ambiguous-DILI-concern (severity class 2). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548261",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548261/",
+      "title": "LiverTox: Emtricitabine",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:0476d7eb-1024-4821-bbe7-abaacfda32a2",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0476d7eb-1024-4821-bbe7-abaacfda32a2",
+      "title": "FDA Structured Product Label: Biktarvy",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0476d7eb-1024-4821-bbe7-abaacfda32a2, effective 20240430. 55 label record(s) matched."
+    },
+    {
+      "id": "unitox:EMTRICITABINE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"EMTRICITABINE\". Ternary ratings — cardio:No, liver:Less, renal:Less, heme:Most, fertility:No, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

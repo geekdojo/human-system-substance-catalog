@@ -1,0 +1,117 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "nirmatrelvir_ritonavir",
+  "name": "Nirmatrelvir and ritonavir",
+  "aka": [
+    "Paxlovid"
+  ],
+  "class": "SARS-CoV-2 3CL protease inhibitor with CYP3A4 boosting",
+  "category": "antiviral",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 300,
+    "amount_high": 300,
+    "unit": "mg",
+    "cadence": "twice_daily"
+  },
+  "description": "A SARS-CoV-2 main protease inhibitor co-packaged with ritonavir as a pharmacokinetic booster, approved for mild-to-moderate COVID-19 at high risk of progression. The ritonavir component is the source of an extensive drug interaction burden.",
+  "systems": [
+    {
+      "key": "blood",
+      "relation": "acts_on",
+      "note": "Viral protease inhibition; the labelled antiviral indication.",
+      "evidence": [
+        "openfda:8a99d6d6-fd9e-45bb-b1bf-48c7f761232a"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Ritonavir is a potent CYP3A4 inhibitor; transaminase elevation is labelled and interactions are extensive.",
+      "evidence": [
+        "openfda:8a99d6d6-fd9e-45bb-b1bf-48c7f761232a",
+        "dilirank:LT01737",
+        "unitox:RITONAVIR"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Dose reduction is labelled in moderate renal impairment.",
+      "evidence": [
+        "openfda:8a99d6d6-fd9e-45bb-b1bf-48c7f761232a",
+        "unitox:RITONAVIR"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Labelled transaminase elevation and an extensive CYP3A4 interaction burden.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:8a99d6d6-fd9e-45bb-b1bf-48c7f761232a",
+        "dilirank:LT01737"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Labelled dose reduction in renal impairment.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:8a99d6d6-fd9e-45bb-b1bf-48c7f761232a"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:nirmatrelvir_ritonavir",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Nirmatrelvir and ritonavir",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01737",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01737 \"Ritonavir\": vMost-DILI-concern (severity class 8). FDA-authored, public domain."
+    },
+    {
+      "id": "openfda:8a99d6d6-fd9e-45bb-b1bf-48c7f761232a",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8a99d6d6-fd9e-45bb-b1bf-48c7f761232a",
+      "title": "FDA Structured Product Label: Paxlovid",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 8a99d6d6-fd9e-45bb-b1bf-48c7f761232a, effective 20260219. 1 label record(s) matched."
+    },
+    {
+      "id": "unitox:RITONAVIR",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"RITONAVIR\". Ternary ratings — cardio:Most, liver:Most, renal:Less, heme:Most, fertility:No, pulm:Less, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Nirmatrelvir",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

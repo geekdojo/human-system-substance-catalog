@@ -1,0 +1,115 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "linagliptin",
+  "name": "Linagliptin",
+  "aka": [
+    "Tradjenta"
+  ],
+  "class": "DPP-4 inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 5,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A dipeptidyl peptidase-4 inhibitor cleared predominantly through the bile rather than the kidney, so no renal dose adjustment is required.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Incretin degradation blocked; the labelled indication.",
+      "evidence": [
+        "openfda:3d02a4d4-d312-80b4-05c4-691b8f0aa7aa",
+        "livertox:NBK548554"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Predominantly biliary elimination; transaminase elevation is reported.",
+      "evidence": [
+        "livertox:NBK548554"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "Direct index of glycaemic effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:3d02a4d4-d312-80b4-05c4-691b8f0aa7aa"
+      ]
+    },
+    {
+      "marker_key": "lipase",
+      "why": "Class pancreatitis signal.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:3d02a4d4-d312-80b4-05c4-691b8f0aa7aa"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Predominantly hepatobiliary elimination.",
+      "cadence_days": 365,
+      "evidence": [
+        "livertox:NBK548554"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:linagliptin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Linagliptin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT02445",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT02445 \"Linagliptin\": vLess-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548554",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548554/",
+      "title": "LiverTox: Linagliptin",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:3d02a4d4-d312-80b4-05c4-691b8f0aa7aa",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3d02a4d4-d312-80b4-05c4-691b8f0aa7aa",
+      "title": "FDA Structured Product Label: Jentadueto XR",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 3d02a4d4-d312-80b4-05c4-691b8f0aa7aa, effective 20240524. 8 label record(s) matched."
+    },
+    {
+      "id": "unitox:LINAGLIPTIN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"LINAGLIPTIN\". Ternary ratings — cardio:Less, liver:No, renal:No, heme:No, fertility:No, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

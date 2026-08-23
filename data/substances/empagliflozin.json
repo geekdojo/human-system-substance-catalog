@@ -1,0 +1,153 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "empagliflozin",
+  "name": "Empagliflozin",
+  "aka": [
+    "Jardiance"
+  ],
+  "class": "SGLT2 inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 10,
+    "amount_high": 25,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A sodium-glucose cotransporter 2 inhibitor approved for type 2 diabetes, heart failure across the ejection-fraction range, and chronic kidney disease.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Lowers glycaemia by increasing urinary glucose loss; the intended metabolic effect, placed on the pancreas as the glycaemic system.",
+      "evidence": [
+        "openfda:0fdd0255-0055-65f3-b2c0-db8fbb87beae"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Heart failure outcome reduction is a labelled indication in its own right.",
+      "evidence": [
+        "openfda:0fdd0255-0055-65f3-b2c0-db8fbb87beae"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "acts_on",
+      "note": "Chronic kidney disease progression reduction is a labelled indication; the tubule is also the site of action.",
+      "evidence": [
+        "openfda:0fdd0255-0055-65f3-b2c0-db8fbb87beae"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "confounds",
+      "note": "Produces an expected early eGFR dip that reads as falling filtration but is haemodynamic, not injury.",
+      "evidence": [
+        "curation:empagliflozin"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Euglycaemic diabetic ketoacidosis is labelled and presents without marked hyperglycaemia.",
+      "evidence": [
+        "openfda:0fdd0255-0055-65f3-b2c0-db8fbb87beae"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "The direct index of glycaemic effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0fdd0255-0055-65f3-b2c0-db8fbb87beae"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Both the labelled renal indication and the expected initial haemodynamic dip.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0fdd0255-0055-65f3-b2c0-db8fbb87beae"
+      ]
+    },
+    {
+      "marker_key": "uacr",
+      "why": "The albuminuria endpoint the renal indication is built on.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0fdd0255-0055-65f3-b2c0-db8fbb87beae"
+      ]
+    },
+    {
+      "marker_key": "beta_hydroxybutyrate",
+      "why": "Euglycaemic ketoacidosis is labelled and glucose will not signal it.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:0fdd0255-0055-65f3-b2c0-db8fbb87beae"
+      ]
+    },
+    {
+      "marker_key": "potassium",
+      "why": "Volume and tubular effects move potassium.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:empagliflozin"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:empagliflozin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Empagliflozin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT03667",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT03667 \"Empagliflozin\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:0fdd0255-0055-65f3-b2c0-db8fbb87beae",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0fdd0255-0055-65f3-b2c0-db8fbb87beae",
+      "title": "FDA Structured Product Label: Synjardy",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0fdd0255-0055-65f3-b2c0-db8fbb87beae, effective 20260130. 11 label record(s) matched."
+    },
+    {
+      "id": "unitox:EMPAGLIFLOZIN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"EMPAGLIFLOZIN\". Ternary ratings — cardio:No, liver:No, renal:Most, heme:Less, fertility:No, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Empagliflozin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

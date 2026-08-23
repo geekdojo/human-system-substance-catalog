@@ -1,0 +1,141 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "losartan",
+  "name": "Losartan",
+  "aka": [
+    "Cozaar"
+  ],
+  "class": "Angiotensin II receptor blocker",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 25,
+    "amount_high": 100,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "An angiotensin II type 1 receptor blocker approved for hypertension, diabetic nephropathy and stroke risk reduction in left ventricular hypertrophy. It also has a mild uricosuric effect. Boxed warning for foetal toxicity.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Blood pressure reduction through angiotensin receptor blockade; the labelled indication.",
+      "evidence": [
+        "openfda:021cd76a-b093-4704-8410-5e7d01e20a54",
+        "livertox:NBK547842"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "acts_on",
+      "note": "Diabetic nephropathy progression reduction is a labelled indication in its own right.",
+      "evidence": [
+        "openfda:021cd76a-b093-4704-8410-5e7d01e20a54"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Hyperkalaemia and creatinine rise are labelled.",
+      "evidence": [
+        "openfda:021cd76a-b093-4704-8410-5e7d01e20a54",
+        "unitox:LOSARTAN POTASSIUM"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is reported.",
+      "evidence": [
+        "livertox:NBK547842",
+        "unitox:LOSARTAN POTASSIUM"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "potassium",
+      "why": "Labelled hyperkalaemia.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:021cd76a-b093-4704-8410-5e7d01e20a54"
+      ]
+    },
+    {
+      "marker_key": "creatinine",
+      "why": "Labelled creatinine rise from reduced filtration pressure.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:021cd76a-b093-4704-8410-5e7d01e20a54"
+      ]
+    },
+    {
+      "marker_key": "uacr",
+      "why": "The albuminuria endpoint behind the nephropathy indication.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:021cd76a-b093-4704-8410-5e7d01e20a54"
+      ]
+    },
+    {
+      "marker_key": "uric_acid",
+      "why": "Mild uricosuric effect distinguishes this agent within the class.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:losartan"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:losartan",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Losartan",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01499",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01499 \"Losartan potassium\": vLess-DILI-concern (severity class 4). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK547842",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547842/",
+      "title": "LiverTox: Losartan",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:021cd76a-b093-4704-8410-5e7d01e20a54",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=021cd76a-b093-4704-8410-5e7d01e20a54",
+      "title": "FDA Structured Product Label: Losartan Potassium",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 021cd76a-b093-4704-8410-5e7d01e20a54, effective 20251022. 214 label record(s) matched."
+    },
+    {
+      "id": "unitox:LOSARTAN POTASSIUM",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"LOSARTAN POTASSIUM\". Ternary ratings — cardio:Less, liver:Less, renal:Less, heme:Less, fertility:Less, pulm:Less, oto:Less, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

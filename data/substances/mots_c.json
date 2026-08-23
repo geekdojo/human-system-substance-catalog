@@ -1,0 +1,121 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "mots_c",
+  "name": "MOTS-c",
+  "aka": [
+    "mitochondrial ORF of the 12S rRNA type-c"
+  ],
+  "class": "Mitochondrial-derived peptide",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 10,
+    "unit": "mg",
+    "cadence": "twice_weekly",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A 16-amino-acid peptide encoded in the mitochondrial 12S rRNA gene, described in preclinical work as a regulator of metabolic homeostasis through AMPK. It has no FDA-approved product and no human trial safety record. No FDA label exists. No completed human safety trials.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Taken for metabolic and exercise-capacity effect via AMPK; the intended effect, evidenced preclinically.",
+      "evidence": [
+        "pubmed:25738459",
+        "pubmed:36761202",
+        "curation:mots_c"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Claimed insulin-sensitising effect is uncharacterised in humans and could move glycaemia unpredictably.",
+      "evidence": [
+        "curation:mots_c"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "No human safety data and no product-quality control.",
+      "evidence": [
+        "curation:mots_c"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "glucose_fasting",
+      "why": "Claimed insulin-sensitising effect with no human dosing reference.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:mots_c"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "Integrated glycaemic effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:mots_c"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "No human safety record exists.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:mots_c"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:mots_c",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: MOTS-c",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:25738459",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25738459/",
+      "title": "The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 25738459 (Cell Metab, 2015 Mar 3) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:36761202",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36761202/",
+      "title": "MOTS-c: A promising mitochondrial-derived peptide for therapeutic exploitation.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 36761202 (Front Endocrinol (Lausanne), 2023) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "MOTS-c",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "MOTS-c",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

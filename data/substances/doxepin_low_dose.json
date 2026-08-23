@@ -1,0 +1,119 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "doxepin_low_dose",
+  "name": "Doxepin, low dose",
+  "aka": [
+    "Silenor"
+  ],
+  "class": "Tricyclic H1 antagonist at hypnotic dose",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 3,
+    "amount_high": 6,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "Doxepin at 3 to 6 mg, far below its antidepressant dose range, approved as Silenor for sleep maintenance insomnia. At this dose it acts as a selective histamine H1 antagonist.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Selective H1 antagonism at the hypnotic dose; the labelled indication.",
+      "evidence": [
+        "openfda:00ef7d0b-4bb9-cd5b-e063-6294a90abc35",
+        "livertox:NBK548035"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Tricyclic class hepatic injury is documented at antidepressant doses.",
+      "evidence": [
+        "livertox:NBK548035",
+        "dilirank:LT01314",
+        "unitox:DOXEPIN HYDROCHLORIDE"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Tricyclic class cardiac conduction effects, minimal at the hypnotic dose.",
+      "evidence": [
+        "unitox:DOXEPIN HYDROCHLORIDE",
+        "curation:doxepin_low_dose"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Tricyclic class hepatic injury, documented at higher doses.",
+      "cadence_days": 365,
+      "evidence": [
+        "livertox:NBK548035",
+        "dilirank:LT01314"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "Antidepressant class boxed suicidality warning applies to the labelling.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00ef7d0b-4bb9-cd5b-e063-6294a90abc35"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:doxepin_low_dose",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Doxepin, low dose",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01314",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01314 \"Doxepin hydrochloride\": vLess-DILI-concern (severity class 4). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548035",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548035/",
+      "title": "LiverTox: Doxepin",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:00ef7d0b-4bb9-cd5b-e063-6294a90abc35",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00ef7d0b-4bb9-cd5b-e063-6294a90abc35",
+      "title": "FDA Structured Product Label: Doxepin hydrochloride",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00ef7d0b-4bb9-cd5b-e063-6294a90abc35, effective 20241224. 89 label record(s) matched."
+    },
+    {
+      "id": "unitox:DOXEPIN HYDROCHLORIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"DOXEPIN HYDROCHLORIDE\". Ternary ratings — cardio:Less, liver:Less, renal:No, heme:Less, fertility:Most, pulm:Less, oto:Less, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,165 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "trenbolone_acetate",
+  "name": "Trenbolone acetate",
+  "aka": [
+    "Finaplix"
+  ],
+  "class": "19-nortestosterone anabolic steroid, veterinary",
+  "category": "hormone",
+  "regulatory_status": "unscheduled",
+  "routes": [
+    "intramuscular"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 50,
+    "amount_high": 100,
+    "unit": "mg",
+    "cadence": "every_other_day",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A 19-nortestosterone anabolic-androgenic steroid approved in the United States only as a cattle growth-promoting implant. There is no human FDA approval and no human labelling; it is a Schedule III controlled substance for human use. It does not aromatise and is strongly progestogenic. Livestock implant approval only. No human FDA label exists.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "High-affinity androgen receptor agonism; the intended anabolic target.",
+      "evidence": [
+        "pubmed:38887114",
+        "pubmed:20138077",
+        "curation:trenbolone_acetate"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Sought for lean mass; does not aromatise.",
+      "evidence": [
+        "curation:trenbolone_acetate"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Severe HDL suppression is described for 19-nor compounds.",
+      "evidence": [
+        "curation:trenbolone_acetate"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Renal stress is reported in the case literature.",
+      "evidence": [
+        "pubmed:38887114",
+        "pubmed:20138077",
+        "curation:trenbolone_acetate"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Class erythrocytosis effect.",
+      "evidence": [
+        "curation:trenbolone_acetate"
+      ]
+    },
+    {
+      "key": "brain",
+      "relation": "burdens",
+      "note": "Sleep disruption and neuropsychiatric effects are commonly described.",
+      "evidence": [
+        "curation:trenbolone_acetate"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hdl_c",
+      "why": "Severe HDL suppression is characteristic of 19-nor compounds.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:trenbolone_acetate"
+      ]
+    },
+    {
+      "marker_key": "prolactin",
+      "why": "Progestogenic activity raises prolactin.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:trenbolone_acetate"
+      ]
+    },
+    {
+      "marker_key": "creatinine",
+      "why": "Case reports of renal injury; confounded by muscle mass.",
+      "cadence_days": 90,
+      "evidence": [
+        "pubmed:38887114",
+        "pubmed:20138077",
+        "curation:trenbolone_acetate"
+      ]
+    },
+    {
+      "marker_key": "cystatin_c",
+      "why": "Filtration marker independent of the muscle mass this compound adds.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:trenbolone_acetate"
+      ]
+    },
+    {
+      "marker_key": "hematocrit",
+      "why": "Class erythrocytosis risk.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:trenbolone_acetate"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:trenbolone_acetate",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Trenbolone acetate",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:20138077",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20138077/",
+      "title": "Tissue selectivity and potential clinical applications of trenbolone (17beta-hydroxyestra-4,9,11-trien-3-one): A potent anabolic steroid with reduced androgenic and estrogenic activity.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 20138077 (Steroids, 2010 Jun) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:38887114",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38887114/",
+      "title": "Impact of trenbolone on selected organs.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 38887114 (Endokrynol Pol, 2024) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "trenbolone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Trenbolone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

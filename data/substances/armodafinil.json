@@ -1,0 +1,106 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "armodafinil",
+  "name": "Armodafinil",
+  "aka": [
+    "Nuvigil"
+  ],
+  "class": "Wakefulness-promoting agent, R-enantiomer (Schedule IV)",
+  "category": "nootropic",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 50,
+    "amount_high": 250,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "The longer-lived R-enantiomer of modafinil, approved for the same sleep-related excessive-sleepiness indications. A Schedule IV controlled substance.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Wakefulness promotion is the labelled indication.",
+      "evidence": [
+        "openfda:23da56b8-7552-4362-a1ab-e794c131194c"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Hepatically metabolised with CYP3A4 induction.",
+      "evidence": [
+        "unitox:ARMODAFINIL"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Blood pressure and heart rate elevation are labelled.",
+      "evidence": [
+        "openfda:23da56b8-7552-4362-a1ab-e794c131194c",
+        "unitox:ARMODAFINIL"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Heavy hepatic metabolism with reported transaminase elevation.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:armodafinil"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:armodafinil",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Armodafinil",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01230",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01230 \"Armodafinil\": Ambiguous-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:23da56b8-7552-4362-a1ab-e794c131194c",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=23da56b8-7552-4362-a1ab-e794c131194c",
+      "title": "FDA Structured Product Label: Armodafinil",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 23da56b8-7552-4362-a1ab-e794c131194c, effective 20240202. 16 label record(s) matched."
+    },
+    {
+      "id": "unitox:ARMODAFINIL",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"ARMODAFINIL\". Ternary ratings — cardio:Most, liver:Most, renal:No, heme:Less, fertility:Less, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Armodafinil",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

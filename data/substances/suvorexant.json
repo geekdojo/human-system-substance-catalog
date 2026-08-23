@@ -1,0 +1,110 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "suvorexant",
+  "name": "Suvorexant",
+  "aka": [
+    "Belsomra"
+  ],
+  "class": "Dual orexin receptor antagonist (Schedule IV)",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 20,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A dual orexin receptor antagonist approved for insomnia, acting by blocking the wake-promoting orexin system rather than by potentiating GABA.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Orexin receptor blockade removing wake drive; the labelled mechanism.",
+      "evidence": [
+        "openfda:e5b72731-1acb-45b7-9c13-290ad12d3951",
+        "livertox:NBK547900"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "CYP3A4-metabolised; not recommended in severe hepatic impairment.",
+      "evidence": [
+        "openfda:e5b72731-1acb-45b7-9c13-290ad12d3951",
+        "livertox:NBK547900",
+        "unitox:SUVOREXANT"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Labelled hepatic impairment restriction.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:e5b72731-1acb-45b7-9c13-290ad12d3951",
+        "livertox:NBK547900"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "Labelled next-day somnolence, sleep paralysis and worsening depression.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:e5b72731-1acb-45b7-9c13-290ad12d3951"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:suvorexant",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Suvorexant",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT03766",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT03766 \"Suvorexant\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK547900",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547900/",
+      "title": "LiverTox: Suvorexant",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:e5b72731-1acb-45b7-9c13-290ad12d3951",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e5b72731-1acb-45b7-9c13-290ad12d3951",
+      "title": "FDA Structured Product Label: BELSOMRA",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id e5b72731-1acb-45b7-9c13-290ad12d3951, effective 20250310. 1 label record(s) matched."
+    },
+    {
+      "id": "unitox:SUVOREXANT",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"SUVOREXANT\". Ternary ratings — cardio:Less, liver:Less, renal:No, heme:No, fertility:Less, pulm:Less, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

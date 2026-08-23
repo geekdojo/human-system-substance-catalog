@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://geekdojo.com/schema/substance-catalog/substance-v1.json",
+  "title": "substance-catalog substance entry",
+  "description": "One compound. Reference data only: this file describes a substance, never a person, and contains no health data. Every asserted value carries evidence pointing at a row in `sources`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "key", "name", "class", "category", "regulatory_status", "routes",
+    "description", "systems", "monitors", "sources", "valid_from", "valid_to"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+
+    "key": {
+      "$ref": "#/$defs/slug",
+      "description": "Stable slug. NEVER changes once published — the app's intervention.substance_key points at it. Matches the human-system bulk-import slug pattern."
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120, "description": "Canonical display name, normally the INN / USAN generic name." },
+    "aka": {
+      "type": "array",
+      "description": "Brand names, common synonyms, and research codes. Not a search index — only names a person would plausibly write down.",
+      "items": { "type": "string", "minLength": 1, "maxLength": 120 },
+      "uniqueItems": true
+    },
+    "class": { "type": "string", "minLength": 1, "maxLength": 160, "description": "Pharmacological class in prose, e.g. 'GLP-1 / GIP dual agonist'. Free text by design: no ATC, no closed vocabulary." },
+    "category": {
+      "enum": ["peptide", "hormone", "glp1", "prescription", "supplement", "serm", "antiviral", "nootropic", "other"],
+      "description": "Coarse bucket the app groups the stack by. One only."
+    },
+    "regulatory_status": {
+      "enum": ["fda_approved", "rx_compounded", "research_chemical", "otc_supplement", "unscheduled", "study_only"],
+      "description": "US regulatory footing. fda_approved = an approved product with an FDA label. rx_compounded = obtained through compounding rather than an approved product. research_chemical = sold for laboratory use only, no human-use approval. otc_supplement = marketed as a dietary supplement. unscheduled = neither approved nor controlled, outside the supplement framework. study_only = investigational, in trials, no marketing authorisation."
+    },
+    "routes": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "enum": ["oral", "sublingual", "buccal", "subcutaneous", "intramuscular", "intravenous", "intranasal", "transdermal", "topical", "rectal", "inhaled", "ophthalmic", "implant"] }
+    },
+    "typical_dose_shape": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "description": "The SHAPE of a dose — magnitude, unit, cadence — so the UI can render a slider and sanity-check a typed dose. It is not a recommendation and is not personalised. Omit or null it where no honest range exists.",
+      "required": ["unit", "cadence"],
+      "properties": {
+        "amount_low": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "amount_high": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "unit": { "enum": ["mcg", "mg", "g", "IU", "mL", "units", "billion_cfu"] },
+        "cadence": { "enum": ["daily", "twice_daily", "three_times_daily", "every_other_day", "weekly", "twice_weekly", "biweekly", "monthly", "quarterly", "as_needed", "cycled"] },
+        "note": { "type": "string", "maxLength": 400 }
+      }
+    },
+    "description": {
+      "type": "string", "minLength": 20, "maxLength": 1200,
+      "description": "Factual and descriptive. States what the compound is and what it is approved or used for. NEVER advisory — no 'should', no 'recommended', no dosing counsel."
+    },
+
+    "systems": {
+      "type": "array", "minItems": 1,
+      "description": "Body systems this compound touches, and how. Exactly one relation per (system, relation) pair.",
+      "items": { "$ref": "#/$defs/systemRelation" }
+    },
+    "monitors": {
+      "type": "array",
+      "description": "'Taking this requires watching marker Y every N days.' marker_key must resolve against data/marker-keys.json.",
+      "items": { "$ref": "#/$defs/monitor" }
+    },
+
+    "sources": {
+      "type": "array", "minItems": 1,
+      "description": "Every source any value in this file came from. The licence gate runs over these.",
+      "items": { "$ref": "#/$defs/source" }
+    },
+    "source_gaps": {
+      "type": "array",
+      "description": "Lookups that were run and returned NOTHING. Recorded rather than silently omitted, so an empty result is distinguishable from a source never consulted.",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["source", "queried", "result"],
+        "properties": {
+          "source": { "enum": ["openfda_spl", "unitox", "dilirank", "livertox", "pubmed"] },
+          "queried": { "type": "string", "minLength": 1 },
+          "result": { "const": "no_rows" },
+          "checked": { "$ref": "#/$defs/date" }
+        }
+      }
+    },
+
+    "valid_from": { "$ref": "#/$defs/date", "description": "AIRAC-style effectivity start. The first bundle date on which this row is in force." },
+    "valid_to": { "oneOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }], "description": "Effectivity end, or null for 'in force until superseded'. Must be strictly after valid_from." }
+  },
+
+  "$defs": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_]*$", "maxLength": 64 },
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "format": "date" },
+
+    "systemKey": {
+      "enum": ["brain", "pituitary", "thyroid", "heart", "liver", "pancreas", "kidneys", "blood", "gonads", "prostate", "body"],
+      "description": "The eleven fixed human-system body systems. Nothing else is accepted."
+    },
+
+    "systemRelation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["key", "relation", "note", "evidence"],
+      "properties": {
+        "key": { "$ref": "#/$defs/systemKey" },
+        "relation": {
+          "enum": ["acts_on", "burdens", "confounds"],
+          "description": "acts_on = the system the compound is INTENDED to affect, placed by intended effect and never by signalling pathway. burdens = a system the compound stresses, is cleared by, or carries a toxicity signal against. confounds = a system whose MARKERS this compound distorts without acting on it. The app collapses burdens and confounds to its own `monitors` relation; only acts_on counts against the load cap."
+        },
+        "note": { "type": "string", "minLength": 5, "maxLength": 500 },
+        "evidence": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "$ref": "#/$defs/evidenceId" },
+          "description": "One or more source ids from this file's `sources`."
+        }
+      }
+    },
+
+    "monitor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["marker_key", "why", "cadence_days", "evidence"],
+      "properties": {
+        "marker_key": { "$ref": "#/$defs/slug" },
+        "why": { "type": "string", "minLength": 5, "maxLength": 500, "description": "Why this marker, in one sentence. Surfaced in the app's alert explanation chain." },
+        "cadence_days": { "type": "integer", "minimum": 1, "maximum": 3650 },
+        "evidence": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/evidenceId" } }
+      }
+    },
+
+    "evidenceId": {
+      "type": "string",
+      "pattern": "^(openfda|unitox|dilirank|livertox|pubmed|curation):[A-Za-z0-9][A-Za-z0-9._\\- ()/,+]*$",
+      "maxLength": 200,
+      "description": "Namespaced id that MUST equal the `id` of a row in this file's `sources`."
+    },
+
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "license", "retrieved"],
+      "properties": {
+        "id": { "$ref": "#/$defs/evidenceId" },
+        "kind": { "enum": ["openfda_spl", "unitox", "dilirank", "livertox", "pubmed", "own_curation"] },
+        "license": {
+          "enum": ["CC0-1.0", "CC-BY-4.0", "public-domain", "own-curation"],
+          "description": "THE LICENCE GATE. This enum is the allowlist. Anything outside it fails validation and the build, by design — an unclean licence in this repo is what makes the curation unsaleable. Do not widen it to make a row pass."
+        },
+        "url": { "type": "string", "format": "uri", "maxLength": 500 },
+        "title": { "type": "string", "maxLength": 300 },
+        "retrieved": { "$ref": "#/$defs/date" },
+        "note": { "type": "string", "maxLength": 500 }
+      }
+    }
+  }
+}

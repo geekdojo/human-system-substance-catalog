@@ -1,0 +1,157 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "finasteride",
+  "name": "Finasteride",
+  "aka": [
+    "Propecia",
+    "Proscar"
+  ],
+  "class": "Type II 5-alpha-reductase inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral",
+    "topical"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 1,
+    "amount_high": 5,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A selective type II 5-alpha-reductase inhibitor approved at 1 mg for androgenetic alopecia and at 5 mg for benign prostatic hyperplasia. It blocks conversion of testosterone to dihydrotestosterone.",
+  "systems": [
+    {
+      "key": "prostate",
+      "relation": "acts_on",
+      "note": "Reduction of prostatic dihydrotestosterone and prostate volume is the labelled 5 mg indication.",
+      "evidence": [
+        "openfda:00e934bb-c15b-490a-a852-839689a1231a",
+        "livertox:NBK548319"
+      ]
+    },
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Blockade of testosterone to DHT conversion is the intended pharmacology.",
+      "evidence": [
+        "openfda:00e934bb-c15b-490a-a852-839689a1231a"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "confounds",
+      "note": "Roughly halves serum PSA, so an unadjusted PSA reads falsely reassuring; labelled.",
+      "evidence": [
+        "openfda:00e934bb-c15b-490a-a852-839689a1231a"
+      ]
+    },
+    {
+      "key": "brain",
+      "relation": "burdens",
+      "note": "Depression and suicidal ideation appear in labelling; sexual adverse effects are labelled.",
+      "evidence": [
+        "openfda:00e934bb-c15b-490a-a852-839689a1231a"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is reported.",
+      "evidence": [
+        "livertox:NBK548319"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "psa_total",
+      "why": "Serum PSA is roughly halved; the value must be interpreted against that, which is the labelled instruction.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00e934bb-c15b-490a-a852-839689a1231a"
+      ]
+    },
+    {
+      "marker_key": "psa_free_pct",
+      "why": "The free fraction is affected differently from total PSA, so the ratio is read alongside it.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:finasteride"
+      ]
+    },
+    {
+      "marker_key": "testosterone_total",
+      "why": "Testosterone rises modestly as conversion to DHT is blocked.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:finasteride"
+      ]
+    },
+    {
+      "marker_key": "estradiol",
+      "why": "A larger fraction of testosterone is available for aromatisation.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:finasteride"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "Labelled depression and suicidal ideation signal.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00e934bb-c15b-490a-a852-839689a1231a"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:finasteride",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Finasteride",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00167",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00167 \"Finasteride\": vLess-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548319",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548319/",
+      "title": "LiverTox: Finasteride",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:00e934bb-c15b-490a-a852-839689a1231a",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00e934bb-c15b-490a-a852-839689a1231a",
+      "title": "FDA Structured Product Label: Finasteride",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00e934bb-c15b-490a-a852-839689a1231a, effective 20170728. 73 label record(s) matched."
+    },
+    {
+      "id": "unitox:FINASTERIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"FINASTERIDE\". Ternary ratings — cardio:No, liver:No, renal:No, heme:Less, fertility:Most, pulm:No, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

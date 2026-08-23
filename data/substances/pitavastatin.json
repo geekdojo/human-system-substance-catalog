@@ -1,0 +1,159 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "pitavastatin",
+  "name": "Pitavastatin",
+  "aka": [
+    "Livalo",
+    "Zypitamag"
+  ],
+  "class": "HMG-CoA reductase inhibitor (statin)",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 1,
+    "amount_high": 4,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A statin with minimal CYP metabolism, used where interaction burden matters, notably alongside antiretroviral therapy.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Inhibition of hepatic HMG-CoA reductase lowering LDL cholesterol and cardiovascular event rate; placed on the heart by intended effect rather than on the liver where the enzyme sits.",
+      "evidence": [
+        "openfda:0f11ee80-871e-4f13-e063-6394a90af19d",
+        "livertox:NBK548065"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is a labelled class effect and the liver is the site of the enzyme, not the target.",
+      "evidence": [
+        "openfda:0f11ee80-871e-4f13-e063-6394a90af19d",
+        "livertox:NBK548065",
+        "unitox:PITAVASTATIN CALCIUM"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Myopathy and, rarely, rhabdomyolysis are labelled class effects.",
+      "evidence": [
+        "openfda:0f11ee80-871e-4f13-e063-6394a90af19d"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "A small increase in incident diabetes is a labelled class effect.",
+      "evidence": [
+        "openfda:0f11ee80-871e-4f13-e063-6394a90af19d"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "ldl_c",
+      "why": "The direct index of the effect the drug is given for.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0f11ee80-871e-4f13-e063-6394a90af19d"
+      ]
+    },
+    {
+      "marker_key": "apob",
+      "why": "Counts atherogenic particles, which LDL-C mass does not.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:pitavastatin"
+      ]
+    },
+    {
+      "marker_key": "non_hdl_c",
+      "why": "Sums every atherogenic particle and is computable from a standard panel.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:pitavastatin"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Labelled class transaminase elevation.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0f11ee80-871e-4f13-e063-6394a90af19d",
+        "livertox:NBK548065"
+      ]
+    },
+    {
+      "marker_key": "ck",
+      "why": "Myopathy is the labelled class effect; CK is the operative marker when muscle symptoms appear.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:0f11ee80-871e-4f13-e063-6394a90af19d"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "Labelled small increase in incident diabetes.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:0f11ee80-871e-4f13-e063-6394a90af19d"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:pitavastatin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Pitavastatin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00668",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00668 \"Pitavastatin calcium\": Ambiguous-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548065",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548065/",
+      "title": "LiverTox: Pitavastatin",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:0f11ee80-871e-4f13-e063-6394a90af19d",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0f11ee80-871e-4f13-e063-6394a90af19d",
+      "title": "FDA Structured Product Label: Pitavastatin",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0f11ee80-871e-4f13-e063-6394a90af19d, effective 20260116. 15 label record(s) matched."
+    },
+    {
+      "id": "unitox:PITAVASTATIN CALCIUM",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"PITAVASTATIN CALCIUM\". Ternary ratings — cardio:Less, liver:Most, renal:Most, heme:Less, fertility:Less, pulm:Less, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

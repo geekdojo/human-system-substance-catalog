@@ -1,0 +1,133 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "aspirin_low_dose",
+  "name": "Aspirin, low dose",
+  "aka": [
+    "acetylsalicylic acid",
+    "ASA",
+    "baby aspirin"
+  ],
+  "class": "Irreversible COX-1 inhibitor (antiplatelet dose)",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 81,
+    "amount_high": 100,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "Acetylsalicylic acid at antiplatelet dose, irreversibly acetylating platelet cyclooxygenase-1 for the platelet lifespan. Approved for secondary cardiovascular prevention; primary-prevention use has narrowed as bleeding risk was weighed against benefit.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Irreversible platelet COX-1 inhibition reducing atherothrombotic events; the labelled indication.",
+      "evidence": [
+        "openfda:0058175f-3474-40c3-a046-6cfaec86d84b",
+        "livertox:NBK548900"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Bleeding is the dose-limiting effect and the reason primary prevention narrowed.",
+      "evidence": [
+        "openfda:0058175f-3474-40c3-a046-6cfaec86d84b"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Salicylate hepatotoxicity is documented at higher doses.",
+      "evidence": [
+        "livertox:NBK548900",
+        "dilirank:LT00053"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Renal effects at analgesic and higher doses.",
+      "evidence": [
+        "openfda:0058175f-3474-40c3-a046-6cfaec86d84b"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hemoglobin",
+      "why": "Occult gastrointestinal blood loss is the common way this presents.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:aspirin_low_dose"
+      ]
+    },
+    {
+      "marker_key": "ferritin",
+      "why": "Chronic occult blood loss depletes iron before the haemoglobin falls.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:aspirin_low_dose"
+      ]
+    },
+    {
+      "marker_key": "platelets",
+      "why": "Function is inhibited irreversibly; the count is what remains measurable.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:aspirin_low_dose"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:aspirin_low_dose",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Aspirin, low dose",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00053",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00053 \"Aspirin\": vLess-DILI-concern (severity class 0). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548900",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548900/",
+      "title": "LiverTox: Aspirin",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:0058175f-3474-40c3-a046-6cfaec86d84b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0058175f-3474-40c3-a046-6cfaec86d84b",
+      "title": "FDA Structured Product Label: Low Dose Aspirin",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0058175f-3474-40c3-a046-6cfaec86d84b, effective 20240416. 720 label record(s) matched."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Aspirin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

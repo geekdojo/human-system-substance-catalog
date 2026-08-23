@@ -1,0 +1,145 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "boldenone_undecylenate",
+  "name": "Boldenone undecylenate",
+  "aka": [
+    "Equipoise"
+  ],
+  "class": "Anabolic-androgenic steroid, veterinary",
+  "category": "hormone",
+  "regulatory_status": "unscheduled",
+  "routes": [
+    "intramuscular"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 200,
+    "amount_high": 600,
+    "unit": "mg",
+    "cadence": "weekly",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A long-chain ester of boldenone approved in the United States only as a veterinary product for horses. There is no human FDA approval and no human labelling; it is a Schedule III controlled substance for human use. Veterinary approval only. No human FDA label exists.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Androgen receptor agonism; the intended anabolic target.",
+      "evidence": [
+        "pubmed:30817935",
+        "pubmed:21443515",
+        "curation:boldenone_undecylenate"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Sought for lean mass; aromatises to estradiol.",
+      "evidence": [
+        "curation:boldenone_undecylenate"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Erythrocytosis is a class effect of androgens.",
+      "evidence": [
+        "curation:boldenone_undecylenate"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Adverse lipid shift is a class effect.",
+      "evidence": [
+        "curation:boldenone_undecylenate"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Androgen class hepatic concern; no human safety record exists.",
+      "evidence": [
+        "curation:boldenone_undecylenate"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hematocrit",
+      "why": "Class erythrocytosis risk with no human dosing reference.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:boldenone_undecylenate"
+      ]
+    },
+    {
+      "marker_key": "estradiol",
+      "why": "Aromatises to estradiol.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:boldenone_undecylenate"
+      ]
+    },
+    {
+      "marker_key": "hdl_c",
+      "why": "Class HDL suppression.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:boldenone_undecylenate"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "No human safety record exists for this compound.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:boldenone_undecylenate"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:boldenone_undecylenate",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Boldenone undecylenate",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:21443515",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21443515/",
+      "title": "Anabolic androgenic steroids (AAS) as doping agents: chemical structures, metabolism, cellular responses, physiological and pathological effects.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 21443515 (Mini Rev Med Chem, 2011 May) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:30817935",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30817935/",
+      "title": "Supraphysiologic-dose anabolic-androgenic steroid use: A risk factor for dementia?",
+      "retrieved": "2026-08-23",
+      "note": "PMID 30817935 (Neurosci Biobehav Rev, 2019 May) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "boldenone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Boldenone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

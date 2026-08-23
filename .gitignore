@@ -1,0 +1,16 @@
+node_modules/
+dist/
+dist-test-*/
+RELEASE_NOTES.md
+
+# Bulk source downloads. UniTox.csv is 42 MB and DILIrank is an FDA spreadsheet; both are
+# fetched from their canonical URLs (docs/SOURCES.md) rather than vendored here.
+sources/
+*.csv
+*.xlsx
+
+.DS_Store
+*.log
+npm-debug.log*
+.env
+.env.*

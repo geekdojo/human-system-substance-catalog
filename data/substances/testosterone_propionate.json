@@ -1,0 +1,133 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "testosterone_propionate",
+  "name": "Testosterone propionate",
+  "class": "Short-chain androgen ester (Schedule III)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "intramuscular"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 25,
+    "amount_high": 100,
+    "unit": "mg",
+    "cadence": "every_other_day"
+  },
+  "description": "A short-chain ester of testosterone with a shorter duration of action than cypionate or enanthate, requiring more frequent administration. A Schedule III controlled substance.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Androgen replacement; placed on the gonads by intended effect.",
+      "evidence": [
+        "curation:testosterone_propionate"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Lean-mass accrual is an intended effect.",
+      "evidence": [
+        "curation:testosterone_propionate"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Erythrocytosis is a class risk.",
+      "evidence": [
+        "curation:testosterone_propionate"
+      ]
+    },
+    {
+      "key": "prostate",
+      "relation": "burdens",
+      "note": "Prostatic growth and rising PSA are labelled.",
+      "evidence": [
+        "curation:testosterone_propionate"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Androgen class hepatic effects.",
+      "evidence": [
+        "curation:testosterone_propionate"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "testosterone_total",
+      "why": "Replacement adequacy; the short ester makes timing relative to injection critical.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:testosterone_propionate"
+      ]
+    },
+    {
+      "marker_key": "hematocrit",
+      "why": "Class erythrocytosis risk.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:testosterone_propionate"
+      ]
+    },
+    {
+      "marker_key": "estradiol",
+      "why": "Aromatisation of the administered androgen.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:testosterone_propionate"
+      ]
+    },
+    {
+      "marker_key": "psa_total",
+      "why": "Labelled prostate monitoring.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:testosterone_propionate"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:testosterone_propionate",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Testosterone propionate",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "testosterone propionate",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "livertox",
+      "queried": "Testosterone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Testosterone propionate",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Testosterone propionate",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

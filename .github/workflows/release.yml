@@ -1,0 +1,121 @@
+name: release
+
+on:
+  push:
+    tags: ['20[0-9][0-9].[0-1][0-9].[0-9]*']
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'CalVer version to build, e.g. 2026.08.1. Defaults to the current UTC month, micro 1.'
+        required: false
+        type: string
+      draft:
+        description: 'Create the release as a draft.'
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  # CI is the gate. A release cannot be cut from data that does not validate.
+  gate:
+    name: ci gate
+    uses: ./.github/workflows/ci.yml
+
+  release:
+    name: build and publish
+    needs: gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # release notes diff against the previous tag
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Resolve version
+        id: v
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            VERSION="${GITHUB_REF_NAME}"
+          elif [ -n "${{ inputs.version }}" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="$(node -e 'const d=new Date();console.log(`${d.getUTCFullYear()}.${String(d.getUTCMonth()+1).padStart(2,"0")}.1`)')"
+          fi
+          case "$VERSION" in
+            20[0-9][0-9].0[1-9].*|20[0-9][0-9].1[0-2].*) ;;
+            *) echo "::error::'$VERSION' is not CalVer YYYY.MM.MICRO"; exit 1 ;;
+          esac
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Releasing $VERSION"
+
+      - name: Refuse a downgrade
+        run: |
+          PREV="$(git tag -l '20*.*.*' | sort -t. -k1,1n -k2,2n -k3,3n | tail -1)"
+          if [ -z "$PREV" ] || [ "$PREV" = "${{ steps.v.outputs.version }}" ]; then
+            echo "No earlier release to compare against."; exit 0
+          fi
+          node -e '
+            const cmp = (a, b) => { const p = s => s.split(".").map(Number);
+              const [x, y] = [p(a), p(b)];
+              for (let i = 0; i < 3; i++) if (x[i] !== y[i]) return x[i] - y[i];
+              return 0; };
+            const [prev, next] = process.argv.slice(1);
+            if (cmp(next, prev) <= 0) { console.error(`refusing downgrade: ${next} is not newer than ${prev}`); process.exit(1); }
+            console.log(`${next} > ${prev}: OK`);
+          ' "$PREV" "${{ steps.v.outputs.version }}"
+
+      - name: Build the bundle
+        run: node tools/build.mjs --version '${{ steps.v.outputs.version }}'
+
+      - name: Generate release notes
+        id: notes
+        run: |
+          VERSION='${{ steps.v.outputs.version }}'
+          PREV="$(git tag -l '20*.*.*' | grep -v "^${VERSION}$" | sort -t. -k1,1n -k2,2n -k3,3n | tail -1 || true)"
+          if [ -n "$PREV" ]; then
+            mkdir -p /tmp/prev
+            git archive "$PREV" data/substances 2>/dev/null | tar -x -C /tmp/prev || true
+          fi
+          node tools/release-notes.mjs \
+            --version "$VERSION" \
+            --previous "${PREV:-}" \
+            --previous-dir /tmp/prev/data/substances \
+            > RELEASE_NOTES.md
+          cat RELEASE_NOTES.md
+
+      - name: Publish the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION='${{ steps.v.outputs.version }}'
+          DRAFT=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.draft }}" = "true" ]; then
+            DRAFT="--draft"
+          fi
+          gh release create "$VERSION" \
+            --title "substance-catalog $VERSION" \
+            --notes-file RELEASE_NOTES.md \
+            $DRAFT \
+            "dist/catalog-${VERSION}.json" \
+            "dist/catalog-${VERSION}.json.sha256"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ steps.v.outputs.version }}
+          path: |
+            dist/
+            RELEASE_NOTES.md
+          if-no-files-found: error

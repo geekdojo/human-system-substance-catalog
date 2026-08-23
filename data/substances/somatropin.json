@@ -1,0 +1,148 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "somatropin",
+  "name": "Somatropin",
+  "aka": [
+    "Genotropin",
+    "Norditropin",
+    "Humatrope",
+    "Omnitrope"
+  ],
+  "class": "Recombinant human growth hormone",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 0.15,
+    "amount_high": 1,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "Recombinant human growth hormone, identical in sequence to pituitary somatotropin. Approved for growth hormone deficiency in children and adults and for several specific growth disorders.",
+  "systems": [
+    {
+      "key": "pituitary",
+      "relation": "acts_on",
+      "note": "Replaces the pituitary somatotropic output; placed by intended effect on the GH axis.",
+      "evidence": [
+        "openfda:1058e17c-9261-459c-a3e6-fae38d196c14"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Anabolic effect on lean soft tissue is a labelled and intended outcome.",
+      "evidence": [
+        "openfda:1058e17c-9261-459c-a3e6-fae38d196c14"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Growth hormone antagonises insulin action; glucose intolerance is labelled.",
+      "evidence": [
+        "openfda:1058e17c-9261-459c-a3e6-fae38d196c14"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "IGF-1 is produced hepatically and transaminase movement is reported.",
+      "evidence": [
+        "unitox:SOMATROPIN"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "igf1",
+      "why": "The stable downstream index of GH exposure and the standard titration marker.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:1058e17c-9261-459c-a3e6-fae38d196c14"
+      ]
+    },
+    {
+      "marker_key": "igfbp3",
+      "why": "Read with IGF-1 to interpret the free fraction under GH replacement.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:1058e17c-9261-459c-a3e6-fae38d196c14"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "Growth hormone induces insulin resistance.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:1058e17c-9261-459c-a3e6-fae38d196c14"
+      ]
+    },
+    {
+      "marker_key": "glucose_fasting",
+      "why": "Interval tracking of GH-induced insulin resistance.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:1058e17c-9261-459c-a3e6-fae38d196c14"
+      ]
+    },
+    {
+      "marker_key": "ft4",
+      "why": "Growth hormone alters peripheral thyroid hormone conversion.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:1058e17c-9261-459c-a3e6-fae38d196c14"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:somatropin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Somatropin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00888",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00888 \"Somatropin\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:1058e17c-9261-459c-a3e6-fae38d196c14",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1058e17c-9261-459c-a3e6-fae38d196c14",
+      "title": "FDA Structured Product Label: Norditropin",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 1058e17c-9261-459c-a3e6-fae38d196c14, effective 20250707. 7 label record(s) matched."
+    },
+    {
+      "id": "unitox:SOMATROPIN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"SOMATROPIN\". Ternary ratings — cardio:Less, liver:Less, renal:No, heme:No, fertility:No, pulm:Most, oto:Most, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Growth Hormone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

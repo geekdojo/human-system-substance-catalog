@@ -1,0 +1,110 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "lemborexant",
+  "name": "Lemborexant",
+  "aka": [
+    "Dayvigo"
+  ],
+  "class": "Dual orexin receptor antagonist (Schedule IV)",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 10,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A dual orexin receptor antagonist approved for insomnia, with faster receptor dissociation than suvorexant.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Orexin receptor blockade; the labelled mechanism.",
+      "evidence": [
+        "openfda:7074cb65-77b3-45d2-8e8d-da8dc0f70bfd",
+        "livertox:NBK574492"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "CYP3A-metabolised; contraindicated in severe hepatic impairment.",
+      "evidence": [
+        "openfda:7074cb65-77b3-45d2-8e8d-da8dc0f70bfd",
+        "livertox:NBK574492",
+        "unitox:LEMBOREXANT"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Labelled contraindication in severe hepatic impairment.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:7074cb65-77b3-45d2-8e8d-da8dc0f70bfd",
+        "livertox:NBK574492"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "Labelled next-day somnolence and worsening depression.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:7074cb65-77b3-45d2-8e8d-da8dc0f70bfd"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:lemborexant",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Lemborexant",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT03700",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT03700 \"Lemborexant\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK574492",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK574492/",
+      "title": "LiverTox: Lemborexant",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:7074cb65-77b3-45d2-8e8d-da8dc0f70bfd",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7074cb65-77b3-45d2-8e8d-da8dc0f70bfd",
+      "title": "FDA Structured Product Label: DAYVIGO",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 7074cb65-77b3-45d2-8e8d-da8dc0f70bfd, effective 20250224. 1 label record(s) matched."
+    },
+    {
+      "id": "unitox:LEMBOREXANT",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"LEMBOREXANT\". Ternary ratings — cardio:Less, liver:Less, renal:No, heme:No, fertility:Most, pulm:Less, oto:No, derm:No. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

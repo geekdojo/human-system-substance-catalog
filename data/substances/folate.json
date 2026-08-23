@@ -1,0 +1,136 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "folate",
+  "name": "Folate",
+  "aka": [
+    "folic acid",
+    "L-methylfolate",
+    "5-MTHF"
+  ],
+  "class": "B-vitamin one-carbon cofactor",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 400,
+    "amount_high": 1000,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A B-vitamin cofactor in one-carbon metabolism. Supplemental folate can mask the haematological signs of vitamin B12 deficiency while the neurological damage progresses, which is why the two are read together.",
+  "systems": [
+    {
+      "key": "blood",
+      "relation": "acts_on",
+      "note": "Repletion of a cofactor required for erythropoiesis; the intended effect.",
+      "evidence": [
+        "pubmed:32845472",
+        "pubmed:38649347",
+        "curation:folate"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "confounds",
+      "note": "Masks the macrocytosis of B12 deficiency while neurological damage continues.",
+      "evidence": [
+        "curation:folate"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "folate",
+      "why": "The direct index of intake.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:folate"
+      ]
+    },
+    {
+      "marker_key": "vitamin_b12",
+      "why": "Folate masks the haematological signal of B12 deficiency; the two must be read together.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:folate"
+      ]
+    },
+    {
+      "marker_key": "homocysteine",
+      "why": "The functional readout of one-carbon sufficiency.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:folate"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:folate",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Folate",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01580",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01580 \"Folic acid\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:025fee85-53a8-4161-a806-44fd95d0ca74",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=025fee85-53a8-4161-a806-44fd95d0ca74",
+      "title": "FDA Structured Product Label: Integra F",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 025fee85-53a8-4161-a806-44fd95d0ca74, effective 20221108. 159 label record(s) matched."
+    },
+    {
+      "id": "pubmed:32845472",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32845472/",
+      "title": "Folic Acid Supplementation in Patients with Elevated Homocysteine Levels.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 32845472 (Adv Ther, 2020 Oct) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:38649347",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38649347/",
+      "title": "Folic acid supplementation on inflammation and homocysteine in type 2 diabetes mellitus: systematic review and meta-analysis of randomized controlled trials.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 38649347 (Nutr Diabetes, 2024 Apr 22) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "unitox:FOLIC ACID",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"FOLIC ACID\". Ternary ratings — cardio:No, liver:No, renal:No, heme:Less, fertility:No, pulm:Less, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Folate",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

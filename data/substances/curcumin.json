@@ -1,0 +1,151 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "curcumin",
+  "name": "Curcumin",
+  "aka": [
+    "turmeric extract",
+    "diferuloylmethane"
+  ],
+  "class": "Polyphenol from Curcuma longa",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 500,
+    "amount_high": 2000,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "The principal curcuminoid of turmeric, taken for anti-inflammatory effect. Bioavailability is poor and is commonly enhanced with piperine or lipid formulations. Turmeric and curcumin products are a recognised and rising cause of herb-induced liver injury.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Taken for anti-inflammatory effect; the intended effect.",
+      "evidence": [
+        "pubmed:35063475",
+        "pubmed:36596445",
+        "curation:curcumin"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Turmeric and curcumin are a documented and increasing cause of herb-induced liver injury, notably with bioavailability enhancers.",
+      "evidence": [
+        "livertox:NBK548561",
+        "pubmed:35063475",
+        "pubmed:36596445",
+        "curation:curcumin"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Antiplatelet effect is described.",
+      "evidence": [
+        "curation:curcumin"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Documented and rising herb-induced liver injury; this is the specific, non-generic concern for this supplement.",
+      "cadence_days": 180,
+      "evidence": [
+        "livertox:NBK548561",
+        "pubmed:35063475",
+        "pubmed:36596445"
+      ]
+    },
+    {
+      "marker_key": "bilirubin_total",
+      "why": "The reported injury pattern includes a hepatocellular picture with jaundice.",
+      "cadence_days": 180,
+      "evidence": [
+        "livertox:NBK548561",
+        "pubmed:35063475",
+        "pubmed:36596445"
+      ]
+    },
+    {
+      "marker_key": "ast",
+      "why": "Read with ALT to characterise the injury as hepatocellular.",
+      "cadence_days": 180,
+      "evidence": [
+        "livertox:NBK548561",
+        "pubmed:35063475",
+        "pubmed:36596445"
+      ]
+    },
+    {
+      "marker_key": "crp_hs",
+      "why": "The accessible index of the anti-inflammatory effect claimed.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:curcumin"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:curcumin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Curcumin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK548561",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548561/",
+      "title": "LiverTox: Turmeric",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:e6f26cf4-dc3d-4d31-aa3e-145167b6ba2b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e6f26cf4-dc3d-4d31-aa3e-145167b6ba2b",
+      "title": "FDA Structured Product Label: Immune Support",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id e6f26cf4-dc3d-4d31-aa3e-145167b6ba2b, effective 20221130. 1 label record(s) matched."
+    },
+    {
+      "id": "pubmed:35063475",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35063475/",
+      "title": "Curcumin mitigates aflatoxin B1-induced liver injury via regulating the NLRP3 inflammasome and Nrf2 signaling pathway.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 35063475 (Food Chem Toxicol, 2022 Mar) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:36596445",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36596445/",
+      "title": "Curcumin attenuates AFB1-induced duck liver injury by inhibiting oxidative stress and lysosomal damage.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 36596445 (Food Chem Toxicol, 2023 Feb) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Curcumin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

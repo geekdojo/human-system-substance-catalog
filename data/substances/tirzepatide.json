@@ -1,0 +1,163 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "tirzepatide",
+  "name": "Tirzepatide",
+  "aka": [
+    "Mounjaro",
+    "Zepbound"
+  ],
+  "class": "GLP-1 / GIP dual receptor agonist",
+  "category": "glp1",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 2.5,
+    "amount_high": 15,
+    "unit": "mg",
+    "cadence": "weekly"
+  },
+  "description": "A dual glucose-dependent insulinotropic polypeptide (GIP) and GLP-1 receptor agonist given once weekly by subcutaneous injection. Approved as Mounjaro for type 2 diabetes and as Zepbound for chronic weight management and obstructive sleep apnoea in obesity.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Glucose-dependent insulin secretion via GIP and GLP-1 receptors on the beta cell; the intended site of action.",
+      "evidence": [
+        "openfda:0818426a-53eb-4db7-9609-bbae1e7a3964",
+        "livertox:NBK581694"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Weight loss under incretin agonism is not fat-selective; lean mass falls alongside fat mass.",
+      "evidence": [
+        "curation:tirzepatide"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation and hepatobiliary events appear in labelling and in the DILI literature.",
+      "evidence": [
+        "livertox:NBK581694"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "confounds",
+      "note": "Rapid weight and volume change moves the lipid panel independently of any lipid agent.",
+      "evidence": [
+        "curation:tirzepatide"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "The direct index of the glycaemic effect the drug is given for.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0818426a-53eb-4db7-9609-bbae1e7a3964"
+      ]
+    },
+    {
+      "marker_key": "glucose_fasting",
+      "why": "Tracks the glycaemic response between A1c draws.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:0818426a-53eb-4db7-9609-bbae1e7a3964"
+      ]
+    },
+    {
+      "marker_key": "lipase",
+      "why": "Pancreatitis is a labelled risk; lipase is the specific enzyme.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0818426a-53eb-4db7-9609-bbae1e7a3964"
+      ]
+    },
+    {
+      "marker_key": "amylase",
+      "why": "Read with lipase; the pair is what a pancreatic panel reports.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0818426a-53eb-4db7-9609-bbae1e7a3964"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Hepatobiliary events are labelled; ALT is the sentinel transaminase.",
+      "cadence_days": 180,
+      "evidence": [
+        "livertox:NBK581694"
+      ]
+    },
+    {
+      "marker_key": "lean_mass",
+      "why": "Distinguishes lean-mass loss from fat loss during the weight-loss phase.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:tirzepatide"
+      ]
+    },
+    {
+      "marker_key": "body_fat_pct",
+      "why": "Read with lean mass to show whether the loss was fat-selective.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:tirzepatide"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:tirzepatide",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Tirzepatide",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK581694",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK581694/",
+      "title": "LiverTox: Tirzepatide",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:0818426a-53eb-4db7-9609-bbae1e7a3964",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0818426a-53eb-4db7-9609-bbae1e7a3964",
+      "title": "FDA Structured Product Label: MOUNJARO",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0818426a-53eb-4db7-9609-bbae1e7a3964, effective 20260729. 8 label record(s) matched."
+    },
+    {
+      "id": "unitox:TIRZEPATIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"TIRZEPATIDE\". Ternary ratings — cardio:Most, liver:No, renal:Most, heme:No, fertility:Most, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "dilirank",
+      "queried": "Tirzepatide",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

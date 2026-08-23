@@ -1,0 +1,122 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "ll_37",
+  "name": "LL-37",
+  "aka": [
+    "cathelicidin LL-37",
+    "hCAP-18 fragment"
+  ],
+  "class": "Cathelicidin antimicrobial peptide",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 500,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "The only human cathelicidin-derived antimicrobial peptide, a 37-residue cationic peptide with both antimicrobial and immunomodulatory activity in vitro. It has no FDA-approved product and no approved human labelling. No FDA label exists.",
+  "systems": [
+    {
+      "key": "blood",
+      "relation": "acts_on",
+      "note": "Immunomodulatory and antimicrobial activity is the intended effect.",
+      "evidence": [
+        "pubmed:27117377",
+        "pubmed:35634307",
+        "curation:ll_37"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Cationic peptides carry a general nephrotoxicity concern; uncharacterised for this peptide in humans.",
+      "evidence": [
+        "curation:ll_37"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "No human safety data and no product-quality control.",
+      "evidence": [
+        "curation:ll_37"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "creatinine",
+      "why": "Cationic peptide class nephrotoxicity concern with no human data.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:ll_37"
+      ]
+    },
+    {
+      "marker_key": "wbc",
+      "why": "Immunomodulatory intent.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:ll_37"
+      ]
+    },
+    {
+      "marker_key": "crp_hs",
+      "why": "The accessible index of systemic inflammatory effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:ll_37"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:ll_37",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: LL-37",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:27117377",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27117377/",
+      "title": "LL-37: Cathelicidin-related antimicrobial peptide with pleiotropic activity.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 27117377 (Pharmacol Rep, 2016 Aug) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:35634307",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35634307/",
+      "title": "Upregulating Human Cathelicidin Antimicrobial Peptide LL-37 Expression May Prevent Severe COVID-19 Inflammatory Responses and Reduce Microthrombosis.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 35634307 (Front Immunol, 2022) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "LL-37",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "LL-37",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

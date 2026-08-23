@@ -1,0 +1,134 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "nac",
+  "name": "N-acetylcysteine",
+  "aka": [
+    "NAC",
+    "Acetadote",
+    "Mucomyst"
+  ],
+  "class": "Glutathione precursor and mucolytic",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral",
+    "intravenous",
+    "inhaled"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 600,
+    "amount_high": 1800,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "The acetylated form of cysteine, a rate-limiting glutathione precursor. FDA-approved as a prescription antidote for paracetamol overdose and as a mucolytic; separately sold as a dietary supplement, a status the FDA has contested.",
+  "systems": [
+    {
+      "key": "liver",
+      "relation": "acts_on",
+      "note": "Glutathione repletion; the basis of the approved antidote indication and of supplemental use.",
+      "evidence": [
+        "openfda:2324d60b-4f49-4759-a46e-a06bfce7e8aa",
+        "livertox:NBK548401",
+        "pubmed:35975308",
+        "pubmed:33783984"
+      ]
+    },
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Studied for glutamatergic modulation in compulsive and psychiatric conditions.",
+      "evidence": [
+        "pubmed:35975308",
+        "pubmed:33783984",
+        "curation:nac"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Anaphylactoid reactions are labelled for the intravenous route.",
+      "evidence": [
+        "openfda:2324d60b-4f49-4759-a46e-a06bfce7e8aa"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Glutathione repletion is the hepatic rationale it is taken under.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:nac"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:nac",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: N-acetylcysteine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01041",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01041 \"Acetylcysteine\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548401",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548401/",
+      "title": "LiverTox: Acetylcysteine",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:2324d60b-4f49-4759-a46e-a06bfce7e8aa",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2324d60b-4f49-4759-a46e-a06bfce7e8aa",
+      "title": "FDA Structured Product Label: Acetylcysteine",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 2324d60b-4f49-4759-a46e-a06bfce7e8aa, effective 20220405. 21 label record(s) matched."
+    },
+    {
+      "id": "pubmed:33783984",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33783984/",
+      "title": "Glycine and N-acetylcysteine (GlyNAC) supplementation in older adults improves glutathione deficiency, oxidative stress, mitochondrial dysfunction, inflammation, insulin resistance, endothelial dysfunction, genotoxicity, muscle strength, and cognition: Results of a pilot clinical trial.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 33783984 (Clin Transl Med, 2021 Mar) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:35975308",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35975308/",
+      "title": "Supplementing Glycine and N-Acetylcysteine (GlyNAC) in Older Adults Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Physical Function, and Aging Hallmarks: A Randomized Clinical Trial.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 35975308 (J Gerontol A Biol Sci Med Sci, 2023 Jan 26) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "unitox:ACETYLCYSTEINE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"ACETYLCYSTEINE\". Ternary ratings — cardio:Less, liver:Less, renal:No, heme:No, fertility:No, pulm:Most, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,123 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "cjc_1295",
+  "name": "CJC-1295",
+  "aka": [
+    "CJC-1295 DAC",
+    "Modified GRF(1-29)",
+    "tetrasubstituted GRF"
+  ],
+  "class": "Long-acting GHRH analogue",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 2000,
+    "unit": "mcg",
+    "cadence": "weekly",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A modified growth hormone-releasing factor analogue, circulated with and without a drug-affinity complex (DAC) that extends half-life by albumin binding. It has no FDA-approved product, no approved labelling, and is sold for laboratory research use. No FDA label exists. Not equivalent to an approved growth-hormone product.",
+  "systems": [
+    {
+      "key": "pituitary",
+      "relation": "acts_on",
+      "note": "GHRH receptor agonism at the somatotroph; placed on the pituitary by intended effect.",
+      "evidence": [
+        "pubmed:16352683",
+        "pubmed:34665524",
+        "curation:cjc_1295"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Sought for downstream anabolic and body-composition effect.",
+      "evidence": [
+        "curation:cjc_1295"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Sustained GH elevation antagonises insulin action.",
+      "evidence": [
+        "curation:cjc_1295"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "igf1",
+      "why": "The only practical index of achieved GH exposure; no approved dosing reference exists.",
+      "cadence_days": 90,
+      "evidence": [
+        "pubmed:16352683",
+        "pubmed:34665524",
+        "curation:cjc_1295"
+      ]
+    },
+    {
+      "marker_key": "glucose_fasting",
+      "why": "GH-induced insulin resistance.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:cjc_1295"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:cjc_1295",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: CJC-1295",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:16352683",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16352683/",
+      "title": "Prolonged stimulation of growth hormone (GH) and insulin-like growth factor I secretion by CJC-1295, a long-acting analog of GH-releasing hormone, in healthy adults.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 16352683 (J Clin Endocrinol Metab, 2006 Mar) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:34665524",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34665524/",
+      "title": "Advances in the detection of growth hormone releasing hormone synthetic analogs.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 34665524 (Drug Test Anal, 2021 Nov) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "CJC-1295",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "CJC-1295",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "CJC-1295",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

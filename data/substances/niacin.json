@@ -1,0 +1,146 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "niacin",
+  "name": "Niacin",
+  "aka": [
+    "nicotinic acid",
+    "vitamin B3",
+    "Niaspan"
+  ],
+  "class": "Nicotinic acid lipid-modifying agent",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 500,
+    "amount_high": 2000,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "Nicotinic acid at pharmacological doses, approved for hyperlipidaemia. Outcome trials in statin-treated populations did not show added cardiovascular benefit. Also sold at nutritional doses as a dietary supplement.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Lipid modification, raising HDL and lowering triglycerides; the labelled indication.",
+      "evidence": [
+        "openfda:0800f4ef-1d98-4c0f-a016-501791973f66",
+        "livertox:NBK548176"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Hepatotoxicity is labelled and is markedly higher with sustained-release presentations.",
+      "evidence": [
+        "openfda:0800f4ef-1d98-4c0f-a016-501791973f66",
+        "livertox:NBK548176",
+        "dilirank:LT00312",
+        "unitox:NIACIN"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Worsened glycaemic control is labelled.",
+      "evidence": [
+        "openfda:0800f4ef-1d98-4c0f-a016-501791973f66"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Hyperuricaemia and gout are labelled.",
+      "evidence": [
+        "openfda:0800f4ef-1d98-4c0f-a016-501791973f66"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Labelled hepatotoxicity, sharply higher on sustained-release forms.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:0800f4ef-1d98-4c0f-a016-501791973f66",
+        "livertox:NBK548176",
+        "dilirank:LT00312"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "Labelled worsening of glycaemic control.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0800f4ef-1d98-4c0f-a016-501791973f66"
+      ]
+    },
+    {
+      "marker_key": "uric_acid",
+      "why": "Labelled hyperuricaemia and gout.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:0800f4ef-1d98-4c0f-a016-501791973f66"
+      ]
+    },
+    {
+      "marker_key": "hdl_c",
+      "why": "The lipid fraction the drug most affects.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0800f4ef-1d98-4c0f-a016-501791973f66"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:niacin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Niacin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00312",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00312 \"Niacin\": vMost-DILI-concern (severity class 7). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548176",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548176/",
+      "title": "LiverTox: Niacin",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:0800f4ef-1d98-4c0f-a016-501791973f66",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0800f4ef-1d98-4c0f-a016-501791973f66",
+      "title": "FDA Structured Product Label: Multivitamin with Fluoride",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0800f4ef-1d98-4c0f-a016-501791973f66, effective 20260327. 43 label record(s) matched."
+    },
+    {
+      "id": "unitox:NIACIN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"NIACIN\". Ternary ratings — cardio:Less, liver:Most, renal:No, heme:Less, fertility:No, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

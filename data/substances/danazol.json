@@ -1,0 +1,133 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "danazol",
+  "name": "Danazol",
+  "aka": [
+    "Danocrine"
+  ],
+  "class": "Attenuated androgen / gonadotropin inhibitor",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 200,
+    "amount_high": 800,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A synthetic attenuated androgen derived from ethisterone, approved for endometriosis, fibrocystic breast disease and hereditary angioedema. It suppresses pituitary gonadotropin output.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Suppression of gonadotropin-driven gonadal steroidogenesis is the intended effect.",
+      "evidence": [
+        "openfda:55ad6325-16f6-4f0c-a1dc-734847052d0b"
+      ]
+    },
+    {
+      "key": "pituitary",
+      "relation": "burdens",
+      "note": "Gonadotropin suppression is the mechanism but the pituitary is not the therapeutic target.",
+      "evidence": [
+        "openfda:55ad6325-16f6-4f0c-a1dc-734847052d0b"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Boxed warning for peliosis hepatis and hepatic adenoma.",
+      "evidence": [
+        "openfda:55ad6325-16f6-4f0c-a1dc-734847052d0b",
+        "dilirank:LT00539",
+        "unitox:DANAZOL"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Boxed warning for thromboembolism; adverse lipid shift is labelled.",
+      "evidence": [
+        "openfda:55ad6325-16f6-4f0c-a1dc-734847052d0b",
+        "unitox:DANAZOL"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Boxed hepatic warning.",
+      "cadence_days": 60,
+      "evidence": [
+        "openfda:55ad6325-16f6-4f0c-a1dc-734847052d0b",
+        "dilirank:LT00539"
+      ]
+    },
+    {
+      "marker_key": "hdl_c",
+      "why": "Marked HDL suppression is labelled.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:55ad6325-16f6-4f0c-a1dc-734847052d0b"
+      ]
+    },
+    {
+      "marker_key": "lh",
+      "why": "Documents the intended gonadotropin suppression.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:55ad6325-16f6-4f0c-a1dc-734847052d0b"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:danazol",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Danazol",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00539",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00539 \"Danazol\": vMost-DILI-concern (severity class 8). FDA-authored, public domain."
+    },
+    {
+      "id": "openfda:55ad6325-16f6-4f0c-a1dc-734847052d0b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=55ad6325-16f6-4f0c-a1dc-734847052d0b",
+      "title": "FDA Structured Product Label: Danazol",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 55ad6325-16f6-4f0c-a1dc-734847052d0b, effective 20241010. 4 label record(s) matched."
+    },
+    {
+      "id": "unitox:DANAZOL",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"DANAZOL\". Ternary ratings — cardio:Most, liver:Most, renal:Less, heme:Most, fertility:Less, pulm:Less, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Danazol",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

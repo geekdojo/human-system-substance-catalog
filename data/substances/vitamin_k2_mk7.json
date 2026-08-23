@@ -1,0 +1,119 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "vitamin_k2_mk7",
+  "name": "Vitamin K2 (menaquinone-7)",
+  "aka": [
+    "MK-7",
+    "menaquinone-7"
+  ],
+  "class": "Menaquinone vitamin K vitamer",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 90,
+    "amount_high": 200,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A long-chain bacterial menaquinone form of vitamin K, a cofactor for gamma-carboxylation of osteocalcin and matrix Gla protein. Taken alongside vitamin D for calcium handling.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Gamma-carboxylation of bone and vascular Gla proteins; the intended effect.",
+      "evidence": [
+        "pubmed:35465686",
+        "pubmed:25694037",
+        "curation:vitamin_k2_mk7"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Directly antagonises vitamin K antagonist anticoagulation; a clinically consequential interaction.",
+      "evidence": [
+        "curation:vitamin_k2_mk7"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "bmd_t_score",
+      "why": "The bone endpoint the supplement is taken for.",
+      "cadence_days": 730,
+      "evidence": [
+        "curation:vitamin_k2_mk7"
+      ]
+    },
+    {
+      "marker_key": "calcium_serum",
+      "why": "Read alongside vitamin D when both are taken for calcium handling.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:vitamin_k2_mk7"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:vitamin_k2_mk7",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Vitamin K2 (menaquinone-7)",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK548213",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548213/",
+      "title": "LiverTox: Vitamin K",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:02445c07-7b4b-cd70-54e8-ebefc814f547",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02445c07-7b4b-cd70-54e8-ebefc814f547",
+      "title": "FDA Structured Product Label: PHYTONADIONE PHYTONADIONE",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 02445c07-7b4b-cd70-54e8-ebefc814f547, effective 20190530. 34 label record(s) matched."
+    },
+    {
+      "id": "pubmed:25694037",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25694037/",
+      "title": "Menaquinone-7 supplementation improves arterial stiffness in healthy postmenopausal women. A double-blind randomised clinical trial.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 25694037 (Thromb Haemost, 2015 May) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:35465686",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35465686/",
+      "title": "Vitamin K2 and D in Patients With Aortic Valve Calcification: A Randomized Double-Blinded Clinical Trial.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 35465686 (Circulation, 2022 May 3) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "unitox:PHYTONADIONE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"PHYTONADIONE\". Ternary ratings — cardio:Less, liver:No, renal:No, heme:Most, fertility:Less, pulm:No, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

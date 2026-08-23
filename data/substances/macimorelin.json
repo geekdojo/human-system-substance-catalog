@@ -1,0 +1,95 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "macimorelin",
+  "name": "Macimorelin",
+  "aka": [
+    "Macrilen"
+  ],
+  "class": "Oral ghrelin receptor agonist (diagnostic)",
+  "category": "peptide",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 0.5,
+    "amount_high": 0.5,
+    "unit": "mg",
+    "cadence": "as_needed"
+  },
+  "description": "An orally active ghrelin receptor agonist approved as a single-dose diagnostic test for adult growth hormone deficiency. It is a diagnostic agent, not a therapy.",
+  "systems": [
+    {
+      "key": "pituitary",
+      "relation": "acts_on",
+      "note": "Provokes somatotroph GH release as a diagnostic challenge; placed on the pituitary by intended effect.",
+      "evidence": [
+        "openfda:6034c9b8-5a36-4961-a5dd-11ebf7bdab78"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "QT prolongation is labelled.",
+      "evidence": [
+        "openfda:6034c9b8-5a36-4961-a5dd-11ebf7bdab78",
+        "unitox:MACIMORELIN ACETATE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "igf1",
+      "why": "Read alongside the provocative test result when characterising the GH axis.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:6034c9b8-5a36-4961-a5dd-11ebf7bdab78"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:macimorelin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Macimorelin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:6034c9b8-5a36-4961-a5dd-11ebf7bdab78",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6034c9b8-5a36-4961-a5dd-11ebf7bdab78",
+      "title": "FDA Structured Product Label: Macrilen",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 6034c9b8-5a36-4961-a5dd-11ebf7bdab78, effective 20210130. 2 label record(s) matched."
+    },
+    {
+      "id": "unitox:MACIMORELIN ACETATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"MACIMORELIN ACETATE\". Ternary ratings — cardio:Most, liver:No, renal:No, heme:No, fertility:No, pulm:No, oto:No, derm:No. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Macimorelin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Macimorelin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

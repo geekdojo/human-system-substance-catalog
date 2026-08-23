@@ -1,0 +1,116 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "aod_9604",
+  "name": "AOD-9604",
+  "aka": [
+    "hGH fragment 176-191"
+  ],
+  "class": "Growth hormone C-terminal fragment",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "subcutaneous",
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 300,
+    "amount_high": 500,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A synthetic analogue of the C-terminal 176-191 fragment of human growth hormone, developed for obesity and abandoned after clinical trials failed to show weight-loss efficacy. It holds self-affirmed GRAS status as a food ingredient in the United States but has no drug approval. Clinical development discontinued for lack of efficacy. No FDA drug approval; a self-affirmed GRAS food-ingredient notification is not a drug approval.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Taken for lipolysis; the intended effect, though trials did not demonstrate weight loss.",
+      "evidence": [
+        "pubmed:11146367",
+        "pubmed:11673763",
+        "curation:aod_9604"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "No approved human dosing reference and no product-quality control.",
+      "evidence": [
+        "curation:aod_9604"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "fat_mass",
+      "why": "The claimed effect; trials failed to demonstrate it, which is itself the reason to measure.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:11146367",
+        "pubmed:11673763",
+        "curation:aod_9604"
+      ]
+    },
+    {
+      "marker_key": "igf1",
+      "why": "Confirms the fragment is not producing systemic GH-like effect, as designed.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:aod_9604"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "No approved safety labelling exists.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:aod_9604"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:aod_9604",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: AOD-9604",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:11146367",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11146367/",
+      "title": "Metabolic studies of a synthetic lipolytic domain (AOD9604) of human growth hormone.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 11146367 (Horm Res, 2000) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:11673763",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11673763/",
+      "title": "Increase of fat oxidation and weight loss in obese mice caused by chronic treatment with human growth hormone or a modified C-terminal fragment.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 11673763 (Int J Obes Relat Metab Disord, 2001 Oct) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "AOD-9604",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "AOD-9604",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

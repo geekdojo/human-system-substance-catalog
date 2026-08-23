@@ -1,0 +1,106 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "oxytocin",
+  "name": "Oxytocin",
+  "aka": [
+    "Pitocin"
+  ],
+  "class": "Posterior pituitary nonapeptide",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "intravenous",
+    "intranasal"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 1,
+    "amount_high": 10,
+    "unit": "units",
+    "cadence": "as_needed"
+  },
+  "description": "A nonapeptide hormone of the posterior pituitary, approved as Pitocin for the initiation or augmentation of uterine contractions. Intranasal use for social or affective effect is off-label and unapproved.",
+  "systems": [
+    {
+      "key": "pituitary",
+      "relation": "acts_on",
+      "note": "Supplies a posterior pituitary hormone; placed on the pituitary by intended effect.",
+      "evidence": [
+        "openfda:03dc86d3-575f-4c65-b06d-2613efbcd943"
+      ]
+    },
+    {
+      "key": "brain",
+      "relation": "burdens",
+      "note": "Central effects sought off-label are not a labelled indication and are uncharacterised at those routes.",
+      "evidence": [
+        "curation:oxytocin"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Antidiuretic activity causes water intoxication and hyponatraemia; labelled.",
+      "evidence": [
+        "openfda:03dc86d3-575f-4c65-b06d-2613efbcd943"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "sodium",
+      "why": "Antidiuretic cross-reactivity causes labelled water intoxication and hyponatraemia.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:03dc86d3-575f-4c65-b06d-2613efbcd943"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:oxytocin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Oxytocin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00827",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00827 \"Oxytocin\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:03dc86d3-575f-4c65-b06d-2613efbcd943",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03dc86d3-575f-4c65-b06d-2613efbcd943",
+      "title": "FDA Structured Product Label: GUNA-GERIATRICS",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 03dc86d3-575f-4c65-b06d-2613efbcd943, effective 20181222. 26 label record(s) matched."
+    },
+    {
+      "id": "unitox:OXYTOCIN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"OXYTOCIN\". Ternary ratings — cardio:Most, liver:No, renal:Less, heme:Most, fertility:No, pulm:No, oto:No, derm:No. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Oxytocin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

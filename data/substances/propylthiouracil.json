@@ -1,0 +1,137 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "propylthiouracil",
+  "name": "Propylthiouracil",
+  "aka": [
+    "PTU"
+  ],
+  "class": "Thionamide antithyroid agent",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 50,
+    "amount_high": 600,
+    "unit": "mg",
+    "cadence": "three_times_daily"
+  },
+  "description": "A thionamide that inhibits thyroid peroxidase and also blocks peripheral T4 to T3 conversion, approved for hyperthyroidism. Carries a boxed warning for severe hepatic injury.",
+  "systems": [
+    {
+      "key": "thyroid",
+      "relation": "acts_on",
+      "note": "Inhibits hormone synthesis and peripheral conversion; the labelled indication.",
+      "evidence": [
+        "openfda:53c5f586-3e72-479d-89ba-379683c8f6ba",
+        "livertox:NBK547973"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Boxed warning for severe hepatic injury including hepatic failure.",
+      "evidence": [
+        "openfda:53c5f586-3e72-479d-89ba-379683c8f6ba",
+        "livertox:NBK547973",
+        "dilirank:LT00136",
+        "unitox:PROPYLTHIOURACIL"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Agranulocytosis is labelled.",
+      "evidence": [
+        "openfda:53c5f586-3e72-479d-89ba-379683c8f6ba",
+        "unitox:PROPYLTHIOURACIL"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Boxed warning for severe hepatic injury; the defining monitoring parameter for this drug.",
+      "cadence_days": 30,
+      "evidence": [
+        "openfda:53c5f586-3e72-479d-89ba-379683c8f6ba",
+        "livertox:NBK547973",
+        "dilirank:LT00136"
+      ]
+    },
+    {
+      "marker_key": "ft4",
+      "why": "Titration parameter that responds faster than TSH.",
+      "cadence_days": 60,
+      "evidence": [
+        "openfda:53c5f586-3e72-479d-89ba-379683c8f6ba"
+      ]
+    },
+    {
+      "marker_key": "tsh",
+      "why": "Lags the free hormones early in therapy.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:53c5f586-3e72-479d-89ba-379683c8f6ba"
+      ]
+    },
+    {
+      "marker_key": "neutrophils_absolute",
+      "why": "Labelled agranulocytosis risk.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:53c5f586-3e72-479d-89ba-379683c8f6ba"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:propylthiouracil",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Propylthiouracil",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00136",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00136 \"Propylthiouracil\": vMost-DILI-concern (severity class 8). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK547973",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547973/",
+      "title": "LiverTox: Propylthiouracil",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:53c5f586-3e72-479d-89ba-379683c8f6ba",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=53c5f586-3e72-479d-89ba-379683c8f6ba",
+      "title": "FDA Structured Product Label: Propylthiouracil",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 53c5f586-3e72-479d-89ba-379683c8f6ba, effective 20231226. 8 label record(s) matched."
+    },
+    {
+      "id": "unitox:PROPYLTHIOURACIL",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"PROPYLTHIOURACIL\". Ternary ratings — cardio:Less, liver:Most, renal:Most, heme:Most, fertility:Less, pulm:Most, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

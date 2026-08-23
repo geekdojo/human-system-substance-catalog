@@ -1,0 +1,126 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "telmisartan",
+  "name": "Telmisartan",
+  "aka": [
+    "Micardis"
+  ],
+  "class": "Angiotensin II receptor blocker with partial PPAR-gamma activity",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 20,
+    "amount_high": 80,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A long-acting angiotensin II receptor blocker approved for hypertension and cardiovascular risk reduction, with partial PPAR-gamma agonist activity that distinguishes it metabolically within the class. Boxed warning for foetal toxicity.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Blood pressure reduction and cardiovascular risk reduction; the labelled indications.",
+      "evidence": [
+        "openfda:09d31eee-cd22-4918-a889-3eb4d2969525",
+        "livertox:NBK548042"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Hyperkalaemia and creatinine rise are labelled.",
+      "evidence": [
+        "openfda:09d31eee-cd22-4918-a889-3eb4d2969525",
+        "unitox:TELMISARTAN"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Biliary excretion predominates; caution in hepatic impairment is labelled.",
+      "evidence": [
+        "openfda:09d31eee-cd22-4918-a889-3eb4d2969525",
+        "livertox:NBK548042",
+        "unitox:TELMISARTAN"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "potassium",
+      "why": "Labelled hyperkalaemia.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:09d31eee-cd22-4918-a889-3eb4d2969525"
+      ]
+    },
+    {
+      "marker_key": "creatinine",
+      "why": "Labelled creatinine rise.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:09d31eee-cd22-4918-a889-3eb4d2969525"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "Partial PPAR-gamma activity gives this agent a metabolic effect the class otherwise lacks.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:telmisartan"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:telmisartan",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Telmisartan",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT02063",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT02063 \"Telmisartan\": vLess-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548042",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548042/",
+      "title": "LiverTox: Telmisartan",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:09d31eee-cd22-4918-a889-3eb4d2969525",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09d31eee-cd22-4918-a889-3eb4d2969525",
+      "title": "FDA Structured Product Label: telmisartan",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 09d31eee-cd22-4918-a889-3eb4d2969525, effective 20260605. 55 label record(s) matched."
+    },
+    {
+      "id": "unitox:TELMISARTAN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"TELMISARTAN\". Ternary ratings — cardio:Less, liver:Less, renal:Most, heme:Less, fertility:No, pulm:No, oto:Less, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,125 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "magnesium_glycinate",
+  "name": "Magnesium glycinate",
+  "aka": [
+    "magnesium bisglycinate"
+  ],
+  "class": "Chelated magnesium salt",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 200,
+    "amount_high": 400,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "Magnesium chelated to glycine, a form chosen for absorption and low osmotic laxative effect relative to magnesium oxide or citrate. Magnesium is a cofactor for several hundred enzymatic reactions.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Repletion of an enzymatic cofactor; the intended effect.",
+      "evidence": [
+        "pubmed:38215424",
+        "pubmed:34247796",
+        "curation:magnesium_glycinate"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Renally cleared; accumulates to hypermagnesaemia in renal impairment.",
+      "evidence": [
+        "curation:magnesium_glycinate"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "magnesium_rbc",
+      "why": "Tracks body stores more closely than the serum value, which is tightly regulated.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:magnesium_glycinate"
+      ]
+    },
+    {
+      "marker_key": "magnesium_serum",
+      "why": "The commonly available assay, though a poor index of total body stores.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:magnesium_glycinate"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Accumulation in renal impairment is the specific concern.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:magnesium_glycinate"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:magnesium_glycinate",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Magnesium glycinate",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:001817ea-906e-47f7-8605-41ba5a9abd21",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=001817ea-906e-47f7-8605-41ba5a9abd21",
+      "title": "FDA Structured Product Label: Acid Reducer",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 001817ea-906e-47f7-8605-41ba5a9abd21, effective 20260121. 966 label record(s) matched."
+    },
+    {
+      "id": "pubmed:34247796",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34247796/",
+      "title": "Effect of oral magnesium supplementation for relieving leg cramps during pregnancy: A meta-analysis of randomized controlled trials.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 34247796 (Taiwan J Obstet Gynecol, 2021 Jul) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:38215424",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38215424/",
+      "title": "Does Magnesium Supplementation Treat Nocturnal Leg Cramps?",
+      "retrieved": "2026-08-23",
+      "note": "PMID 38215424 (Am Fam Physician, 2023 Dec) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "unitox:MAGNESIUM SULFATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"MAGNESIUM SULFATE\". Ternary ratings — cardio:Most, liver:No, renal:Most, heme:No, fertility:No, pulm:Most, oto:No, derm:No. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Magnesium",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

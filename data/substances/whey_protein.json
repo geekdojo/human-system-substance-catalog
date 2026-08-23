@@ -1,0 +1,119 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "whey_protein",
+  "name": "Whey protein",
+  "aka": [
+    "whey protein isolate",
+    "whey protein concentrate"
+  ],
+  "class": "Complete dairy protein isolate",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 20,
+    "amount_high": 50,
+    "unit": "g",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "The soluble protein fraction of milk, a complete protein rich in leucine. Used to meet protein intake targets supporting muscle protein synthesis; it is a food ingredient rather than a pharmacological agent.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Supplies dietary protein and leucine supporting muscle protein synthesis; the intended effect.",
+      "evidence": [
+        "pubmed:40871607",
+        "pubmed:37571361",
+        "curation:whey_protein"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "confounds",
+      "note": "Raises blood urea nitrogen and, at high intakes, creatinine, through protein load rather than reduced filtration.",
+      "evidence": [
+        "curation:whey_protein"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "lean_mass",
+      "why": "The effect the supplement is taken for.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:40871607",
+        "pubmed:37571361",
+        "curation:whey_protein"
+      ]
+    },
+    {
+      "marker_key": "bun",
+      "why": "Rises with protein load without a fall in filtration.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:whey_protein"
+      ]
+    },
+    {
+      "marker_key": "cystatin_c",
+      "why": "Filtration marker unaffected by protein or muscle mass.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:whey_protein"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:whey_protein",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Whey protein",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:6a12aa49-35fc-41f4-bec8-6f9a20a97caa",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6a12aa49-35fc-41f4-bec8-6f9a20a97caa",
+      "title": "FDA Structured Product Label: Psora Miasm",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 6a12aa49-35fc-41f4-bec8-6f9a20a97caa, effective 20250313. 2 label record(s) matched."
+    },
+    {
+      "id": "pubmed:37571361",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37571361/",
+      "title": "Effectiveness of Whey Protein Supplementation during Resistance Exercise Training on Skeletal Muscle Mass and Strength in Older People with Sarcopenia: A Systematic Review and Meta-Analysis.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 37571361 (Nutrients, 2023 Aug 2) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:40871607",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40871607/",
+      "title": "Whey Protein Supplementation Combined with Exercise on Muscle Protein Synthesis and the AKT/mTOR Pathway in Healthy Adults: A Systematic Review and Meta-Analysis.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 40871607 (Nutrients, 2025 Aug 8) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Whey protein",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "omega3_epa_dha",
+  "name": "Omega-3 fatty acids (EPA/DHA)",
+  "aka": [
+    "fish oil",
+    "EPA",
+    "DHA"
+  ],
+  "class": "Long-chain omega-3 polyunsaturated fatty acids",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 1,
+    "amount_high": 4,
+    "unit": "g",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "Eicosapentaenoic and docosahexaenoic acid, marine-derived long-chain omega-3 fatty acids, sold as dietary supplements. Purified prescription forms exist separately with approved indications for hypertriglyceridaemia.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Triglyceride reduction and membrane fatty acid modification; the intended effect and the basis of the prescription forms.",
+      "evidence": [
+        "pubmed:33190147",
+        "pubmed:35739003",
+        "curation:omega3_epa_dha"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Prolonged bleeding time at higher intakes; atrial fibrillation signal in the prescription-dose trials.",
+      "evidence": [
+        "pubmed:33190147",
+        "pubmed:35739003",
+        "curation:omega3_epa_dha"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "triglycerides",
+      "why": "The effect the supplement is taken for.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:33190147",
+        "pubmed:35739003",
+        "curation:omega3_epa_dha"
+      ]
+    },
+    {
+      "marker_key": "omega3_index",
+      "why": "The direct membrane-incorporation index of intake.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:omega3_epa_dha"
+      ]
+    },
+    {
+      "marker_key": "platelets",
+      "why": "Prolonged bleeding time at higher intakes.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:omega3_epa_dha"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:omega3_epa_dha",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Omega-3 fatty acids (EPA/DHA)",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:034045d6-5308-4701-b97b-8873e053ec17",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=034045d6-5308-4701-b97b-8873e053ec17",
+      "title": "FDA Structured Product Label: Omega-3-acid ethyl esters",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 034045d6-5308-4701-b97b-8873e053ec17, effective 20231006. 25 label record(s) matched."
+    },
+    {
+      "id": "pubmed:33190147",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33190147/",
+      "title": "Effect of High-Dose Omega-3 Fatty Acids vs Corn Oil on Major Adverse Cardiovascular Events in Patients at High Cardiovascular Risk: The STRENGTH Randomized Clinical Trial.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 33190147 (JAMA, 2020 Dec 8) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:35739003",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35739003/",
+      "title": "Omega-3-fatty acids: Do they prevent cardiovascular disease?",
+      "retrieved": "2026-08-23",
+      "note": "PMID 35739003 (Best Pract Res Clin Endocrinol Metab, 2023 May) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "unitox:OMEGA-3-ACID ETHYL ESTERS",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"OMEGA-3-ACID ETHYL ESTERS\". Ternary ratings — cardio:Less, liver:Most, renal:No, heme:Most, fertility:No, pulm:No, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Omega-3",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Omega-3-acid ethyl esters",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

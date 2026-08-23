@@ -1,0 +1,67 @@
+{
+  "$comment": "Hand-written assertions of the product's placement rule: a compound is placed by INTENDED EFFECT, never by signalling pathway, and never on the organ that merely clears or metabolises it. The build enforces every rule below and fails on a violation. Add a rule when a placement decision was hard enough to be worth freezing; do not add one that merely restates the schema.",
+  "rules_version": 1,
+  "rules": [
+    {
+      "id": "gh_axis_acts_on_pituitary",
+      "reason": "GH secretagogues, GHRH analogues and growth hormone itself are placed on the pituitary — the site of the intended effect — not on liver (where IGF-1 is made) or muscle (where the downstream effect lands).",
+      "$note": "Deliberately matches the GH-AXIS agents only. AOD-9604 is a growth hormone C-terminal fragment with no somatotroph activity, so a bare `growth hormone` match would wrongly demand a pituitary placement for it.",
+      "when": { "class_matches": "GHRH|ghrelin receptor|recombinant human growth hormone|growth hormone derivative" },
+      "require_acts_on": ["pituitary"],
+      "forbid_acts_on": ["liver"]
+    },
+    {
+      "id": "incretin_acts_on_pancreas",
+      "reason": "GLP-1, GIP and amylin agonists are placed on the pancreas. Weight change is a downstream consequence and belongs on `body` as burdens, not as a second acts_on.",
+      "when": { "category_in": ["glp1"] },
+      "require_acts_on": ["pancreas"],
+      "forbid_acts_on": ["body", "liver"]
+    },
+    {
+      "id": "androgen_acts_on_gonads",
+      "reason": "Androgens, androgen esters and anabolic-androgenic steroids are placed on the gonads. Erythrocytosis, prostatic growth and lipid shift are burdens, not intended effects — except where an approved label states otherwise, which is why `blood` is not forbidden here.",
+      "$note": "The lookbehind excludes ANTIandrogens (spironolactone, the 5-alpha-reductase inhibitors), which are not placed on the gonads by this rule.",
+      "when": { "class_matches": "(?<!anti)androgen|anabolic|nortestosterone" },
+      "require_acts_on": ["gonads"],
+      "forbid_acts_on": ["prostate", "liver", "heart"]
+    },
+    {
+      "id": "statin_acts_on_heart",
+      "reason": "The liver is where HMG-CoA reductase sits, but lowering cardiovascular risk is the intended effect. Statins are placed on the heart; the liver is burdens.",
+      "when": { "class_matches": "HMG-CoA reductase" },
+      "require_acts_on": ["heart"],
+      "forbid_acts_on": ["liver"]
+    },
+    {
+      "id": "aromatase_and_serm_act_on_gonads",
+      "reason": "SERMs and aromatase inhibitors are placed on the gonads — the sex-steroid axis they modulate — not on the pituitary that transmits the feedback change.",
+      "when": { "category_in": ["serm"] },
+      "forbid_acts_on": ["pituitary"]
+    },
+    {
+      "id": "thyroid_hormones_act_on_thyroid",
+      "reason": "Thyroid hormones and antithyroid agents are placed on the thyroid. Cardiac and skeletal effects of over- or under-replacement are burdens.",
+      "when": { "class_matches": "thyroxine|triiodothyronine|thionamide|thyroid extract" },
+      "require_acts_on": ["thyroid"],
+      "forbid_acts_on": ["heart", "body"]
+    },
+    {
+      "id": "clearance_organ_is_never_acts_on",
+      "reason": "An organ a compound is merely cleared by, excreted through, or metabolised in is burdens or confounds — never acts_on. This is the rule most easily broken by accident.",
+      "when": { "any_substance": true },
+      "forbid_acts_on_note_matching": "cleared|clearance|excret|metabolis|first[- ]pass|accumulat"
+    },
+    {
+      "id": "toxicity_language_is_never_acts_on",
+      "reason": "A toxicity, injury or adverse-effect claim is never an intended effect. If the note describes harm, the relation must be burdens or confounds.",
+      "when": { "any_substance": true },
+      "forbid_acts_on_note_matching": "toxicit|hepatotox|nephrotox|injury|adverse|boxed warning|no human safety"
+    },
+    {
+      "id": "confounds_must_describe_a_reading",
+      "reason": "`confounds` means the compound distorts a MEASUREMENT without acting on the system. If the note does not talk about a reading, value, marker or assay, the relation is probably burdens.",
+      "when": { "any_substance": true },
+      "require_confounds_note_matching": "read|value|assay|marker|measur|level|signal|panel|estimate|index|interpret|mask|rais|lower|falsely|distort|alter|suppress|normalis|report"
+    }
+  ]
+}

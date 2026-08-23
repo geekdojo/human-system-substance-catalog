@@ -1,0 +1,140 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "berberine",
+  "name": "Berberine",
+  "aka": [
+    "berberine hydrochloride"
+  ],
+  "class": "Isoquinoline alkaloid",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 500,
+    "amount_high": 1500,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A quaternary isoquinoline alkaloid extracted from several plant genera, sold as a dietary supplement and taken for glycaemic and lipid effect. It is a potent CYP3A4 and P-glycoprotein inhibitor, which is the basis of its interaction burden.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Taken for glycaemic effect via AMPK activation; the intended effect.",
+      "evidence": [
+        "pubmed:38762210",
+        "pubmed:37979703",
+        "curation:berberine"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Also taken for LDL cholesterol reduction.",
+      "evidence": [
+        "pubmed:38762210",
+        "pubmed:37979703",
+        "curation:berberine"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Potent CYP3A4 inhibition alters clearance of co-administered drugs; hepatic exposure is substantial.",
+      "evidence": [
+        "pubmed:38762210",
+        "pubmed:37979703",
+        "curation:berberine"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "The glycaemic effect it is taken for.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:38762210",
+        "pubmed:37979703",
+        "curation:berberine"
+      ]
+    },
+    {
+      "marker_key": "glucose_fasting",
+      "why": "Interval glycaemic tracking; additive with glucose-lowering drugs.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:berberine"
+      ]
+    },
+    {
+      "marker_key": "ldl_c",
+      "why": "The lipid effect it is taken for.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:38762210",
+        "pubmed:37979703",
+        "curation:berberine"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Substantial hepatic exposure and CYP3A4 inhibition with no approved labelling.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:berberine"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:berberine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Berberine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:28bd4306-800c-4d98-9b1f-1af37b0dc112",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=28bd4306-800c-4d98-9b1f-1af37b0dc112",
+      "title": "FDA Structured Product Label: Intestipar",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 28bd4306-800c-4d98-9b1f-1af37b0dc112, effective 20260415. 2 label record(s) matched."
+    },
+    {
+      "id": "pubmed:37979703",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37979703/",
+      "title": "Berberine protects mice against type 2 diabetes by promoting PPARγ-FGF21-GLUT2-regulated insulin sensitivity and glucose/lipid homeostasis.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 37979703 (Biochem Pharmacol, 2023 Dec) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:38762210",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38762210/",
+      "title": "Berberine directly targets AKR1B10 protein to modulate lipid and glucose metabolism disorders in NAFLD.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 38762210 (J Ethnopharmacol, 2024 Oct 5) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Berberine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

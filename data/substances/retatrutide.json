@@ -1,0 +1,147 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "retatrutide",
+  "name": "Retatrutide",
+  "aka": [
+    "LY3437943"
+  ],
+  "class": "GLP-1 / GIP / glucagon triple receptor agonist",
+  "category": "glp1",
+  "regulatory_status": "study_only",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 1,
+    "amount_high": 12,
+    "unit": "mg",
+    "cadence": "weekly",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "An investigational triple agonist at the GLP-1, GIP and glucagon receptors, studied for obesity and type 2 diabetes. No marketing authorisation exists in any jurisdiction; all human data come from clinical trials.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Incretin receptor agonism at GLP-1 and GIP; the intended metabolic target.",
+      "evidence": [
+        "pubmed:37366315",
+        "pubmed:40563436",
+        "curation:retatrutide"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Trial weight loss is large and includes a lean-mass component.",
+      "evidence": [
+        "pubmed:37366315",
+        "pubmed:40563436",
+        "curation:retatrutide"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Glucagon receptor agonism raises heart rate in trials.",
+      "evidence": [
+        "pubmed:37366315",
+        "pubmed:40563436",
+        "curation:retatrutide"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "confounds",
+      "note": "Rapid hepatic fat mobilisation moves the transaminase reading independently of any injury.",
+      "evidence": [
+        "curation:retatrutide"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "Glycaemic effect of the incretin components.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:37366315",
+        "pubmed:40563436",
+        "curation:retatrutide"
+      ]
+    },
+    {
+      "marker_key": "lean_mass",
+      "why": "Trial weight loss is not fat-selective.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:retatrutide"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Hepatic fat mobilisation and the absence of a marketed safety record.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:retatrutide"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:retatrutide",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Retatrutide",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:37366315",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+      "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity - A Phase 2 Trial.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 37366315 (N Engl J Med, 2023 Aug 10) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:40563436",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40563436/",
+      "title": "Retatrutide-A Game Changer in Obesity Pharmacotherapy.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 40563436 (Biomolecules, 2025 May 30) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "retatrutide",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "livertox",
+      "queried": "Retatrutide",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Retatrutide",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Retatrutide",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

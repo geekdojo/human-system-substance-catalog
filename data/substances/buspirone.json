@@ -1,0 +1,119 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "buspirone",
+  "name": "Buspirone",
+  "aka": [
+    "Buspar"
+  ],
+  "class": "5-HT1A partial agonist anxiolytic",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 30,
+    "unit": "mg",
+    "cadence": "twice_daily"
+  },
+  "description": "An azapirone 5-HT1A partial agonist approved for generalised anxiety disorder, without the sedation, dependence or withdrawal of benzodiazepines.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "5-HT1A partial agonism; the labelled anxiolytic indication.",
+      "evidence": [
+        "openfda:02628a0c-bfdb-4a58-8e48-bcd8ca12d53b",
+        "livertox:NBK547966"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "CYP3A4-metabolised with extensive first pass; dose reduction is labelled in hepatic impairment.",
+      "evidence": [
+        "openfda:02628a0c-bfdb-4a58-8e48-bcd8ca12d53b",
+        "livertox:NBK547966",
+        "unitox:BUSPIRONE HYDROCHLORIDE"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Dose reduction is labelled in renal impairment.",
+      "evidence": [
+        "openfda:02628a0c-bfdb-4a58-8e48-bcd8ca12d53b",
+        "unitox:BUSPIRONE HYDROCHLORIDE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Labelled dose reduction in hepatic impairment.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:02628a0c-bfdb-4a58-8e48-bcd8ca12d53b",
+        "livertox:NBK547966"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "The accessible instrument for the anxiolytic effect and for emergent mood change.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:buspirone"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:buspirone",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Buspirone",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01148",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01148 \"Buspirone hydrochloride\": Ambiguous-DILI-concern (severity class 3). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK547966",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547966/",
+      "title": "LiverTox: Buspirone",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:02628a0c-bfdb-4a58-8e48-bcd8ca12d53b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02628a0c-bfdb-4a58-8e48-bcd8ca12d53b",
+      "title": "FDA Structured Product Label: Buspirone Hydrochloride",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 02628a0c-bfdb-4a58-8e48-bcd8ca12d53b, effective 20190503. 163 label record(s) matched."
+    },
+    {
+      "id": "unitox:BUSPIRONE HYDROCHLORIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"BUSPIRONE HYDROCHLORIDE\". Ternary ratings — cardio:Less, liver:Most, renal:Less, heme:Less, fertility:No, pulm:No, oto:Less, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

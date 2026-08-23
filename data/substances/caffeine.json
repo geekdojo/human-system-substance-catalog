@@ -1,0 +1,104 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "caffeine",
+  "name": "Caffeine",
+  "aka": [
+    "1,3,7-trimethylxanthine"
+  ],
+  "class": "Methylxanthine adenosine receptor antagonist",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 400,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A methylxanthine adenosine receptor antagonist, the most widely consumed psychoactive compound. Regulated in the United States as a food ingredient, as an OTC stimulant drug, and as a prescription drug for apnoea of prematurity depending on the presentation.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Adenosine receptor antagonism producing wakefulness; the intended effect.",
+      "evidence": [
+        "openfda:00cc94fa-23b7-4148-87a3-669111267522",
+        "livertox:NBK559835"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Dose-dependent blood pressure and heart rate elevation.",
+      "evidence": [
+        "openfda:00cc94fa-23b7-4148-87a3-669111267522"
+      ]
+    },
+    {
+      "key": "brain",
+      "relation": "confounds",
+      "note": "Chronic use degrades sleep architecture, which confounds every sleep-linked reading on the board.",
+      "evidence": [
+        "curation:caffeine"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "who5",
+      "why": "Chronic intake affects sleep and therefore affect; the accessible instrument.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:caffeine"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:caffeine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Caffeine",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK559835",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559835/",
+      "title": "LiverTox: Caffeine",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:00cc94fa-23b7-4148-87a3-669111267522",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00cc94fa-23b7-4148-87a3-669111267522",
+      "title": "FDA Structured Product Label: Stay Awake",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00cc94fa-23b7-4148-87a3-669111267522, effective 20250904. 457 label record(s) matched."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Caffeine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Caffeine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

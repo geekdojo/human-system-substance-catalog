@@ -1,0 +1,145 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "dapagliflozin",
+  "name": "Dapagliflozin",
+  "aka": [
+    "Farxiga"
+  ],
+  "class": "SGLT2 inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 10,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A sodium-glucose cotransporter 2 inhibitor approved for type 2 diabetes, heart failure and chronic kidney disease.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Lowers glycaemia by increasing urinary glucose loss; the intended metabolic effect, placed on the pancreas as the glycaemic system.",
+      "evidence": [
+        "openfda:01f90c94-71cb-4a1f-81ff-8004b850529b"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Heart failure outcome reduction is a labelled indication.",
+      "evidence": [
+        "openfda:01f90c94-71cb-4a1f-81ff-8004b850529b"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "acts_on",
+      "note": "Chronic kidney disease progression reduction is a labelled indication.",
+      "evidence": [
+        "openfda:01f90c94-71cb-4a1f-81ff-8004b850529b"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "confounds",
+      "note": "Produces an expected early eGFR dip that reads as falling filtration but is haemodynamic, not injury.",
+      "evidence": [
+        "curation:dapagliflozin"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Euglycaemic diabetic ketoacidosis is labelled.",
+      "evidence": [
+        "openfda:01f90c94-71cb-4a1f-81ff-8004b850529b"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "Direct index of glycaemic effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:01f90c94-71cb-4a1f-81ff-8004b850529b"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Renal indication and expected initial dip.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:01f90c94-71cb-4a1f-81ff-8004b850529b"
+      ]
+    },
+    {
+      "marker_key": "uacr",
+      "why": "The albuminuria endpoint.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:01f90c94-71cb-4a1f-81ff-8004b850529b"
+      ]
+    },
+    {
+      "marker_key": "beta_hydroxybutyrate",
+      "why": "Labelled euglycaemic ketoacidosis.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:01f90c94-71cb-4a1f-81ff-8004b850529b"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:dapagliflozin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Dapagliflozin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT02891",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT02891 \"Dapagliflozin\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:01f90c94-71cb-4a1f-81ff-8004b850529b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01f90c94-71cb-4a1f-81ff-8004b850529b",
+      "title": "FDA Structured Product Label: FARXIGA",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 01f90c94-71cb-4a1f-81ff-8004b850529b, effective 20260710. 36 label record(s) matched."
+    },
+    {
+      "id": "unitox:DAPAGLIFLOZIN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"DAPAGLIFLOZIN\". Ternary ratings — cardio:Less, liver:Less, renal:Most, heme:Less, fertility:No, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Dapagliflozin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

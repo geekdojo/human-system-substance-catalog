@@ -1,0 +1,103 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "inositol",
+  "name": "Myo-inositol",
+  "aka": [
+    "inositol",
+    "D-chiro-inositol"
+  ],
+  "class": "Cyclic polyol, second messenger precursor",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 2,
+    "amount_high": 4,
+    "unit": "g",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A cyclic sugar alcohol serving as a precursor to inositol phosphate second messengers in the insulin signalling pathway. Studied principally in polycystic ovary syndrome for insulin sensitivity.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Taken for insulin sensitivity via inositol phosphoglycan second messengers; the intended effect.",
+      "evidence": [
+        "pubmed:38163998",
+        "pubmed:27808588",
+        "curation:inositol"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "insulin_fasting",
+      "why": "The insulin-sensitivity endpoint it is taken for.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:38163998",
+        "pubmed:27808588",
+        "curation:inositol"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "Integrated glycaemic effect.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:inositol"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:inositol",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Myo-inositol",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:727f168a-6d9c-4ff5-b161-8bf0642a117b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=727f168a-6d9c-4ff5-b161-8bf0642a117b",
+      "title": "FDA Structured Product Label: Neuro T Support Liquescence",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 727f168a-6d9c-4ff5-b161-8bf0642a117b, effective 20230425. 4 label record(s) matched."
+    },
+    {
+      "id": "pubmed:27808588",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27808588/",
+      "title": "Comparison of two insulin sensitizers, metformin and myo-inositol, in women with polycystic ovary syndrome (PCOS).",
+      "retrieved": "2026-08-23",
+      "note": "PMID 27808588 (Gynecol Endocrinol, 2017 Jan) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:38163998",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38163998/",
+      "title": "Inositol for Polycystic Ovary Syndrome: A Systematic Review and Meta-analysis to Inform the 2023 Update of the International Evidence-based PCOS Guidelines.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 38163998 (J Clin Endocrinol Metab, 2024 May 17) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Inositol",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

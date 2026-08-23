@@ -1,0 +1,121 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "ipamorelin",
+  "name": "Ipamorelin",
+  "aka": [
+    "NNC 26-0161"
+  ],
+  "class": "Selective ghrelin receptor (GHS-R1a) agonist",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 300,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A pentapeptide growth hormone secretagogue acting at the ghrelin receptor, selective relative to earlier secretagogues in that it releases GH with little effect on cortisol or prolactin. It has no FDA-approved product and no approved labelling. No FDA label exists. Not equivalent to an approved growth-hormone product.",
+  "systems": [
+    {
+      "key": "pituitary",
+      "relation": "acts_on",
+      "note": "Ghrelin receptor agonism at the somatotroph driving GH release; placed on the pituitary by intended effect.",
+      "evidence": [
+        "pubmed:9849822",
+        "pubmed:39043357",
+        "curation:ipamorelin"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Sought for downstream anabolic effect.",
+      "evidence": [
+        "curation:ipamorelin"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Raised GH exposure antagonises insulin action.",
+      "evidence": [
+        "curation:ipamorelin"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "igf1",
+      "why": "The practical index of achieved GH exposure.",
+      "cadence_days": 90,
+      "evidence": [
+        "pubmed:9849822",
+        "pubmed:39043357",
+        "curation:ipamorelin"
+      ]
+    },
+    {
+      "marker_key": "glucose_fasting",
+      "why": "GH-induced insulin resistance.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:ipamorelin"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:ipamorelin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Ipamorelin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:39043357",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39043357/",
+      "title": "The growth hormone secretagogue receptor 1a agonists, anamorelin and ipamorelin, inhibit cisplatin-induced weight loss in ferrets: Anamorelin also exhibits anti-emetic effects via a central mechanism.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 39043357 (Physiol Behav, 2024 Oct 1) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:9849822",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9849822/",
+      "title": "Ipamorelin, the first selective growth hormone secretagogue.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 9849822 (Eur J Endocrinol, 1998 Nov) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "ipamorelin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Ipamorelin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Ipamorelin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

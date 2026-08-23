@@ -1,0 +1,140 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "creatine_monohydrate",
+  "name": "Creatine monohydrate",
+  "aka": [
+    "creatine"
+  ],
+  "class": "Phosphagen system substrate",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 3,
+    "amount_high": 5,
+    "unit": "g",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A nitrogenous organic acid that buffers ATP resynthesis through the phosphocreatine system. Among the most extensively studied ergogenic dietary supplements, with consistent effects on high-intensity performance and lean mass.",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Increased intramuscular phosphocreatine supporting high-intensity work and lean mass; the intended effect.",
+      "evidence": [
+        "pubmed:40673730",
+        "pubmed:39509039",
+        "curation:creatine_monohydrate"
+      ]
+    },
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Cognitive effect under sleep deprivation and stress is a secondary studied effect.",
+      "evidence": [
+        "pubmed:40673730",
+        "pubmed:39509039",
+        "curation:creatine_monohydrate"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "confounds",
+      "note": "Raises serum creatinine by substrate loading without reducing filtration; the creatinine-based eGFR reads falsely low.",
+      "evidence": [
+        "pubmed:40673730",
+        "pubmed:39509039",
+        "curation:creatine_monohydrate"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "creatinine",
+      "why": "Rises on creatine loading without a true fall in filtration; this is the classic false-alarm on the board.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:40673730",
+        "pubmed:39509039",
+        "curation:creatine_monohydrate"
+      ]
+    },
+    {
+      "marker_key": "cystatin_c",
+      "why": "Filtration marker unaffected by creatine loading; the value that settles the question.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:creatine_monohydrate"
+      ]
+    },
+    {
+      "marker_key": "egfr_cystatin_c",
+      "why": "The filtration estimate that survives creatine supplementation.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:creatine_monohydrate"
+      ]
+    },
+    {
+      "marker_key": "lean_mass",
+      "why": "The effect the supplement is taken for.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:40673730",
+        "pubmed:39509039",
+        "curation:creatine_monohydrate"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:creatine_monohydrate",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Creatine monohydrate",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:20e20965-61db-44a3-82bf-f1ca18e6b6bc",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=20e20965-61db-44a3-82bf-f1ca18e6b6bc",
+      "title": "FDA Structured Product Label: Colotox",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 20e20965-61db-44a3-82bf-f1ca18e6b6bc, effective 20260120. 4 label record(s) matched."
+    },
+    {
+      "id": "pubmed:39509039",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39509039/",
+      "title": "Effects of Creatine Monohydrate Supplementation on Muscle, Bone and Brain- Hope or Hype for Older Adults?",
+      "retrieved": "2026-08-23",
+      "note": "PMID 39509039 (Curr Osteoporos Rep, 2024 Nov 1) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:40673730",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40673730/",
+      "title": "Creatine monohydrate supplementation for older adults and clinical populations.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 40673730 (J Int Soc Sports Nutr, 2025 Sep) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Creatine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

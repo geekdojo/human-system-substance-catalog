@@ -1,0 +1,139 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "escitalopram",
+  "name": "Escitalopram",
+  "aka": [
+    "Lexapro"
+  ],
+  "class": "Selective serotonin reuptake inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 20,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "The S-enantiomer of citalopram, approved for major depressive disorder and generalised anxiety disorder. Carries a boxed warning for suicidality in young people and a labelled dose-dependent QT effect.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Serotonin reuptake inhibition; the labelled indications.",
+      "evidence": [
+        "openfda:09945404-e4cf-6269-e063-6294a90a5b8d"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Dose-dependent QT prolongation is labelled.",
+      "evidence": [
+        "openfda:09945404-e4cf-6269-e063-6294a90a5b8d",
+        "unitox:ESCITALOPRAM OXALATE"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Hyponatraemia from SIADH is labelled.",
+      "evidence": [
+        "openfda:09945404-e4cf-6269-e063-6294a90a5b8d"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Transaminase elevation is reported.",
+      "evidence": [
+        "unitox:ESCITALOPRAM OXALATE"
+      ]
+    },
+    {
+      "key": "gonads",
+      "relation": "burdens",
+      "note": "Sexual dysfunction is a labelled class effect.",
+      "evidence": [
+        "openfda:09945404-e4cf-6269-e063-6294a90a5b8d",
+        "unitox:ESCITALOPRAM OXALATE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "sodium",
+      "why": "Labelled hyponatraemia from SIADH.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:09945404-e4cf-6269-e063-6294a90a5b8d"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "Boxed suicidality warning.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:09945404-e4cf-6269-e063-6294a90a5b8d"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Reported transaminase elevation.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:escitalopram"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:escitalopram",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Escitalopram",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT02929",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT02929 \"Escitalopram oxalate\": vLess-DILI-concern (severity class 7). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:09945404-e4cf-6269-e063-6294a90a5b8d",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=09945404-e4cf-6269-e063-6294a90a5b8d",
+      "title": "FDA Structured Product Label: Escitalopram",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 09945404-e4cf-6269-e063-6294a90a5b8d, effective 20260602. 33 label record(s) matched."
+    },
+    {
+      "id": "unitox:ESCITALOPRAM OXALATE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"ESCITALOPRAM OXALATE\". Ternary ratings — cardio:Less, liver:Most, renal:Less, heme:Most, fertility:Most, pulm:Most, oto:Less, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Escitalopram",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

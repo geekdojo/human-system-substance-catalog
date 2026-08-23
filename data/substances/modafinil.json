@@ -1,0 +1,119 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "modafinil",
+  "name": "Modafinil",
+  "aka": [
+    "Provigil"
+  ],
+  "class": "Wakefulness-promoting agent (Schedule IV)",
+  "category": "nootropic",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 400,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A wakefulness-promoting agent approved for excessive sleepiness in narcolepsy, obstructive sleep apnoea and shift-work disorder. A Schedule IV controlled substance.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Wakefulness promotion is the labelled indication.",
+      "evidence": [
+        "openfda:013450dd-cd42-46c7-98d6-9a2925761978",
+        "livertox:NBK548274"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Hepatically metabolised with CYP3A4 induction; transaminase elevation is reported.",
+      "evidence": [
+        "livertox:NBK548274",
+        "dilirank:LT00589",
+        "unitox:MODAFINIL"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Blood pressure and heart rate elevation are labelled.",
+      "evidence": [
+        "openfda:013450dd-cd42-46c7-98d6-9a2925761978",
+        "unitox:MODAFINIL"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Reported transaminase elevation and heavy hepatic metabolism.",
+      "cadence_days": 365,
+      "evidence": [
+        "livertox:NBK548274",
+        "dilirank:LT00589"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "Wakefulness agents alter mood and affect alongside alertness.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:modafinil"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:modafinil",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Modafinil",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00589",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00589 \"Modafinil\": vLess-DILI-concern (severity class 3). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548274",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548274/",
+      "title": "LiverTox: Modafinil",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:013450dd-cd42-46c7-98d6-9a2925761978",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=013450dd-cd42-46c7-98d6-9a2925761978",
+      "title": "FDA Structured Product Label: Modafinil",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 013450dd-cd42-46c7-98d6-9a2925761978, effective 20260714. 35 label record(s) matched."
+    },
+    {
+      "id": "unitox:MODAFINIL",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"MODAFINIL\". Ternary ratings — cardio:Most, liver:Less, renal:No, heme:Most, fertility:Less, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,47 @@
+Copyright (c) 2026 Geekdojo. All rights reserved.
+
+PROPRIETARY AND CONFIDENTIAL
+
+This repository and the compound catalog it produces are proprietary works of Geekdojo.
+The curation is the product: the selection of compounds, the assignment of each compound
+to a body system, the distinction between acting on a system and merely burdening or
+confounding it, the choice of monitoring markers and their cadences, the regulatory
+characterisation of each entry, and the descriptive prose are original works of
+authorship, produced at cost, and are not licensed for redistribution.
+
+NO LICENCE IS GRANTED
+
+No permission is granted to copy, modify, merge, publish, distribute, sublicense, sell,
+or create derivative works from this repository or from any bundle it produces, in whole
+or in part, except under a separate written agreement signed by Geekdojo.
+
+UPSTREAM SOURCE MATERIAL
+
+This work incorporates factual material drawn from third-party sources that carry their
+own licences. Those licences apply to that upstream material and are NOT superseded by
+this one. Every such source is recorded per row in `sources[]` and reproduced in full in
+`docs/ATTRIBUTION.md`:
+
+  - openFDA / DailyMed Structured Product Labeling  — CC0-1.0
+  - UniTox (Silberg, Simon, Swanson & Zou, Stanford) — CC BY 4.0
+  - DILIrank 2.0 (U.S. FDA / NCTR)                   — public domain, U.S. Government work
+  - LiverTox (NIDDK, NCBI Bookshelf)                 — public domain
+
+The CC BY 4.0 attribution obligation attaching to UniTox travels with any redistribution
+of material derived from it. `docs/ATTRIBUTION.md` and the `attribution` block inside every
+published bundle exist to discharge that obligation.
+
+WHAT THIS REPOSITORY IS NOT
+
+This repository contains reference data about compounds. It describes no person, contains
+no health data, and is not medical advice, a medical device, or a clinical decision support
+system. Nothing in it recommends starting, stopping, or changing any dose. Interpretation
+belongs to a physician.
+
+NO WARRANTY
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE WORK OR THE USE OR OTHER DEALINGS IN IT.

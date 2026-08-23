@@ -1,0 +1,148 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "melanotan_ii",
+  "name": "Melanotan II",
+  "aka": [
+    "MT-II",
+    "MT2"
+  ],
+  "class": "Non-selective melanocortin receptor agonist",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 250,
+    "amount_high": 1000,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A cyclic heptapeptide analogue of alpha-melanocyte-stimulating hormone acting non-selectively across melanocortin receptors. It has no approval anywhere; the related selective agonists afamelanotide and bremelanotide are separately approved products and are not this compound. No FDA approval in any jurisdiction. Distinct from the approved products afamelanotide (Scenesse) and bremelanotide (Vyleesi).",
+  "systems": [
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Taken for melanogenesis and pigmentation via MC1R; the intended effect.",
+      "evidence": [
+        "pubmed:33332767",
+        "pubmed:36155088",
+        "curation:melanotan_ii"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Non-selective melanocortin agonism raises blood pressure; described for the class.",
+      "evidence": [
+        "curation:melanotan_ii"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Rhabdomyolysis has been reported in the case literature.",
+      "evidence": [
+        "pubmed:33332767",
+        "pubmed:36155088",
+        "curation:melanotan_ii"
+      ]
+    },
+    {
+      "key": "brain",
+      "relation": "burdens",
+      "note": "Nausea, flushing and MC4R-mediated central effects are characteristic.",
+      "evidence": [
+        "curation:melanotan_ii"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "creatinine",
+      "why": "Rhabdomyolysis case reports; renal injury is the specific concern.",
+      "cadence_days": 90,
+      "evidence": [
+        "pubmed:33332767",
+        "pubmed:36155088",
+        "curation:melanotan_ii"
+      ]
+    },
+    {
+      "marker_key": "ck",
+      "why": "Rhabdomyolysis is the reported serious adverse event.",
+      "cadence_days": 90,
+      "evidence": [
+        "pubmed:33332767",
+        "pubmed:36155088",
+        "curation:melanotan_ii"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "No approved safety labelling exists.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:melanotan_ii"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:melanotan_ii",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Melanotan II",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK573221",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK573221/",
+      "title": "LiverTox: Bremelanotide",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "pubmed:33332767",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33332767/",
+      "title": "Melanotan II, a melanocortin agonist, partially rescues the impaired thermogenic capacity of pituitary adenylate cyclase-activating polypeptide deficient mice.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 33332767 (Exp Physiol, 2021 Feb) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:36155088",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36155088/",
+      "title": "Melanocortin receptor agonist melanotan-II microinjected in the nucleus accumbens decreases appetitive and consumptive responding for food.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 36155088 (Neuropeptides, 2022 Dec) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "unitox:BREMELANOTIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"BREMELANOTIDE\". Ternary ratings — cardio:Most, liver:Less, renal:Less, heme:No, fertility:No, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "melanotan",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

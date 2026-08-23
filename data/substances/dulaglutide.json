@@ -1,0 +1,115 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "dulaglutide",
+  "name": "Dulaglutide",
+  "aka": [
+    "Trulicity"
+  ],
+  "class": "GLP-1 receptor agonist (Fc fusion)",
+  "category": "glp1",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 0.75,
+    "amount_high": 4.5,
+    "unit": "mg",
+    "cadence": "weekly"
+  },
+  "description": "A weekly GLP-1 receptor agonist formulated as an Fc fusion protein, approved for type 2 diabetes and for cardiovascular risk reduction in that population.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "GLP-1 receptor agonism on the beta cell.",
+      "evidence": [
+        "openfda:0a4716d0-9c9c-4bc3-a8f1-6784599aae89",
+        "livertox:NBK547979"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Hepatobiliary events appear in the class labelling.",
+      "evidence": [
+        "livertox:NBK547979",
+        "unitox:DULAGLUTIDE"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Modest weight loss with a lean-mass component.",
+      "evidence": [
+        "curation:dulaglutide"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "Direct index of glycaemic effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0a4716d0-9c9c-4bc3-a8f1-6784599aae89"
+      ]
+    },
+    {
+      "marker_key": "lipase",
+      "why": "Class pancreatitis signal.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0a4716d0-9c9c-4bc3-a8f1-6784599aae89"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:dulaglutide",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Dulaglutide",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK547979",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547979/",
+      "title": "LiverTox: Dulaglutide",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:0a4716d0-9c9c-4bc3-a8f1-6784599aae89",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0a4716d0-9c9c-4bc3-a8f1-6784599aae89",
+      "title": "FDA Structured Product Label: TRULICITY",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0a4716d0-9c9c-4bc3-a8f1-6784599aae89, effective 20230805. 7 label record(s) matched."
+    },
+    {
+      "id": "unitox:DULAGLUTIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"DULAGLUTIDE\". Ternary ratings — cardio:Less, liver:Less, renal:Most, heme:No, fertility:Less, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "dilirank",
+      "queried": "Dulaglutide",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

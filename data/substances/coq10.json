@@ -1,0 +1,111 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "coq10",
+  "name": "Coenzyme Q10",
+  "aka": [
+    "ubiquinone",
+    "ubiquinol"
+  ],
+  "class": "Mitochondrial electron transport cofactor",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 300,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A lipid-soluble benzoquinone carrying electrons in the mitochondrial respiratory chain. Its synthesis shares the mevalonate pathway that statins inhibit, which is the rationale for co-supplementation.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Taken for myocardial and skeletal-muscle bioenergetics; the intended effect.",
+      "evidence": [
+        "pubmed:31687097",
+        "pubmed:29317392",
+        "curation:coq10"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Also taken to offset the mevalonate-pathway depletion statins cause.",
+      "evidence": [
+        "pubmed:31687097",
+        "pubmed:29317392",
+        "curation:coq10"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Structurally related to vitamin K and reported to antagonise warfarin.",
+      "evidence": [
+        "curation:coq10"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "ck",
+      "why": "The muscle marker for the statin-myopathy rationale it is taken under.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:coq10"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:coq10",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Coenzyme Q10",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:10e46b39-7903-4390-b72d-865291245b4c",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=10e46b39-7903-4390-b72d-865291245b4c",
+      "title": "FDA Structured Product Label: GUNA-AWARENESS",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 10e46b39-7903-4390-b72d-865291245b4c, effective 20260610. 6 label record(s) matched."
+    },
+    {
+      "id": "pubmed:29317392",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29317392/",
+      "title": "Coenzyme Q10 for statin-associated myalgia.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 29317392 (Am J Health Syst Pharm, 2018 Jan 15) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:31687097",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31687097/",
+      "title": "Coenzyme Q(10).",
+      "retrieved": "2026-08-23",
+      "note": "PMID 31687097 (Methodist Debakey Cardiovasc J, 2019 Jul-Sep) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Ubidecarenone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

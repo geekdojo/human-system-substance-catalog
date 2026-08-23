@@ -1,0 +1,139 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "hydrochlorothiazide",
+  "name": "Hydrochlorothiazide",
+  "aka": [
+    "HCTZ",
+    "Microzide"
+  ],
+  "class": "Thiazide diuretic",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 12.5,
+    "amount_high": 50,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A thiazide diuretic inhibiting the sodium-chloride cotransporter in the distal convoluted tubule, approved for hypertension and oedema.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Blood pressure reduction; the labelled indication.",
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Hypokalaemia, hyponatraemia and hypomagnesaemia are labelled and characteristic, as are hyperuricaemia and precipitation of gout.",
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b",
+        "unitox:HYDROCHLOROTHIAZIDE"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Worsened glycaemic control is labelled.",
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "potassium",
+      "why": "Hypokalaemia is the characteristic labelled electrolyte disturbance.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b"
+      ]
+    },
+    {
+      "marker_key": "sodium",
+      "why": "Hyponatraemia is labelled and can be severe.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b"
+      ]
+    },
+    {
+      "marker_key": "uric_acid",
+      "why": "Labelled hyperuricaemia and precipitation of gout.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "Labelled worsening of glycaemic control.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b"
+      ]
+    },
+    {
+      "marker_key": "calcium_serum",
+      "why": "Thiazides reduce urinary calcium excretion and raise serum calcium.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:hydrochlorothiazide",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Hydrochlorothiazide",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01433",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01433 \"Hydrochlorothiazide\": vLess-DILI-concern (severity class 2). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:00b266d9-ac4a-e931-e063-6294a90a6a0b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00b266d9-ac4a-e931-e063-6294a90a6a0b",
+      "title": "FDA Structured Product Label: Lisinopril and Hydrochlorothiazide",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00b266d9-ac4a-e931-e063-6294a90a6a0b, effective 20260602. 547 label record(s) matched."
+    },
+    {
+      "id": "unitox:HYDROCHLOROTHIAZIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"HYDROCHLOROTHIAZIDE\". Ternary ratings — cardio:Most, liver:Less, renal:Most, heme:Most, fertility:No, pulm:Less, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Hydrochlorothiazide",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

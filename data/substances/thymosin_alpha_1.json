@@ -1,0 +1,127 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "thymosin_alpha_1",
+  "name": "Thymosin alpha-1",
+  "aka": [
+    "Zadaxin",
+    "thymalfasin",
+    "Ta1"
+  ],
+  "class": "Synthetic 28-amino-acid immunomodulatory thymic peptide",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 1.6,
+    "amount_high": 3.2,
+    "unit": "mg",
+    "cadence": "twice_weekly",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A synthetic peptide identical to a naturally occurring thymic hormone, approved in several countries outside the United States as thymalfasin for hepatitis B and as a vaccine adjuvant. It has no FDA approval and appears on the FDA Category 2 bulk-substances list. Approved in some non-US jurisdictions as thymalfasin. No FDA approval; on the FDA 503A Category 2 bulk drug substances list.",
+  "systems": [
+    {
+      "key": "blood",
+      "relation": "acts_on",
+      "note": "Immunomodulation of T-cell maturation is the intended effect.",
+      "evidence": [
+        "pubmed:11381492",
+        "pubmed:36989892",
+        "curation:thymosin_alpha_1"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Studied in hepatitis but without US labelling; hepatic effect at these doses is uncharacterised in an approved setting.",
+      "evidence": [
+        "curation:thymosin_alpha_1"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "wbc",
+      "why": "Immunomodulatory intent; the accessible index of the leukocyte compartment.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:thymosin_alpha_1"
+      ]
+    },
+    {
+      "marker_key": "neutrophils_absolute",
+      "why": "Read with the total count when a compound targets immune function.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:thymosin_alpha_1"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "No US safety labelling exists.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:thymosin_alpha_1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:thymosin_alpha_1",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Thymosin alpha-1",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:11381492",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11381492/",
+      "title": "Thymosin alpha-1.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 11381492 (Am J Health Syst Pharm, 2001 May 15) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:36989892",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36989892/",
+      "title": "Thymosin alpha 1 restores the immune homeostasis in lymphocytes during Post-Acute sequelae of SARS-CoV-2 infection.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 36989892 (Int Immunopharmacol, 2023 May) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "thymalfasin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "livertox",
+      "queried": "Thymosin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Thymalfasin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Thymalfasin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

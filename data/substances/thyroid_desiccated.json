@@ -1,0 +1,132 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "thyroid_desiccated",
+  "name": "Thyroid, desiccated",
+  "aka": [
+    "Armour Thyroid",
+    "NP Thyroid",
+    "Nature-Throid"
+  ],
+  "class": "Porcine thyroid extract (T4 + T3)",
+  "category": "hormone",
+  "regulatory_status": "unscheduled",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 15,
+    "amount_high": 120,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "Dried porcine thyroid gland standardised by iodine content, containing both thyroxine and triiodothyronine. Marketed in the United States under enforcement discretion as an unapproved drug rather than under an approved NDA. Marketed as an unapproved drug under enforcement discretion; there is no FDA-approved application for desiccated thyroid.",
+  "systems": [
+    {
+      "key": "thyroid",
+      "relation": "acts_on",
+      "note": "Supplies both thyroxine and triiodothyronine; the intended replacement.",
+      "evidence": [
+        "pubmed:34185829",
+        "pubmed:39368843",
+        "curation:thyroid_desiccated"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "The T3 fraction produces peaked levels with the same arrhythmic concern as liothyronine.",
+      "evidence": [
+        "curation:thyroid_desiccated"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Over-replacement causes bone density loss.",
+      "evidence": [
+        "curation:thyroid_desiccated"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "tsh",
+      "why": "Titration parameter.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:thyroid_desiccated"
+      ]
+    },
+    {
+      "marker_key": "ft3",
+      "why": "The T3 fraction produces a peaked level; timing relative to the dose matters.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:thyroid_desiccated"
+      ]
+    },
+    {
+      "marker_key": "ft4",
+      "why": "Runs lower on T3-containing regimens than on thyroxine alone.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:thyroid_desiccated"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:thyroid_desiccated",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Thyroid, desiccated",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:03e79049-65b2-4f47-9c98-7ebb324cbc14",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03e79049-65b2-4f47-9c98-7ebb324cbc14",
+      "title": "FDA Structured Product Label: Amerithroid",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 03e79049-65b2-4f47-9c98-7ebb324cbc14, effective 20260513. 58 label record(s) matched."
+    },
+    {
+      "id": "pubmed:34185829",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34185829/",
+      "title": "Comparative Effectiveness of Levothyroxine, Desiccated Thyroid Extract, and Levothyroxine+Liothyronine in Hypothyroidism.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 34185829 (J Clin Endocrinol Metab, 2021 Oct 21) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:39368843",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39368843/",
+      "title": "Hypothyroidism.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 39368843 (Lancet, 2024 Oct 5) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Thyroid",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Thyroid",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

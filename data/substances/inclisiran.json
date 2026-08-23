@@ -1,0 +1,110 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "inclisiran",
+  "name": "Inclisiran",
+  "aka": [
+    "Leqvio"
+  ],
+  "class": "PCSK9-directed small interfering RNA",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 284,
+    "amount_high": 284,
+    "unit": "mg",
+    "cadence": "quarterly"
+  },
+  "description": "A GalNAc-conjugated small interfering RNA that silences hepatic PCSK9 synthesis, approved as an adjunct for LDL cholesterol lowering and dosed twice yearly after a loading dose.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Hepatic PCSK9 silencing lowering LDL cholesterol; the labelled indication.",
+      "evidence": [
+        "livertox:NBK588654"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "GalNAc conjugation targets the hepatocyte; hepatic exposure is by design.",
+      "evidence": [
+        "curation:inclisiran"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "ldl_c",
+      "why": "The direct index of effect; the dosing interval means fewer opportunities to read it.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:inclisiran"
+      ]
+    },
+    {
+      "marker_key": "apob",
+      "why": "Particle count at low LDL-C values.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:inclisiran"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Hepatocyte-targeted delivery.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:inclisiran"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:inclisiran",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Inclisiran",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK588654",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK588654/",
+      "title": "LiverTox: Inclisiran",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "unitox:INCLISIRAN",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"INCLISIRAN\". Ternary ratings — cardio:No, liver:No, renal:No, heme:No, fertility:No, pulm:No, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "inclisiran",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "dilirank",
+      "queried": "Inclisiran",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

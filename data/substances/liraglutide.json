@@ -1,0 +1,125 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "liraglutide",
+  "name": "Liraglutide",
+  "aka": [
+    "Victoza",
+    "Saxenda"
+  ],
+  "class": "GLP-1 receptor agonist",
+  "category": "glp1",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 0.6,
+    "amount_high": 3,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A once-daily GLP-1 receptor agonist approved as Victoza for type 2 diabetes and as Saxenda for chronic weight management.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "GLP-1 receptor agonism driving glucose-dependent insulin secretion.",
+      "evidence": [
+        "openfda:0450d8a2-a88e-4849-9788-ed4f5246f223",
+        "livertox:NBK548472"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Weight loss includes a lean-mass component.",
+      "evidence": [
+        "curation:liraglutide"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Hepatobiliary events appear in labelling.",
+      "evidence": [
+        "livertox:NBK548472",
+        "unitox:LIRAGLUTIDE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "Direct index of glycaemic effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0450d8a2-a88e-4849-9788-ed4f5246f223"
+      ]
+    },
+    {
+      "marker_key": "lipase",
+      "why": "Pancreatitis is a labelled risk.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0450d8a2-a88e-4849-9788-ed4f5246f223"
+      ]
+    },
+    {
+      "marker_key": "glucose_fasting",
+      "why": "Interval glycaemic tracking.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:0450d8a2-a88e-4849-9788-ed4f5246f223"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:liraglutide",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Liraglutide",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01268",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01268 \"Liraglutide\": vLess-DILI-concern (severity class 4). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "livertox:NBK548472",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548472/",
+      "title": "LiverTox: Liraglutide",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:0450d8a2-a88e-4849-9788-ed4f5246f223",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0450d8a2-a88e-4849-9788-ed4f5246f223",
+      "title": "FDA Structured Product Label: Liraglutide",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0450d8a2-a88e-4849-9788-ed4f5246f223, effective 20251113. 22 label record(s) matched."
+    },
+    {
+      "id": "unitox:LIRAGLUTIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"LIRAGLUTIDE\". Ternary ratings — cardio:Less, liver:Less, renal:Most, heme:No, fertility:Less, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

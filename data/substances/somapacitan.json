@@ -1,0 +1,129 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "somapacitan",
+  "name": "Somapacitan",
+  "aka": [
+    "Sogroya"
+  ],
+  "class": "Long-acting albumin-binding growth hormone derivative",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 1.5,
+    "amount_high": 8,
+    "unit": "mg",
+    "cadence": "weekly"
+  },
+  "description": "A once-weekly growth hormone derivative with a non-covalent albumin-binding side chain, approved for growth hormone deficiency in adults and children.",
+  "systems": [
+    {
+      "key": "pituitary",
+      "relation": "acts_on",
+      "note": "Replaces pituitary somatotropic output on a weekly schedule.",
+      "evidence": [
+        "openfda:eadd03b4-adc3-4b88-8a24-9d205c5b85aa"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Body-composition effect is a labelled outcome of GH replacement.",
+      "evidence": [
+        "openfda:eadd03b4-adc3-4b88-8a24-9d205c5b85aa"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Growth hormone antagonises insulin action.",
+      "evidence": [
+        "openfda:eadd03b4-adc3-4b88-8a24-9d205c5b85aa"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "igf1",
+      "why": "Labelled titration marker.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:eadd03b4-adc3-4b88-8a24-9d205c5b85aa"
+      ]
+    },
+    {
+      "marker_key": "igfbp3",
+      "why": "Read with IGF-1 to interpret the free fraction.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:eadd03b4-adc3-4b88-8a24-9d205c5b85aa"
+      ]
+    },
+    {
+      "marker_key": "hba1c",
+      "why": "GH-induced insulin resistance.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:eadd03b4-adc3-4b88-8a24-9d205c5b85aa"
+      ]
+    },
+    {
+      "marker_key": "ft4",
+      "why": "GH alters peripheral thyroid hormone conversion.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:eadd03b4-adc3-4b88-8a24-9d205c5b85aa"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:somapacitan",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Somapacitan",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK604849",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK604849/",
+      "title": "LiverTox: Somapacitan",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:eadd03b4-adc3-4b88-8a24-9d205c5b85aa",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=eadd03b4-adc3-4b88-8a24-9d205c5b85aa",
+      "title": "FDA Structured Product Label: SOGROYA",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id eadd03b4-adc3-4b88-8a24-9d205c5b85aa, effective 20260225. 1 label record(s) matched."
+    },
+    {
+      "id": "unitox:SOMAPACITAN-BECO",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"SOMAPACITAN-BECO\". Ternary ratings — cardio:Less, liver:Less, renal:No, heme:Less, fertility:No, pulm:Less, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "dilirank",
+      "queried": "Somapacitan",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

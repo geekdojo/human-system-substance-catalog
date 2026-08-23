@@ -1,0 +1,112 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "acarbose",
+  "name": "Acarbose",
+  "aka": [
+    "Precose"
+  ],
+  "class": "Alpha-glucosidase inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 25,
+    "amount_high": 100,
+    "unit": "mg",
+    "cadence": "three_times_daily"
+  },
+  "description": "An intestinal alpha-glucosidase inhibitor that slows carbohydrate absorption, approved for type 2 diabetes. Minimally absorbed systemically.",
+  "systems": [
+    {
+      "key": "pancreas",
+      "relation": "acts_on",
+      "note": "Blunted postprandial glucose excursion; the labelled indication.",
+      "evidence": [
+        "openfda:067c0adc-7322-489d-9baa-1d061b37be36",
+        "livertox:NBK548181"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Dose-related transaminase elevation is labelled and is the reason for labelled hepatic monitoring.",
+      "evidence": [
+        "openfda:067c0adc-7322-489d-9baa-1d061b37be36",
+        "livertox:NBK548181",
+        "dilirank:LT01034",
+        "unitox:ACARBOSE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "hba1c",
+      "why": "Direct index of glycaemic effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:067c0adc-7322-489d-9baa-1d061b37be36"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Labelled dose-related transaminase elevation with explicit monitoring instruction.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:067c0adc-7322-489d-9baa-1d061b37be36",
+        "livertox:NBK548181",
+        "dilirank:LT01034"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:acarbose",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Acarbose",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT01034",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT01034 \"Acarbose\": vMost-DILI-concern (severity class 8). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548181",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548181/",
+      "title": "LiverTox: Acarbose",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:067c0adc-7322-489d-9baa-1d061b37be36",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=067c0adc-7322-489d-9baa-1d061b37be36",
+      "title": "FDA Structured Product Label: Acarbose",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 067c0adc-7322-489d-9baa-1d061b37be36, effective 20260716. 7 label record(s) matched."
+    },
+    {
+      "id": "unitox:ACARBOSE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"ACARBOSE\". Ternary ratings — cardio:No, liver:Most, renal:Less, heme:Less, fertility:No, pulm:Less, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

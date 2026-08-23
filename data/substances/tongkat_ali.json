@@ -1,0 +1,111 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "tongkat_ali",
+  "name": "Tongkat ali",
+  "aka": [
+    "Eurycoma longifolia",
+    "longjack"
+  ],
+  "class": "Botanical extract (Eurycoma longifolia root)",
+  "category": "supplement",
+  "regulatory_status": "otc_supplement",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 200,
+    "amount_high": 400,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A standardised root extract of Eurycoma longifolia taken for testosterone and stress effects. Studies are small and heterogeneous; product standardisation varies widely between manufacturers.",
+  "systems": [
+    {
+      "key": "gonads",
+      "relation": "acts_on",
+      "note": "Taken for its reported effect on testosterone; the intended effect, on thin and heterogeneous evidence.",
+      "evidence": [
+        "pubmed:33541567",
+        "pubmed:36013514",
+        "curation:tongkat_ali"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Botanical extract with variable standardisation and no approved labelling.",
+      "evidence": [
+        "curation:tongkat_ali"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "testosterone_total",
+      "why": "The endpoint claimed for it.",
+      "cadence_days": 180,
+      "evidence": [
+        "pubmed:33541567",
+        "pubmed:36013514",
+        "curation:tongkat_ali"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Botanical extract with variable standardisation.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:tongkat_ali"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:tongkat_ali",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Tongkat ali",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:ae63fe31-f602-4171-abed-a7212864d064",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ae63fe31-f602-4171-abed-a7212864d064",
+      "title": "FDA Structured Product Label: JBA Omelia",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id ae63fe31-f602-4171-abed-a7212864d064, effective 20250331. 1 label record(s) matched."
+    },
+    {
+      "id": "pubmed:33541567",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33541567/",
+      "title": "A 6-month, double-blind, placebo-controlled, randomized trial to evaluate the effect of Eurycoma longifolia (Tongkat Ali) and concurrent training on erectile function and testosterone levels in androgen deficiency of aging males (ADAM).",
+      "retrieved": "2026-08-23",
+      "note": "PMID 33541567 (Maturitas, 2021 Mar) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:36013514",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36013514/",
+      "title": "Eurycoma longifolia (Jack) Improves Serum Total Testosterone in Men: A Systematic Review and Meta-Analysis of Clinical Trials.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 36013514 (Medicina (Kaunas), 2022 Aug 4) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "unitox",
+      "queried": "Eurycoma longifolia",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

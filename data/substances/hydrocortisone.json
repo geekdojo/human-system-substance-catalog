@@ -1,0 +1,156 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "hydrocortisone",
+  "name": "Hydrocortisone",
+  "aka": [
+    "Cortef",
+    "Solu-Cortef"
+  ],
+  "class": "Systemic glucocorticoid (cortisol)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral",
+    "intravenous",
+    "topical"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 15,
+    "amount_high": 30,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "Synthetic cortisol, approved for adrenal insufficiency replacement and for inflammatory conditions. At replacement dose it substitutes for endogenous adrenal output; above that it acts pharmacologically.",
+  "systems": [
+    {
+      "key": "pituitary",
+      "relation": "acts_on",
+      "note": "Replaces the cortisol output of the HPA axis; the labelled replacement indication.",
+      "evidence": [
+        "openfda:00040bfe-001a-484e-bec0-e21e8b27f369"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Anti-inflammatory glucocorticoid action at supraphysiological dose.",
+      "evidence": [
+        "openfda:00040bfe-001a-484e-bec0-e21e8b27f369"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Glucocorticoid-induced hyperglycaemia above replacement dose.",
+      "evidence": [
+        "openfda:00040bfe-001a-484e-bec0-e21e8b27f369"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Bone density loss and muscle catabolism at supraphysiological exposure.",
+      "evidence": [
+        "openfda:00040bfe-001a-484e-bec0-e21e8b27f369"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Mineralocorticoid activity drives sodium retention and potassium loss.",
+      "evidence": [
+        "openfda:00040bfe-001a-484e-bec0-e21e8b27f369"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "cortisol_am",
+      "why": "The hormone being replaced; the direct index of adequacy.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00040bfe-001a-484e-bec0-e21e8b27f369"
+      ]
+    },
+    {
+      "marker_key": "acth",
+      "why": "Localises the axis lesion and reads the adequacy of replacement.",
+      "cadence_days": 365,
+      "evidence": [
+        "curation:hydrocortisone"
+      ]
+    },
+    {
+      "marker_key": "glucose_fasting",
+      "why": "Hyperglycaemia above replacement dose.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00040bfe-001a-484e-bec0-e21e8b27f369"
+      ]
+    },
+    {
+      "marker_key": "potassium",
+      "why": "Mineralocorticoid activity drives potassium loss.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00040bfe-001a-484e-bec0-e21e8b27f369"
+      ]
+    },
+    {
+      "marker_key": "sodium",
+      "why": "Mineralocorticoid activity drives sodium retention.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:00040bfe-001a-484e-bec0-e21e8b27f369"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:hydrocortisone",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Hydrocortisone",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00188",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00188 \"Hydrocortisone acetate\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:00040bfe-001a-484e-bec0-e21e8b27f369",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00040bfe-001a-484e-bec0-e21e8b27f369",
+      "title": "FDA Structured Product Label: anti itch",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 00040bfe-001a-484e-bec0-e21e8b27f369, effective 20240917. 613 label record(s) matched."
+    },
+    {
+      "id": "unitox:HYDROCORTISONE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"HYDROCORTISONE\". Ternary ratings — cardio:Most, liver:Less, renal:No, heme:No, fertility:Less, pulm:No, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0. Consulted, not cited: the toxicity axes this entry makes claims about were not rated Most or Less in this row."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Hydrocortisone",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "ghrp_6",
+  "name": "GHRP-6",
+  "aka": [
+    "SKF-110679",
+    "His-D-Trp-Ala-Trp-D-Phe-Lys-NH2"
+  ],
+  "class": "Growth hormone-releasing peptide (ghrelin receptor agonist)",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 300,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A synthetic hexapeptide growth hormone secretagogue, the earliest of the GHRP series, with pronounced appetite stimulation. It has no FDA-approved product and no approved labelling. No FDA label exists.",
+  "systems": [
+    {
+      "key": "pituitary",
+      "relation": "acts_on",
+      "note": "Ghrelin receptor agonism at the somatotroph; placed on the pituitary by intended effect.",
+      "evidence": [
+        "pubmed:41327290",
+        "pubmed:9893708",
+        "curation:ghrp_6"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Sought for anabolic effect; strong appetite stimulation is characteristic.",
+      "evidence": [
+        "pubmed:41327290",
+        "pubmed:9893708",
+        "curation:ghrp_6"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Raised GH exposure antagonises insulin action.",
+      "evidence": [
+        "curation:ghrp_6"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "igf1",
+      "why": "The practical index of achieved GH exposure.",
+      "cadence_days": 90,
+      "evidence": [
+        "pubmed:41327290",
+        "pubmed:9893708",
+        "curation:ghrp_6"
+      ]
+    },
+    {
+      "marker_key": "cortisol_am",
+      "why": "Non-selective secretagogue with described cortisol rise.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:ghrp_6"
+      ]
+    },
+    {
+      "marker_key": "prolactin",
+      "why": "Non-selective secretagogues raise prolactin.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:ghrp_6"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:ghrp_6",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: GHRP-6",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:41327290",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41327290/",
+      "title": "Growth hormone-releasing peptide 6 (GHRP-6) hydrogel for acute kidney injury therapy via metabolic regulation.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 41327290 (J Nanobiotechnology, 2025 Dec 1) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:9893708",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9893708/",
+      "title": "Growth hormone-releasing peptide (GHRP).",
+      "retrieved": "2026-08-23",
+      "note": "PMID 9893708 (Cell Mol Life Sci, 1998 Dec) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "GHRP-6",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "GHRP-6",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,125 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "hexarelin",
+  "name": "Hexarelin",
+  "aka": [
+    "Examorelin"
+  ],
+  "class": "Growth hormone-releasing peptide (ghrelin receptor agonist)",
+  "category": "peptide",
+  "regulatory_status": "research_chemical",
+  "routes": [
+    "subcutaneous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 100,
+    "amount_high": 200,
+    "unit": "mcg",
+    "cadence": "daily",
+    "note": "No FDA-approved dosing reference exists for this compound. This range describes reported use and is not a recommendation."
+  },
+  "description": "A synthetic hexapeptide growth hormone secretagogue with described cardiac CD36 binding independent of GH release. It has no FDA-approved product. No FDA label exists.",
+  "systems": [
+    {
+      "key": "pituitary",
+      "relation": "acts_on",
+      "note": "Ghrelin receptor agonism at the somatotroph; placed on the pituitary by intended effect.",
+      "evidence": [
+        "pubmed:28321024",
+        "pubmed:28400207",
+        "curation:hexarelin"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Sought for anabolic effect.",
+      "evidence": [
+        "curation:hexarelin"
+      ]
+    },
+    {
+      "key": "pancreas",
+      "relation": "burdens",
+      "note": "Raised GH exposure antagonises insulin action.",
+      "evidence": [
+        "curation:hexarelin"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Described binding at cardiac CD36; desensitisation with continuous use is reported.",
+      "evidence": [
+        "pubmed:28321024",
+        "pubmed:28400207",
+        "curation:hexarelin"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "igf1",
+      "why": "The practical index of achieved GH exposure.",
+      "cadence_days": 90,
+      "evidence": [
+        "pubmed:28321024",
+        "pubmed:28400207",
+        "curation:hexarelin"
+      ]
+    },
+    {
+      "marker_key": "cortisol_am",
+      "why": "Non-selective secretagogue with described adrenal axis effect.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:hexarelin"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:hexarelin",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Hexarelin",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "pubmed:28321024",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28321024/",
+      "title": "The Growth Hormone Secretagogue Hexarelin Protects Rat Cardiomyocytes From in vivo Ischemia/Reperfusion Injury Through Interleukin-1 Signaling Pathway.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 28321024 (Int Heart J, 2017 Apr 6) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    },
+    {
+      "id": "pubmed:28400207",
+      "kind": "pubmed",
+      "license": "own-curation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28400207/",
+      "title": "The Safety and Efficacy of Growth Hormone Secretagogues.",
+      "retrieved": "2026-08-23",
+      "note": "PMID 28400207 (Sex Med Rev, 2018 Jan) identifies literature consulted for this hand-curated entry. No source text is reproduced; the catalog value is original curation."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "openfda_spl",
+      "queried": "hexarelin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    },
+    {
+      "source": "unitox",
+      "queried": "Hexarelin",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

@@ -1,0 +1,135 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "methimazole",
+  "name": "Methimazole",
+  "aka": [
+    "Tapazole"
+  ],
+  "class": "Thionamide antithyroid agent",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 60,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A thionamide that inhibits thyroid peroxidase, approved for hyperthyroidism and for preparation before thyroidectomy or radioiodine.",
+  "systems": [
+    {
+      "key": "thyroid",
+      "relation": "acts_on",
+      "note": "Inhibits thyroid peroxidase and hormone synthesis; the labelled indication.",
+      "evidence": [
+        "openfda:05a8fed7-f805-4c59-8840-630174b6d130",
+        "livertox:NBK548406"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Agranulocytosis is the characteristic labelled risk.",
+      "evidence": [
+        "openfda:05a8fed7-f805-4c59-8840-630174b6d130",
+        "unitox:METHIMAZOLE"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Cholestatic hepatic injury is documented.",
+      "evidence": [
+        "livertox:NBK548406",
+        "dilirank:LT00580",
+        "unitox:METHIMAZOLE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "tsh",
+      "why": "Titration parameter, though it lags the free hormones early in therapy.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:05a8fed7-f805-4c59-8840-630174b6d130"
+      ]
+    },
+    {
+      "marker_key": "ft4",
+      "why": "Responds faster than TSH when titrating.",
+      "cadence_days": 60,
+      "evidence": [
+        "openfda:05a8fed7-f805-4c59-8840-630174b6d130"
+      ]
+    },
+    {
+      "marker_key": "neutrophils_absolute",
+      "why": "Agranulocytosis is the characteristic labelled risk.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:05a8fed7-f805-4c59-8840-630174b6d130"
+      ]
+    },
+    {
+      "marker_key": "alt",
+      "why": "Documented cholestatic hepatic injury.",
+      "cadence_days": 90,
+      "evidence": [
+        "livertox:NBK548406",
+        "dilirank:LT00580"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:methimazole",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Methimazole",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00580",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00580 \"Methimazole\": vMost-DILI-concern (severity class 8). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548406",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548406/",
+      "title": "LiverTox: Methimazole",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:05a8fed7-f805-4c59-8840-630174b6d130",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05a8fed7-f805-4c59-8840-630174b6d130",
+      "title": "FDA Structured Product Label: methimazole",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 05a8fed7-f805-4c59-8840-630174b6d130, effective 20250910. 37 label record(s) matched."
+    },
+    {
+      "id": "unitox:METHIMAZOLE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"METHIMAZOLE\". Ternary ratings — cardio:Less, liver:Less, renal:Less, heme:Most, fertility:No, pulm:Most, oto:No, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

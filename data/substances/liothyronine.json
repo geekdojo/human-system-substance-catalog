@@ -1,0 +1,124 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "liothyronine",
+  "name": "Liothyronine sodium",
+  "aka": [
+    "Cytomel",
+    "Triostat"
+  ],
+  "class": "Synthetic triiodothyronine (T3)",
+  "category": "hormone",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral",
+    "intravenous"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 50,
+    "unit": "mcg",
+    "cadence": "daily"
+  },
+  "description": "Synthetic triiodothyronine, the active thyroid hormone at the receptor, approved for hypothyroidism and myxoedema coma. Its short half-life produces peaked serum levels compared with thyroxine.",
+  "systems": [
+    {
+      "key": "thyroid",
+      "relation": "acts_on",
+      "note": "Supplies the active thyroid hormone directly, bypassing peripheral conversion.",
+      "evidence": [
+        "openfda:0b0f2db9-642d-d84f-b102-b43de34bbe75"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Peaked T3 levels are more arrhythmogenic than steady thyroxine; boxed warning against non-hypothyroid use.",
+      "evidence": [
+        "openfda:0b0f2db9-642d-d84f-b102-b43de34bbe75",
+        "unitox:LIOTHYRONINE SODIUM"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Over-replacement causes bone density loss and lean-tissue catabolism.",
+      "evidence": [
+        "openfda:0b0f2db9-642d-d84f-b102-b43de34bbe75"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "tsh",
+      "why": "Titration parameter, though suppressed more readily than on thyroxine alone.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:0b0f2db9-642d-d84f-b102-b43de34bbe75"
+      ]
+    },
+    {
+      "marker_key": "ft3",
+      "why": "The direct index of the administered hormone; timing relative to the dose matters.",
+      "cadence_days": 90,
+      "evidence": [
+        "curation:liothyronine"
+      ]
+    },
+    {
+      "marker_key": "ft4",
+      "why": "Falls on T3-containing regimens and should not be read as under-replacement.",
+      "cadence_days": 180,
+      "evidence": [
+        "curation:liothyronine"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:liothyronine",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Liothyronine sodium",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00783",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00783 \"Liothyronine sodium\": vNo-DILI-concern (severity class 0). FDA-authored, public domain. Consulted, not cited: this classification does not support a hepatic burden claim."
+    },
+    {
+      "id": "openfda:0b0f2db9-642d-d84f-b102-b43de34bbe75",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0b0f2db9-642d-d84f-b102-b43de34bbe75",
+      "title": "FDA Structured Product Label: Liothyronine Sodium",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 0b0f2db9-642d-d84f-b102-b43de34bbe75, effective 20240315. 27 label record(s) matched."
+    },
+    {
+      "id": "unitox:LIOTHYRONINE SODIUM",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"LIOTHYRONINE SODIUM\". Ternary ratings — cardio:Most, liver:No, renal:No, heme:No, fertility:Most, pulm:Less, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "livertox",
+      "queried": "Liothyronine",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

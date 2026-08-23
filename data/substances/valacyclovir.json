@@ -1,0 +1,124 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "valacyclovir",
+  "name": "Valacyclovir",
+  "aka": [
+    "Valtrex"
+  ],
+  "class": "Nucleoside analogue antiviral prodrug",
+  "category": "antiviral",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 500,
+    "amount_high": 2000,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "The L-valyl ester prodrug of aciclovir, approved for herpes zoster, genital herpes and cold sores, with far better oral bioavailability than the parent.",
+  "systems": [
+    {
+      "key": "blood",
+      "relation": "acts_on",
+      "note": "Viral DNA polymerase inhibition; the labelled antiviral indication.",
+      "evidence": [
+        "openfda:1864bf8b-07a2-4b82-8592-bf8ad6f9f8f9",
+        "livertox:NBK548655"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Crystalline nephropathy with inadequate hydration; renal dose adjustment is labelled.",
+      "evidence": [
+        "openfda:1864bf8b-07a2-4b82-8592-bf8ad6f9f8f9",
+        "unitox:VALACYCLOVIR HYDROCHLORIDE"
+      ]
+    },
+    {
+      "key": "blood",
+      "relation": "burdens",
+      "note": "Thrombotic thrombocytopenic purpura is labelled in severely immunocompromised patients.",
+      "evidence": [
+        "openfda:1864bf8b-07a2-4b82-8592-bf8ad6f9f8f9",
+        "unitox:VALACYCLOVIR HYDROCHLORIDE"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "creatinine",
+      "why": "Crystalline nephropathy is the characteristic renal risk.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:1864bf8b-07a2-4b82-8592-bf8ad6f9f8f9"
+      ]
+    },
+    {
+      "marker_key": "egfr_creatinine",
+      "why": "Labelled renal dose adjustment.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:1864bf8b-07a2-4b82-8592-bf8ad6f9f8f9"
+      ]
+    },
+    {
+      "marker_key": "platelets",
+      "why": "Labelled thrombotic microangiopathy signal.",
+      "cadence_days": 365,
+      "evidence": [
+        "openfda:1864bf8b-07a2-4b82-8592-bf8ad6f9f8f9"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:valacyclovir",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Valacyclovir",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "livertox:NBK548655",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548655/",
+      "title": "LiverTox: Valacyclovir",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:1864bf8b-07a2-4b82-8592-bf8ad6f9f8f9",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1864bf8b-07a2-4b82-8592-bf8ad6f9f8f9",
+      "title": "FDA Structured Product Label: Valacyclovir Hydrochloride",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 1864bf8b-07a2-4b82-8592-bf8ad6f9f8f9, effective 20240711. 46 label record(s) matched."
+    },
+    {
+      "id": "unitox:VALACYCLOVIR HYDROCHLORIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"VALACYCLOVIR HYDROCHLORIDE\". Ternary ratings — cardio:No, liver:Less, renal:Most, heme:Most, fertility:Less, pulm:No, oto:No, derm:Less. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "source_gaps": [
+    {
+      "source": "dilirank",
+      "queried": "Valacyclovir hydrochloride",
+      "result": "no_rows",
+      "checked": "2026-08-23"
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}

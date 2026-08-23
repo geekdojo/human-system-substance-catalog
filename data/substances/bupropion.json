@@ -1,0 +1,130 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "bupropion",
+  "name": "Bupropion",
+  "aka": [
+    "Wellbutrin",
+    "Zyban",
+    "Aplenzin"
+  ],
+  "class": "Norepinephrine-dopamine reuptake inhibitor",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 150,
+    "amount_high": 450,
+    "unit": "mg",
+    "cadence": "daily"
+  },
+  "description": "A norepinephrine and dopamine reuptake inhibitor approved for major depressive disorder, seasonal affective disorder and smoking cessation. Lowers the seizure threshold in a dose-dependent way; carries a boxed warning for suicidality in young people.",
+  "systems": [
+    {
+      "key": "brain",
+      "relation": "acts_on",
+      "note": "Catecholamine reuptake inhibition; the labelled indications.",
+      "evidence": [
+        "openfda:004d8121-59d4-46c4-acb8-b2dd097bf556",
+        "livertox:NBK548836"
+      ]
+    },
+    {
+      "key": "liver",
+      "relation": "burdens",
+      "note": "Hepatically metabolised and a documented cause of hepatic injury.",
+      "evidence": [
+        "openfda:004d8121-59d4-46c4-acb8-b2dd097bf556",
+        "livertox:NBK548836",
+        "dilirank:LT00058",
+        "unitox:BUPROPION HYDROCHLORIDE"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Blood pressure elevation is labelled.",
+      "evidence": [
+        "openfda:004d8121-59d4-46c4-acb8-b2dd097bf556",
+        "unitox:BUPROPION HYDROCHLORIDE"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "burdens",
+      "note": "Weight loss is a labelled effect, unusual among antidepressants.",
+      "evidence": [
+        "openfda:004d8121-59d4-46c4-acb8-b2dd097bf556"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "alt",
+      "why": "Documented hepatic injury.",
+      "cadence_days": 365,
+      "evidence": [
+        "livertox:NBK548836",
+        "dilirank:LT00058"
+      ]
+    },
+    {
+      "marker_key": "who5",
+      "why": "Boxed suicidality warning; the labelled monitoring obligation.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:004d8121-59d4-46c4-acb8-b2dd097bf556"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:bupropion",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Bupropion",
+      "retrieved": "2026-08-23",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
+    },
+    {
+      "id": "dilirank:LT00058",
+      "kind": "dilirank",
+      "license": "public-domain",
+      "url": "https://www.fda.gov/science-research/liver-toxicity-knowledge-base-ltkb/drug-induced-liver-injury-rank-dilirank-20-dataset",
+      "title": "DILIrank 2.0 — Drug Induced Liver Injury Rank dataset",
+      "retrieved": "2026-08-23",
+      "note": "DILIrank 2.0 row LT00058 \"Bupropion hydrochloride\": vLess-DILI-concern (severity class 5). FDA-authored, public domain."
+    },
+    {
+      "id": "livertox:NBK548836",
+      "kind": "livertox",
+      "license": "public-domain",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548836/",
+      "title": "LiverTox: Bupropion",
+      "retrieved": "2026-08-23",
+      "note": "LiverTox, NIDDK, NCBI Bookshelf. The publication is in the public domain."
+    },
+    {
+      "id": "openfda:004d8121-59d4-46c4-acb8-b2dd097bf556",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=004d8121-59d4-46c4-acb8-b2dd097bf556",
+      "title": "FDA Structured Product Label: buPropion Hydrochloride XL",
+      "retrieved": "2026-08-23",
+      "note": "openFDA drug/label SPL set id 004d8121-59d4-46c4-acb8-b2dd097bf556, effective 20251125. 248 label record(s) matched."
+    },
+    {
+      "id": "unitox:BUPROPION HYDROCHLORIDE",
+      "kind": "unitox",
+      "license": "CC-BY-4.0",
+      "url": "https://doi.org/10.5281/zenodo.14042913",
+      "title": "UniTox: Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "retrieved": "2026-08-23",
+      "note": "UniTox row \"BUPROPION HYDROCHLORIDE\". Ternary ratings — cardio:Most, liver:Most, renal:Most, heme:Most, fertility:No, pulm:Less, oto:Less, derm:Most. Silberg, Simon, Swanson & Zou (Stanford), CC BY 4.0."
+    }
+  ],
+  "valid_from": "2026-08-23",
+  "valid_to": null
+}
