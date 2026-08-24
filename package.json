@@ -4,7 +4,7 @@
   "private": true,
   "description": "Versioned compound reference data published as a signed JSON bundle for the human-system app. Reference data only — describes no person, contains no health data.",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": { "node": ">=26" },
   "scripts": {
     "build": "node tools/build.mjs",
     "check": "node tools/build.mjs --check",
