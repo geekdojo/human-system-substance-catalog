@@ -12,17 +12,18 @@ updates:
       ajv:
         patterns: ["ajv", "ajv-*"]
 
-  # The build is Node, but pip is declared so that a future Python tool under tools/
-  # is covered from the day it lands rather than being quietly unmonitored.
-  - package-ecosystem: pip
-    directory: /
-    schedule:
-      interval: weekly
-      day: monday
-    open-pull-requests-limit: 3
-    commit-message:
-      prefix: "deps"
-
+  # There is deliberately NO `pip` entry here. One used to sit at `/` in advance of
+  # "a future Python tool under tools/", and it did not wait quietly: Dependabot
+  # resolves every declared ecosystem on its schedule, finds no manifest, and
+  # aborts the whole run with `dependency_file_not_found` ("No files found in /").
+  # That failed every Monday — see run 32706239231 — which is worse than no
+  # coverage, because a job that is always red tells you nothing on the week it
+  # goes red for a real reason.
+  #
+  # Add the entry back on the day a manifest actually lands, pointed at the
+  # DIRECTORY THAT HOLDS IT rather than at the repository root — e.g.
+  # `directory: /tools/<name>` beside a requirements.txt or pyproject.toml. The
+  # sibling human-system repo has a worked example.
   - package-ecosystem: github-actions
     directory: /
     schedule:
