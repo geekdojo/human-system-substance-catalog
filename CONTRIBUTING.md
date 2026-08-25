@@ -213,7 +213,7 @@ hyphens: `bpc_157`, not `bpc-157`.
 ### Marker keys
 
 Every `monitors[].marker_key` must exist in `data/marker-keys.json`. To add one, add it there
-first, with `key`, `name`, `system` (one of the eleven) and `unit`.
+first, with `key`, `name`, `system` (one of the thirteen) and `unit`.
 
 Do **not** add `ref_low`, `ref_high` or any LOINC field. A reference interval is a property
 of the assay and the reference population, not of the compound catalog, and LOINC binding is

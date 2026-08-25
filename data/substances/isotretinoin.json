@@ -22,7 +22,7 @@
   "description": "A retinoic acid isomer approved for severe recalcitrant nodular acne. Carries a boxed warning for extreme teratogenicity and is dispensed only through the iPLEDGE risk management programme.",
   "systems": [
     {
-      "key": "body",
+      "key": "skin",
       "relation": "acts_on",
       "note": "Sebaceous gland suppression; the labelled dermatological indication.",
       "evidence": [
@@ -64,6 +64,15 @@
       "note": "Bone density effects and hyperostosis are labelled with prolonged use.",
       "evidence": [
         "openfda:0114567b-3bac-490d-b9eb-03a6c5d90935"
+      ]
+    },
+    {
+      "key": "hair",
+      "relation": "burdens",
+      "note": "Alopecia, in some cases persistent, and other hair abnormalities are labelled under skin and appendages.",
+      "evidence": [
+        "openfda:0114567b-3bac-490d-b9eb-03a6c5d90935",
+        "unitox:ISOTRETINOIN"
       ]
     }
   ],

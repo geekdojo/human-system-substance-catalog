@@ -1,0 +1,117 @@
+{
+  "$schema": "../../schema/substance.schema.json",
+  "key": "minoxidil_oral",
+  "name": "Minoxidil, oral",
+  "aka": [
+    "Loniten",
+    "Low-dose oral minoxidil",
+    "LDOM"
+  ],
+  "class": "ATP-sensitive potassium channel opener (oral vasodilator)",
+  "category": "prescription",
+  "regulatory_status": "fda_approved",
+  "routes": [
+    "oral"
+  ],
+  "typical_dose_shape": {
+    "amount_low": 5,
+    "amount_high": 100,
+    "unit": "mg",
+    "cadence": "daily",
+    "note": "The labelled antihypertensive range. It is NOT the range used off-label for hair, which is roughly an order of magnitude smaller; the label states that using the tablets to promote hair growth is not an approved indication, so no FDA-approved dosing reference exists for that use and none is published here."
+  },
+  "description": "A direct-acting peripheral vasodilator, approved as a tablet only for hypertension that is symptomatic or associated with target organ damage and not manageable on a diuretic plus two other antihypertensives. It carries a boxed warning for pericardial effusion progressing to tamponade. Hypertrichosis is one of its most common labelled effects, and the label states in its own Unapproved Use section that using the tablets to promote hair growth is not an approved indication. A separate entry from minoxidil_topical: different route, different systemic exposure, different label.",
+  "systems": [
+    {
+      "key": "heart",
+      "relation": "acts_on",
+      "note": "Peripheral vasodilation to lower blood pressure in hypertension not manageable on three other agents; the labelled indication.",
+      "evidence": [
+        "openfda:0354a7f5-5917-44dc-9963-411104008cb5"
+      ]
+    },
+    {
+      "key": "hair",
+      "relation": "acts_on",
+      "note": "Growth of scalp hair is the intended effect of off-label low-dose use; the label states that using the tablets to promote hair growth is not an approved indication.",
+      "evidence": [
+        "openfda:0354a7f5-5917-44dc-9963-411104008cb5",
+        "curation:minoxidil_oral"
+      ]
+    },
+    {
+      "key": "heart",
+      "relation": "burdens",
+      "note": "Boxed warning for pericardial effusion progressing to tamponade, with exacerbation of angina and reflex tachycardia; the label pairs the drug with a beta-blocker for that reason.",
+      "evidence": [
+        "openfda:0354a7f5-5917-44dc-9963-411104008cb5"
+      ]
+    },
+    {
+      "key": "kidneys",
+      "relation": "burdens",
+      "note": "Salt and water retention is labelled, and the label requires a concomitant loop diuretic to prevent it.",
+      "evidence": [
+        "openfda:0354a7f5-5917-44dc-9963-411104008cb5"
+      ]
+    },
+    {
+      "key": "hair",
+      "relation": "burdens",
+      "note": "Hypertrichosis is labelled in about 80 percent of people taking the tablets, on the face, arms, back and legs as well as the scalp.",
+      "evidence": [
+        "openfda:0354a7f5-5917-44dc-9963-411104008cb5"
+      ]
+    }
+  ],
+  "monitors": [
+    {
+      "marker_key": "sodium",
+      "why": "Salt and water retention is labelled and is what the mandated diuretic is there to prevent.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:0354a7f5-5917-44dc-9963-411104008cb5"
+      ]
+    },
+    {
+      "marker_key": "potassium",
+      "why": "The labelled regimen pairs the tablets with a loop diuretic, which moves potassium.",
+      "cadence_days": 90,
+      "evidence": [
+        "openfda:0354a7f5-5917-44dc-9963-411104008cb5",
+        "curation:minoxidil_oral"
+      ]
+    },
+    {
+      "marker_key": "creatinine",
+      "why": "Fluid and sodium handling is renal, and the labelled dosing interval is lengthened where renal function is reduced.",
+      "cadence_days": 180,
+      "evidence": [
+        "openfda:0354a7f5-5917-44dc-9963-411104008cb5",
+        "curation:minoxidil_oral"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "curation:minoxidil_oral",
+      "kind": "own_curation",
+      "license": "own-curation",
+      "url": "https://github.com/geekdojo/substance-catalog",
+      "title": "substance-catalog hand curation: Minoxidil, oral",
+      "retrieved": "2026-08-25",
+      "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence, and the decision to carry the oral tablet as an entry separate from minoxidil_topical. No third-party text is reproduced."
+    },
+    {
+      "id": "openfda:0354a7f5-5917-44dc-9963-411104008cb5",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0354a7f5-5917-44dc-9963-411104008cb5",
+      "title": "FDA Structured Product Label: Minoxidil tablets",
+      "retrieved": "2026-08-25",
+      "note": "openFDA drug/label SPL set id 0354a7f5-5917-44dc-9963-411104008cb5, effective 20260209, Sun Pharmaceutical Industries, route ORAL. Read for the indication, the boxed warning, the fluid-retention and diuretic requirement, the hypertrichosis rate, and the Unapproved Use section."
+    }
+  ],
+  "valid_from": "2026-08-25",
+  "valid_to": null
+}

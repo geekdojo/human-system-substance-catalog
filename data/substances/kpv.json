@@ -24,9 +24,9 @@
   "description": "The C-terminal tripeptide of alpha-melanocyte-stimulating hormone, studied preclinically for anti-inflammatory activity in gut and skin models without the pigmentary effect of the parent hormone. It has no FDA-approved product. No FDA label exists.",
   "systems": [
     {
-      "key": "body",
+      "key": "skin",
       "relation": "acts_on",
-      "note": "Taken for anti-inflammatory effect in gut and skin; the intended effect, evidenced preclinically.",
+      "note": "Taken for anti-inflammatory effect in skin and gut; the intended effect, evidenced preclinically in keratinocyte and colitis models.",
       "evidence": [
         "pubmed:18092346",
         "pubmed:15102092",

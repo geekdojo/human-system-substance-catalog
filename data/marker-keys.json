@@ -4,10 +4,10 @@
   "notes": [
     "NO reference intervals are published here. An interval is a property of the assay and the reference population, not of the compound catalog. The app owns ref_low / ref_high / ref_kind / ref_source; this file deliberately omits them rather than assert unverified numbers.",
     "NO LOINC codes are published here. SPEC 1.3 requires a LOINC code to travel with one of four approved LOINC display names verbatim. LOINC is not on this repo's licence allowlist and was not retrieved, so binding is left to the app. Do not infer codes from these keys.",
-    "system values are the eleven fixed human-system body-system keys.",
+    "system values are the thirteen human-system body-system keys a fresh install seeds.",
     "who5 is also an `instrument` in the app's bulk-import schema. It appears here because the original catalog brief lists it as a marker key; the app should decide which surface owns it and drop the other."
   ],
-  "system_keys": ["brain", "pituitary", "thyroid", "heart", "liver", "pancreas", "kidneys", "blood", "gonads", "prostate", "body"],
+  "system_keys": ["brain", "pituitary", "thyroid", "heart", "liver", "pancreas", "kidneys", "blood", "gonads", "prostate", "body", "skin", "hair"],
   "markers": [
     { "key": "hba1c", "name": "Hemoglobin A1c", "system": "pancreas", "unit": "%", "decimals": 1, "higher_is_better": false, "description": "Glycated haemoglobin; integrates glycaemia over roughly the preceding three months." },
     { "key": "glucose_fasting", "name": "Fasting glucose", "system": "pancreas", "unit": "mg/dL", "decimals": 0, "higher_is_better": false, "description": "Plasma glucose after an overnight fast." },

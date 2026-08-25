@@ -10,20 +10,20 @@ Every figure below was measured against the data in this repository, not estimat
 
 | | |
 |---|---|
-| Substances | 166 |
+| Substances | 167 |
 | Marker keys | 77 |
-| System relations | 550 (`acts_on` 212, `burdens` 319, `confounds` 19) |
-| Monitor rows | 536 |
-| Source rows | 700 |
+| System relations | 561 (`acts_on` 218, `burdens` 324, `confounds` 19) |
+| Monitor rows | 539 |
+| Source rows | 702 |
 | Recorded source gaps | 171 |
 
 Source rows by licence — this is what the licence gate sees:
 
 | Licence | Rows |
 |---|---|
-| `own-curation` | 273 |
+| `own-curation` | 274 |
 | `public-domain` | 183 |
-| `CC0-1.0` | 132 |
+| `CC0-1.0` | 133 |
 | `CC-BY-4.0` | 112 |
 
 Nothing else appears, and nothing else can: `tools/build.mjs` fails the build on any
@@ -32,16 +32,16 @@ fails by feeding it a poisoned row.
 
 ## Coverage by source
 
-How many of the 166 substances carry at least one row from each source:
+How many of the 167 substances carry at least one row from each source:
 
 | Source | Substances | Lookups that returned nothing |
 |---|---|---|
-| openFDA SPL | 132 | 34 |
+| openFDA SPL | 133 | 34 |
 | UniTox | 112 | 54 |
 | DILIrank 2.0 | 95 | 34 |
 | LiverTox | 88 | 48 |
 | PubMed | 54 | 1 |
-| Own curation | 166 | — |
+| Own curation | 167 | — |
 
 A "lookup that returned nothing" is not a silence. It is written into the data file as a
 `source_gaps` entry recording the source, the exact query string, the result `no_rows` and
@@ -56,7 +56,7 @@ one that was consulted and had nothing to say.
 |---|---|
 | Licence | CC0-1.0 / U.S. public domain |
 | Endpoint | `https://api.fda.gov/drug/label.json` |
-| Retrieved | 2026-08-23 |
+| Retrieved | 2026-08-23; the `minoxidil_oral` label and four re-checks on 2026-08-25 |
 | Evidence ids | `openfda:<SPL set id>` |
 | API key | not required at the volume used here |
 

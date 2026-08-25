@@ -9,7 +9,7 @@ app, published as a JSON bundle on GitHub Releases with AIRAC-style effectivity 
 > status. Nothing in it recommends starting, stopping or changing a dose. Interpretation
 > belongs to a physician.
 
-**166 substances · 77 marker keys · 700 sourced rows · every value traceable to a clean source.**
+**167 substances · 77 marker keys · 702 sourced rows · every value traceable to a clean source.**
 
 ---
 
@@ -45,8 +45,11 @@ monitors. See `human-system` `docs/SPEC.md` §2.6 and §3.
 
 Two vocabularies are shared with the app and must not drift:
 
-- **Body system keys** — the eleven fixed keys: `brain`, `pituitary`, `thyroid`, `heart`,
-  `liver`, `pancreas`, `kidneys`, `blood`, `gonads`, `prostate`, `body`.
+- **Body system keys** — the thirteen fixed keys: `brain`, `pituitary`, `thyroid`, `heart`,
+  `liver`, `pancreas`, `kidneys`, `blood`, `gonads`, `prostate`, `body`, `skin`, `hair`.
+  `skin` and `hair` were added 2026-08-25. They are **two** systems and not one integumentary
+  system, because the app caps a system at two live `acts_on` and a finasteride + minoxidil +
+  retinoid stack is three, treating two unrelated things.
 - **Marker keys** — [`data/marker-keys.json`](data/marker-keys.json), shaped so the app can
   adopt it directly as its builtin marker seed. Every `monitors[].marker_key` in the catalog
   resolves against it, and the build fails if one does not.
@@ -195,7 +198,7 @@ Full rules, stated as rules, in [`CONTRIBUTING.md`](CONTRIBUTING.md).
   "published_at": "2026-08-23T…",     // excluded from the hash
   "valid_from": "2026-08-23",
   "valid_to": null,
-  "substance_count": 166,
+  "substance_count": 167,
   "marker_keys": ["albumin", "alp", …],
   "markers": [ /* full marker rows, adoptable as the app's seed */ ],
   "substances": [ /* sorted by key */ ],

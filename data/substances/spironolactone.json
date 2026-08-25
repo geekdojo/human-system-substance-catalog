@@ -30,6 +30,15 @@
       ]
     },
     {
+      "key": "skin",
+      "relation": "acts_on",
+      "note": "Androgen receptor antagonism in the skin is the intended effect of off-label dermatological use; the label carries no dermatological indication.",
+      "evidence": [
+        "openfda:08738ad4-1607-4d55-af71-6790477353bd",
+        "curation:spironolactone"
+      ]
+    },
+    {
       "key": "kidneys",
       "relation": "burdens",
       "note": "Hyperkalaemia is the characteristic labelled risk and can be fatal.",

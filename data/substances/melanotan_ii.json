@@ -22,7 +22,7 @@
   "description": "A cyclic heptapeptide analogue of alpha-melanocyte-stimulating hormone acting non-selectively across melanocortin receptors. It has no approval anywhere; the related selective agonists afamelanotide and bremelanotide are separately approved products and are not this compound. No FDA approval in any jurisdiction. Distinct from the approved products afamelanotide (Scenesse) and bremelanotide (Vyleesi).",
   "systems": [
     {
-      "key": "body",
+      "key": "skin",
       "relation": "acts_on",
       "note": "Taken for melanogenesis and pigmentation via MC1R; the intended effect.",
       "evidence": [

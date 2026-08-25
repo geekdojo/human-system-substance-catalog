@@ -20,6 +20,15 @@
   "description": "A dual type I and type II 5-alpha-reductase inhibitor approved for benign prostatic hyperplasia, producing more complete dihydrotestosterone suppression than finasteride and with a much longer half-life.",
   "systems": [
     {
+      "key": "hair",
+      "relation": "acts_on",
+      "note": "Dual isoenzyme blockade lowers scalp dihydrotestosterone; hair growth is the intended effect of off-label use in the US, where the label covers benign prostatic hyperplasia only.",
+      "evidence": [
+        "openfda:170f01fe-5048-413c-b4cd-8311e1a2728a",
+        "curation:dutasteride"
+      ]
+    },
+    {
       "key": "prostate",
       "relation": "acts_on",
       "note": "Reduction of prostatic dihydrotestosterone and prostate volume is the labelled indication.",

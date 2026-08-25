@@ -94,8 +94,8 @@
     "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "format": "date" },
 
     "systemKey": {
-      "enum": ["brain", "pituitary", "thyroid", "heart", "liver", "pancreas", "kidneys", "blood", "gonads", "prostate", "body"],
-      "description": "The eleven fixed human-system body systems. Nothing else is accepted."
+      "enum": ["brain", "pituitary", "thyroid", "heart", "liver", "pancreas", "kidneys", "blood", "gonads", "prostate", "body", "skin", "hair"],
+      "description": "The thirteen human-system body systems a fresh install seeds. Nothing else is accepted HERE, deliberately: the app resolves a system key against its own database and can hold more, but a catalog bundle is published once and read by every install, so it may only name keys every install has. `skin` and `hair` were added 2026-08-25 and are two systems rather than one integumentary system, because the app's load cap is two live acts_on per system and a finasteride + minoxidil + retinoid stack is three, treating two unrelated things."
     },
 
     "systemRelation": {

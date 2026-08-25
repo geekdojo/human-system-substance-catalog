@@ -22,11 +22,19 @@
   "description": "Enzymatically hydrolysed animal collagen, rich in glycine, proline and hydroxyproline, taken for connective tissue and skin. It is an incomplete protein and does not substitute for dietary protein targets.",
   "systems": [
     {
-      "key": "body",
+      "key": "skin",
       "relation": "acts_on",
-      "note": "Taken for connective tissue, tendon and skin; the intended effect.",
+      "note": "Taken for skin; the intended effect, evidenced in the dermatology literature.",
       "evidence": [
         "pubmed:41804623",
+        "curation:collagen_peptides"
+      ]
+    },
+    {
+      "key": "body",
+      "relation": "acts_on",
+      "note": "Taken for connective tissue and tendon; the intended effect.",
+      "evidence": [
         "curation:collagen_peptides"
       ]
     }

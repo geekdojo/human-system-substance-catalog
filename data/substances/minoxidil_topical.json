@@ -20,7 +20,7 @@
   "description": "A potassium channel opener applied to the scalp, approved over the counter for androgenetic alopecia. Systemic absorption from topical use is limited but not zero; the oral form is a potent antihypertensive with a boxed warning.",
   "systems": [
     {
-      "key": "body",
+      "key": "hair",
       "relation": "acts_on",
       "note": "Prolongation of the anagen hair growth phase; the labelled indication.",
       "evidence": [
@@ -32,6 +32,15 @@
       "key": "heart",
       "relation": "burdens",
       "note": "Systemic absorption can produce tachycardia and fluid retention; the oral form carries a boxed pericardial warning.",
+      "evidence": [
+        "openfda:00c83180-0e13-4a07-9ce8-a9cae19a79a3",
+        "unitox:MINOXIDIL"
+      ]
+    },
+    {
+      "key": "skin",
+      "relation": "burdens",
+      "note": "Scalp irritation and redness at the application site is a labelled stop-use.",
       "evidence": [
         "openfda:00c83180-0e13-4a07-9ce8-a9cae19a79a3",
         "unitox:MINOXIDIL"

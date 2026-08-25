@@ -23,7 +23,7 @@
   "description": "A naturally occurring tripeptide that chelates copper(II), used topically as a cosmetic ingredient and injected without approval. Topical cosmetic use is regulated as a cosmetic, not as a drug; there is no FDA-approved injectable product. Cosmetic ingredient status for topical use. No FDA-approved injectable product exists.",
   "systems": [
     {
-      "key": "body",
+      "key": "skin",
       "relation": "acts_on",
       "note": "Taken for dermal and connective-tissue remodelling; the intended effect.",
       "evidence": [

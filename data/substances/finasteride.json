@@ -22,6 +22,14 @@
   "description": "A selective type II 5-alpha-reductase inhibitor approved at 1 mg for androgenetic alopecia and at 5 mg for benign prostatic hyperplasia. It blocks conversion of testosterone to dihydrotestosterone.",
   "systems": [
     {
+      "key": "hair",
+      "relation": "acts_on",
+      "note": "Treatment of male pattern hair loss (androgenetic alopecia); the labelled 1 mg indication.",
+      "evidence": [
+        "openfda:00e934bb-c15b-490a-a852-839689a1231a"
+      ]
+    },
+    {
       "key": "prostate",
       "relation": "acts_on",
       "note": "Reduction of prostatic dihydrotestosterone and prostate volume is the labelled 5 mg indication.",

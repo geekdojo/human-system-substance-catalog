@@ -18,7 +18,7 @@ const validator = makeValidator();
 const rows = substances.map(s => s.data);
 
 const SYSTEM_KEYS = ['brain', 'pituitary', 'thyroid', 'heart', 'liver', 'pancreas',
-  'kidneys', 'blood', 'gonads', 'prostate', 'body'];
+  'kidneys', 'blood', 'gonads', 'prostate', 'body', 'skin', 'hair'];
 
 // ── coverage ──────────────────────────────────────────────────────────────────
 
@@ -74,7 +74,7 @@ test('marker-keys.json is itself internally consistent', () => {
   assert.deepEqual([...new Set(keys.filter((k, i) => keys.indexOf(k) !== i))], [], 'duplicate marker keys');
   for (const m of markerKeys.markers) {
     assert.match(m.key, /^[a-z0-9][a-z0-9_]*$/, `${m.key}: not a valid slug`);
-    assert.ok(SYSTEM_KEYS.includes(m.system), `${m.key}: system "${m.system}" is not one of the eleven`);
+    assert.ok(SYSTEM_KEYS.includes(m.system), `${m.key}: system "${m.system}" is not one of the thirteen`);
     assert.ok(m.name && m.unit !== undefined, `${m.key}: missing name or unit`);
   }
   assert.deepEqual(markerKeys.system_keys, SYSTEM_KEYS);
@@ -96,7 +96,7 @@ test('every marker key is actually used by at least one substance', () => {
   assert.deepEqual(orphans, [], `marker keys defined but never referenced: ${orphans.join(', ')}`);
 });
 
-test('every system key is one of the eleven the app accepts', () => {
+test('every system key is one of the thirteen the app accepts', () => {
   for (const r of rows) for (const s of r.systems) {
     assert.ok(SYSTEM_KEYS.includes(s.key), `${r.key}: unknown system "${s.key}"`);
   }
