@@ -82,9 +82,10 @@
     },
     {
       "marker_key": "psa_free_pct",
-      "why": "The free fraction is affected differently from total PSA, so the ratio is read alongside it.",
+      "why": "Percent free PSA is unchanged by dutasteride, so unlike total PSA it needs no doubling to be read — it is the one PSA value the drug leaves interpretable as it stands.",
       "cadence_days": 180,
       "evidence": [
+        "openfda:170f01fe-5048-413c-b4cd-8311e1a2728a",
         "curation:dutasteride"
       ]
     },

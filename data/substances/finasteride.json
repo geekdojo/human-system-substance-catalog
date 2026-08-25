@@ -83,9 +83,10 @@
     },
     {
       "marker_key": "psa_free_pct",
-      "why": "The free fraction is affected differently from total PSA, so the ratio is read alongside it.",
+      "why": "Percent free PSA is unchanged by finasteride, so unlike total PSA it needs no doubling to be read — it is the one PSA value the drug leaves interpretable as it stands.",
       "cadence_days": 180,
       "evidence": [
+        "openfda:6f988153-fc74-4ca4-b29a-111f750c4a4b",
         "curation:finasteride"
       ]
     },
