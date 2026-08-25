@@ -34,7 +34,7 @@
       "relation": "acts_on",
       "note": "Reduction of prostatic dihydrotestosterone and prostate volume is the labelled 5 mg indication.",
       "evidence": [
-        "openfda:00e934bb-c15b-490a-a852-839689a1231a",
+        "openfda:6f988153-fc74-4ca4-b29a-111f750c4a4b",
         "livertox:NBK548319"
       ]
     },
@@ -51,7 +51,7 @@
       "relation": "confounds",
       "note": "Roughly halves serum PSA, so an unadjusted PSA reads falsely reassuring; labelled.",
       "evidence": [
-        "openfda:00e934bb-c15b-490a-a852-839689a1231a"
+        "openfda:6f988153-fc74-4ca4-b29a-111f750c4a4b"
       ]
     },
     {
@@ -59,7 +59,8 @@
       "relation": "burdens",
       "note": "Depression and suicidal ideation appear in labelling; sexual adverse effects are labelled.",
       "evidence": [
-        "openfda:00e934bb-c15b-490a-a852-839689a1231a"
+        "openfda:00e934bb-c15b-490a-a852-839689a1231a",
+        "openfda:6f988153-fc74-4ca4-b29a-111f750c4a4b"
       ]
     },
     {
@@ -77,7 +78,7 @@
       "why": "Serum PSA is roughly halved; the value must be interpreted against that, which is the labelled instruction.",
       "cadence_days": 180,
       "evidence": [
-        "openfda:00e934bb-c15b-490a-a852-839689a1231a"
+        "openfda:6f988153-fc74-4ca4-b29a-111f750c4a4b"
       ]
     },
     {
@@ -109,7 +110,8 @@
       "why": "Labelled depression and suicidal ideation signal.",
       "cadence_days": 180,
       "evidence": [
-        "openfda:00e934bb-c15b-490a-a852-839689a1231a"
+        "openfda:00e934bb-c15b-490a-a852-839689a1231a",
+        "openfda:6f988153-fc74-4ca4-b29a-111f750c4a4b"
       ]
     }
   ],
@@ -146,9 +148,18 @@
       "kind": "openfda_spl",
       "license": "CC0-1.0",
       "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00e934bb-c15b-490a-a852-839689a1231a",
-      "title": "FDA Structured Product Label: Finasteride",
-      "retrieved": "2026-08-23",
-      "note": "openFDA drug/label SPL set id 00e934bb-c15b-490a-a852-839689a1231a, effective 20170728. 73 label record(s) matched."
+      "title": "FDA Structured Product Label: Finasteride tablets USP, 1 mg",
+      "retrieved": "2026-08-25",
+      "note": "openFDA drug/label SPL set id 00e934bb-c15b-490a-a852-839689a1231a, effective 20170728. The 1 mg label: indicated for male pattern hair loss (androgenetic alopecia) in men only. It carries no BPH indication, so it does not support a prostate claim."
+    },
+    {
+      "id": "openfda:6f988153-fc74-4ca4-b29a-111f750c4a4b",
+      "kind": "openfda_spl",
+      "license": "CC0-1.0",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6f988153-fc74-4ca4-b29a-111f750c4a4b",
+      "title": "FDA Structured Product Label: PROSCAR (finasteride) 5 mg",
+      "retrieved": "2026-08-25",
+      "note": "openFDA drug/label SPL set id 6f988153-fc74-4ca4-b29a-111f750c4a4b, effective 20260318, version 9. The 5 mg BPH label: symptomatic benign prostatic hyperplasia, ~80% lower prostatic DHT, prostate volume reduced, serum PSA reduced by approximately 50%, and postmarketing depression and suicidal ideation. 1 label record matched openfda.brand_name:\"PROSCAR\"."
     },
     {
       "id": "unitox:FINASTERIDE",
