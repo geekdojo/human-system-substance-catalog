@@ -380,7 +380,8 @@ test('the bundle has the shape the app expects', () => {
   assert.ok(bundle.published_at);
   assert.deepEqual(bundle.marker_keys, markerKeys.markers.map(m => m.key).sort());
   assert.ok(bundle.attribution.sources.openfda_spl);
-  assert.ok(bundle.attribution.bundle_license.includes('Proprietary'));
+  assert.ok(bundle.attribution.bundle_license.startsWith('CC-BY-4.0'));
+  assert.doesNotMatch(bundle.attribution.bundle_license, /proprietary/i);
 });
 
 test('bundle substances are sorted by key and carry no $schema pointer', () => {

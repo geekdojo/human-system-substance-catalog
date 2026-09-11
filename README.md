@@ -1,15 +1,23 @@
-# substance-catalog
+# human-system-substance-catalog
+
+[![data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
+[![code: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSE-CODE)
 
 Versioned compound reference data for the [`human-system`](https://github.com/geekdojo/human-system)
 app, published as a JSON bundle on GitHub Releases with AIRAC-style effectivity dates.
 
+It is open data. Anyone may use it, build on it, and contribute to it: the catalog records
+are [CC BY 4.0](LICENSE-DATA), the tooling is [Apache-2.0](LICENSE-CODE), and
+[`CONTRIBUTING.md`](CONTRIBUTING.md) explains how a change gets in. See [Licence](#licence).
+
 > **This repository is reference data only. It describes no person, contains no health data,
 > and is not medical advice.** It records what a compound *is*, which body systems it acts
 > on versus merely burdens or confounds, what monitoring it implies, and its regulatory
-> status. Nothing in it recommends starting, stopping or changing a dose. Interpretation
+> status. **Catalog entries describe what to monitor. Nothing in them recommends starting,
+> stopping or changing a dose**, and a contribution that does is refused. Interpretation
 > belongs to a physician.
 
-**167 substances · 77 marker keys · 702 sourced rows · every value traceable to a clean source.**
+**167 substances · 77 marker keys · 703 sourced rows · every value traceable to a clean source.**
 
 ---
 
@@ -19,11 +27,11 @@ Three reasons, in order of how much they cost to get wrong.
 
 **Licence hygiene.** Compound reference data is a minefield of non-commercial and closed
 licences. WHO ATC is non-commercial only, DrugBank is closed, ChEMBL and DrugCentral are
-unresolved. One careless import and the catalog stops being saleable — and if the catalog
-lived inside the app, that contamination would be inside the product too. Here the boundary
-is a wall with a gate on it: **every row records its source, every source declares its
-licence, and the build fails on anything outside the allowlist.** See
-[the licence gate](#the-licence-gate).
+unresolved. One careless import and the catalog can no longer be published under an open
+licence at all. If the catalog lived inside the app, that contamination would be inside
+the app too. Here the boundary is a wall with a gate on it: **every row records its source,
+every source declares its licence, and the build fails on anything outside the allowlist.**
+See [the licence gate](#the-licence-gate).
 
 **Different release cadence.** The app ships when code changes. The catalog ships when
 *knowledge* changes — a new approval, a label revision, a compound the audience started
@@ -94,14 +102,42 @@ CC0-1.0    CC-BY-4.0    public-domain    own-curation
 ```
 
 Anything else **fails the schema, fails the build, and fails CI.** This is not advisory. It
-is the mechanism that keeps this repository saleable, and `tests/catalog.test.mjs` proves it
-holds by feeding the validator poisoned rows carrying `CC-BY-NC-4.0`, `CC-BY-SA-4.0`,
-`GPL-3.0`, `proprietary` and an empty licence, and asserting every one is rejected.
+is the mechanism that keeps every row redistributable under the catalog's own CC BY 4.0
+licence. `tests/catalog.test.mjs` proves it holds by feeding the validator poisoned rows
+carrying `CC-BY-NC-4.0`, `CC-BY-SA-4.0`, `GPL-3.0`, `proprietary` and an empty licence, and
+asserting every one is rejected. A non-commercial licence would contradict the commercial
+use CC BY permits; a ShareAlike or copyleft licence would impose terms CC BY does not.
 
 **Do not widen the allowlist to make a row pass.** If a value only exists under a licence
 outside the four, the value does not belong here.
 
-The bundle itself is proprietary — see [`LICENSE`](LICENSE). The curation *is* the product.
+## Licence
+
+Two licences, divided by path. The badges at the top say the same thing as this table, and
+[`LICENSE`](LICENSE) is the authoritative statement of the split.
+
+| Licence | Covers |
+|---|---|
+| **Data: [CC BY 4.0](LICENSE-DATA)** | `data/` (every catalog record), the built bundle `dist/catalog-*.json` and its `.sha256` sidecar including every release asset, `docs/`, `README.md` and `CONTRIBUTING.md` |
+| **Code: [Apache-2.0](LICENSE-CODE)** | `tools/`, `tests/`, `schema/`, `.github/`, `package.json`, `package-lock.json` and `.gitignore` |
+
+**Why two.** Creative Commons licences are written for data and prose, and Creative Commons
+itself advises against using them for software. Apache-2.0 is the software licence closest
+in spirit to CC BY: permissive, attribution-preserving, and it adds an explicit patent
+grant. The data is CC BY rather than a ShareAlike licence, deliberately. You may build on
+the catalog under any terms you like, including closed ones, as long as you attribute it.
+
+**Upstream sources keep their own terms and their own attribution.** CC BY 4.0 covers what
+Geekdojo and contributors wrote. It does not relicense material taken from openFDA (CC0),
+UniTox (CC BY 4.0), DILIrank or LiverTox (U.S. public domain). Every required notice is in
+[`docs/ATTRIBUTION.md`](docs/ATTRIBUTION.md) and in the `attribution` block of every
+published bundle. Keep that block with the data and both obligations are met.
+
+**How to attribute the catalog:**
+
+> human-system-substance-catalog by Geekdojo and contributors,
+> <https://github.com/geekdojo/human-system-substance-catalog>, licensed under
+> [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Say what you changed, if anything.
 
 ## Layout
 
@@ -121,15 +157,20 @@ tests/
 docs/
   SOURCES.md             what came from where, and what returned nothing
   ATTRIBUTION.md         required notices, verbatim
+LICENSE                  which licence covers which path
+LICENSE-DATA             CC BY 4.0, official text
+LICENSE-CODE             Apache-2.0, official text
 ```
 
 ## Usage
 
+You need Node.js 26 or newer (`node --version` to check).
+
 ```sh
-npm ci
+npm ci             # install the two dependencies, exactly as locked
 npm run check      # validate everything, write nothing
 npm test           # the full gate
-npm run build      # -> dist/catalog-2026.08.1.json + .sha256
+npm run build      # -> dist/catalog-<this month>.1.json + .sha256
 node tools/build.mjs --version 2026.09.1 --out dist
 ```
 
@@ -151,6 +192,9 @@ Each substance carries `valid_from` / `valid_to` (AIRAC-style effectivity), so a
 retired without being deleted and the app can still explain a value it recorded last year.
 
 ## Adding a substance
+
+Contributions are welcome from anyone. [`CONTRIBUTING.md`](CONTRIBUTING.md) has the full
+rules, including how to propose a compound without writing the entry yourself. In short:
 
 1. **Resolve real evidence first.** Never write a citation from memory.
 
@@ -187,8 +231,6 @@ retired without being deleted and the app can still explain a value it recorded 
    npm run check && npm test
    ```
 
-Full rules, stated as rules, in [`CONTRIBUTING.md`](CONTRIBUTING.md).
-
 ## Bundle format
 
 ```jsonc
@@ -202,7 +244,7 @@ Full rules, stated as rules, in [`CONTRIBUTING.md`](CONTRIBUTING.md).
   "marker_keys": ["albumin", "alp", …],
   "markers": [ /* full marker rows, adoptable as the app's seed */ ],
   "substances": [ /* sorted by key */ ],
-  "attribution": { /* derived from the sources actually present */ },
+  "attribution": { /* the bundle licence, plus notices derived from the sources actually present */ },
   "sha256": "…"                        // over the canonical body
 }
 ```
@@ -215,10 +257,10 @@ Full rules, stated as rules, in [`CONTRIBUTING.md`](CONTRIBUTING.md).
 | the `.sha256` **sidecar** file | the written file, byte for byte | Works with `sha256sum -c` on the download; changes every build, because it covers `published_at` |
 
 Excluding `published_at` from the body hash is what makes a rebuild *verifiable* rather than
-merely plausible: rebuild from the same `data/` a year later and you get the same
-`70a3c2…`. But a release artifact also needs a plain file checksum a downloader can run
-without parsing anything, and that is the sidecar. Conflating them would break one or the
-other, so both ship.
+merely plausible: rebuild from the same `data/` a year later and you get the same body hash.
+But a release artifact also needs a plain file checksum a downloader can run without parsing
+anything, and that is the sidecar. Conflating them would break one or the other, so both
+ship.
 
 CI recomputes the body hash independently and fails on a mismatch.
 

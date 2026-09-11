@@ -142,7 +142,7 @@
         "kind": { "enum": ["openfda_spl", "unitox", "dilirank", "livertox", "pubmed", "own_curation"] },
         "license": {
           "enum": ["CC0-1.0", "CC-BY-4.0", "public-domain", "own-curation"],
-          "description": "THE LICENCE GATE. This enum is the allowlist. Anything outside it fails validation and the build, by design — an unclean licence in this repo is what makes the curation unsaleable. Do not widen it to make a row pass."
+          "description": "THE LICENCE GATE. This enum is the allowlist. Anything outside it fails validation and the build, by design — an unclean licence in this repo is what would stop the catalog being redistributable under CC-BY-4.0. Do not widen it to make a row pass."
         },
         "url": { "type": "string", "format": "uri", "maxLength": 500 },
         "title": { "type": "string", "maxLength": 300 },

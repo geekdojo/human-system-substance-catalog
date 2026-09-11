@@ -3,6 +3,10 @@
 Required notices for every source this catalog draws on, reproduced **verbatim** where the
 licence requires it.
 
+The catalog itself is licensed CC BY 4.0 ([`LICENSE-DATA`](../LICENSE-DATA);
+[`LICENSE`](../LICENSE) has the path split). The notices below are for the upstream material
+inside it. The catalog's licence does not supersede them, and they travel with the data.
+
 This file is the human-readable copy. The same notices are emitted into the `attribution`
 block of every published bundle, so a consumer of the JSON never has to come back here to
 discharge an attribution obligation. `tools/build.mjs` derives that block from the source
@@ -138,14 +142,22 @@ verified to exist. None was written from memory.
 
 ---
 
-## geekdojo/substance-catalog hand curation
+## geekdojo/human-system-substance-catalog hand curation
 
-- **Licence:** proprietary — see `LICENSE`
+- **Licence:** CC BY 4.0 — see [`LICENSE`](../LICENSE) and [`LICENSE-DATA`](../LICENSE-DATA).
+  Recorded per row as `own-curation`, the licence-gate value for material this repository
+  wrote itself.
+- **URL:** <https://github.com/geekdojo/human-system-substance-catalog>
 - **Evidence id namespace:** `curation:<substance key>`
 
 System placement, the `acts_on` / `burdens` / `confounds` distinction, monitoring marker
 selection, monitoring cadence, regulatory characterisation and all descriptive prose are
-original works of authorship. This is the part of the bundle that is the product.
+original works of authorship by Geekdojo and contributors, licensed under the Creative
+Commons Attribution 4.0 International licence. Attribute them as:
+
+> human-system-substance-catalog by Geekdojo and contributors,
+> <https://github.com/geekdojo/human-system-substance-catalog>, licensed under CC BY 4.0
+> (<https://creativecommons.org/licenses/by/4.0/>).
 
 ---
 
@@ -155,7 +167,7 @@ These are recorded so that a future contributor does not "helpfully" reintroduce
 
 | Source | Why not |
 |---|---|
-| **WHO ATC / DDD Index** | Licensed for non-commercial use only. Incompatible with a saleable catalog. Not used, not imported, not consulted for classification. |
+| **WHO ATC / DDD Index** | Licensed for non-commercial use only. Incompatible with the catalog's CC BY 4.0 licence, which permits commercial use. Not used, not imported, not consulted for classification. |
 | **DrugBank** | Closed and commercially licensed. Not used. |
 | **ChEMBL** | Licensing for this use is unresolved. Not used pending a decision. |
 | **DrugCentral** | Licensing for this use is unresolved. Not used pending a decision. |

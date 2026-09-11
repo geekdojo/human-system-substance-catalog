@@ -96,8 +96,8 @@
       "id": "curation:testosterone_propionate",
       "kind": "own_curation",
       "license": "own-curation",
-      "url": "https://github.com/geekdojo/substance-catalog",
-      "title": "substance-catalog hand curation: Testosterone propionate",
+      "url": "https://github.com/geekdojo/human-system-substance-catalog",
+      "title": "human-system-substance-catalog hand curation: Testosterone propionate",
       "retrieved": "2026-08-23",
       "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
     }

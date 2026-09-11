@@ -58,7 +58,7 @@ export function render({ version, previous, bundle, delta, previousDirRead }) {
   const byCategory = {};
   for (const s of bundle.substances) byCategory[s.category] = (byCategory[s.category] || 0) + 1;
 
-  L.push(`## substance-catalog ${version}`, '');
+  L.push(`## human-system-substance-catalog ${version}`, '');
   L.push('Versioned compound reference data for the `human-system` app. **Reference data only — this bundle describes no person and contains no health data.**', '');
   L.push('| | |', '|---|---|');
   L.push(`| Substances | **${bundle.substance_count}** |`);

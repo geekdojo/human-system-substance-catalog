@@ -30,7 +30,7 @@ if (!name) {
 async function getJSON(url) {
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      const r = await fetch(url, { headers: { 'User-Agent': 'substance-catalog/1.0' } });
+      const r = await fetch(url, { headers: { 'User-Agent': 'human-system-substance-catalog/1.0' } });
       if (r.status === 404) return null;
       if (r.ok) return await r.json();
       await sleep(1500 * (attempt + 1));

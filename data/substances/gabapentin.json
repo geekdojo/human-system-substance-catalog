@@ -71,8 +71,8 @@
       "id": "curation:gabapentin",
       "kind": "own_curation",
       "license": "own-curation",
-      "url": "https://github.com/geekdojo/substance-catalog",
-      "title": "substance-catalog hand curation: Gabapentin",
+      "url": "https://github.com/geekdojo/human-system-substance-catalog",
+      "title": "human-system-substance-catalog hand curation: Gabapentin",
       "retrieved": "2026-08-23",
       "note": "Original curation by this repository: system placement, relation type, monitoring marker choice and cadence. No third-party text is reproduced."
     },

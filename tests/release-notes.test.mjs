@@ -87,7 +87,7 @@ test('describeChange never returns an empty explanation', () => {
 
 test('render produces first-release notes when there is no previous version', () => {
   const md = render({ version: '2026.08.1', previous: null, bundle, delta: diff(rows, []), previousDirRead: false });
-  assert.match(md, /## substance-catalog 2026\.08\.1/);
+  assert.match(md, /## human-system-substance-catalog 2026\.08\.1/);
   assert.match(md, /First release/);
   assert.match(md, new RegExp(`\\*\\*${rows.length}\\*\\*`));
   assert.match(md, new RegExp(bundle.sha256));
@@ -123,7 +123,7 @@ test('render includes an attribution line for every source in the bundle', () =>
   for (const s of Object.values(bundle.attribution.sources)) {
     assert.ok(md.includes(s.source), `no attribution line for "${s.source}"`);
   }
-  assert.match(md, /Proprietary/);
+  assert.match(md, /Bundle licence: CC-BY-4\.0/);
 });
 
 test('main() requires a version', () => {

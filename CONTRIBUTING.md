@@ -1,7 +1,65 @@
 # Contributing
 
+Contributions are welcome from anyone. This file is the whole process: how to propose a
+compound, what licence your contribution is under, and the rules every change has to meet.
+
+> **Catalog entries describe what to monitor. They never recommend starting, stopping or
+> changing a dose.** A contribution that does, whether in a description, a `monitors[].why`,
+> a dose note or anywhere else, is refused however well it is sourced. This is reference
+> data about compounds, not advice to a person. §4 says how to write it.
+
 These are rules, not guidance. Most of them are enforced by `npm run check` and `npm test`.
 The ones that are not are the ones that matter most, because only a person can hold them.
+
+---
+
+## 0. Contributing from outside
+
+### Nothing lands unless Bryce merges it
+
+Every change arrives as a pull request, and every pull request is merged by the maintainer,
+Bryce (Geekdojo), or not at all. Passing CI means a pull request is worth reading. It is not
+acceptance. The catalog is curated rather than comprehensive, so a complete, well-sourced
+entry can still be declined because it does not fit, and a pull request that reopens a
+decision in §1 will be closed.
+
+### How to propose a compound
+
+Two routes. Pick whichever suits you.
+
+1. **Ask for it.** Open an issue naming the compound. Give its name and, if you know them,
+   its brand names or synonyms. That is all: **do not describe why you want it, what you
+   take, or anything about your own health.** This repository is public and holds no data
+   about any person, and an issue is part of the repository.
+2. **Write it.** Fork the repository, add `data/substances/<key>.json` by following
+   [§5 Adding a substance](#adding-a-substance), and open a pull request against `main`. CI
+   runs the full gate on your pull request with a read-only token. It has to pass before
+   anyone reviews it:
+
+   ```sh
+   npm ci              # install the two dependencies, exactly as locked
+   npm run check       # schema, marker keys, licence gate, placement rules
+   npm test            # the full gate, including coverage
+   ```
+
+   You need Node.js 26 or newer (`node --version` to check).
+
+Corrections are just as welcome: a label revision, a gap that now has a source, a placement
+you think is wrong. Say what changed and cite the live source that shows it.
+
+### Your contribution's licence
+
+- **Opening a pull request means you license your contribution under whichever licence
+  covers the path you changed**: CC BY 4.0 for `data/`, `docs/`, `README.md` and this file,
+  and Apache-2.0 for `tools/`, `tests/`, `schema/` and `.github/`. [`LICENSE`](LICENSE) has
+  the full split. For code this is simply Apache-2.0 §5; the same rule is applied to the data.
+- **There is no CLA and no DCO sign-off.** The pull request is the agreement, the same as
+  Geekdojo's other open catalog, `rasputin-app-catalog`.
+- **Contribute only what you have the right to contribute:** your own curation, and values
+  from the §1.1 sources with the row recording which. Text copied from a label, a paper, a
+  website or another database is not something this repository can accept (§1.3, §1.4).
+- You are credited by your commits. The catalog is attributed as "Geekdojo and
+  contributors".
 
 ---
 
@@ -119,8 +177,9 @@ CC0-1.0    CC-BY-4.0    public-domain    own-curation
 
 Anything else fails the schema, the build and CI.
 
-**Do not widen the allowlist to make a row pass.** The allowlist is the product's commercial
-boundary; a value that only exists under some other licence does not belong here. If you
+**Do not widen the allowlist to make a row pass.** The allowlist is what keeps every row
+redistributable under the catalog's CC BY 4.0 licence; a value that only exists under some
+other licence does not belong here. If you
 believe a fifth licence genuinely belongs, that is a conversation to have before writing
 code, and it needs a decision recorded — not a one-line diff to an enum.
 

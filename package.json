@@ -1,5 +1,5 @@
 {
-  "name": "substance-catalog",
+  "name": "human-system-substance-catalog",
   "version": "0.0.0",
   "private": true,
   "description": "Versioned compound reference data published as a signed JSON bundle for the human-system app. Reference data only — describes no person, contains no health data.",
@@ -16,5 +16,5 @@
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1"
   },
-  "license": "SEE LICENSE IN LICENSE"
+  "license": "Apache-2.0 AND CC-BY-4.0"
 }

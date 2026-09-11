@@ -264,14 +264,14 @@ export function attribution(rows) {
       notice: 'PMIDs identify literature consulted during hand curation. No article text or abstract is reproduced; the catalog values are original curation by this repository.',
     },
     own_curation: {
-      source: 'geekdojo/substance-catalog hand curation',
+      source: 'geekdojo/human-system-substance-catalog hand curation',
       license: 'own-curation',
-      url: 'https://github.com/geekdojo/substance-catalog',
-      notice: 'System placement, relation type, monitoring marker selection and cadence are original curation, proprietary to Geekdojo and licensed only as part of this bundle.',
+      url: 'https://github.com/geekdojo/human-system-substance-catalog',
+      notice: 'System placement, relation type, monitoring marker selection and cadence, regulatory characterisation and descriptive prose are original curation by Geekdojo and contributors, licensed under the Creative Commons Attribution 4.0 International licence (https://creativecommons.org/licenses/by/4.0/).',
     },
   };
   return {
-    bundle_license: 'Proprietary — see LICENSE. The curation is the product.',
+    bundle_license: 'CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/). Attribute as: human-system-substance-catalog by Geekdojo and contributors, https://github.com/geekdojo/human-system-substance-catalog. Material from the sources below keeps its own licence, and each notice below travels with it.',
     disclaimer: 'Reference data about compounds. This bundle describes no person, contains no health data, and is not medical advice.',
     sources: Object.fromEntries(Object.entries(notices).filter(([k]) => kinds.has(k))),
   };
@@ -294,7 +294,7 @@ export function main(argv = process.argv.slice(2)) {
   const markerKeys = readJSON(path.join(ROOT, 'data', 'marker-keys.json'));
   const placementRules = readJSON(path.join(ROOT, 'data', 'placement-rules.json'));
 
-  console.log(`substance-catalog build ${version}`);
+  console.log(`human-system-substance-catalog build ${version}`);
   console.log(`  data files      : ${substances.length}`);
   console.log(`  marker keys     : ${markerKeys.markers.length}`);
   console.log(`  placement rules : ${placementRules.rules.length}`);
