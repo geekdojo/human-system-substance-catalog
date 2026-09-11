@@ -14,7 +14,7 @@ Every figure below was measured against the data in this repository, not estimat
 | Marker keys | 77 |
 | System relations | 561 (`acts_on` 218, `burdens` 324, `confounds` 19) |
 | Monitor rows | 539 |
-| Source rows | 702 |
+| Source rows | 703 |
 | Recorded source gaps | 171 |
 
 Source rows by licence — this is what the licence gate sees:
@@ -23,7 +23,7 @@ Source rows by licence — this is what the licence gate sees:
 |---|---|
 | `own-curation` | 274 |
 | `public-domain` | 183 |
-| `CC0-1.0` | 133 |
+| `CC0-1.0` | 134 |
 | `CC-BY-4.0` | 112 |
 
 Nothing else appears, and nothing else can: `tools/build.mjs` fails the build on any
