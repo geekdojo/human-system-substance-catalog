@@ -10,22 +10,26 @@ on:
     - cron: '19 7 * * 1'
   workflow_dispatch:
 
-permissions:
-  contents: read
+# Empty here; the one job asks for what it needs. See .github/workflows/README.md.
+permissions: {}
 
 jobs:
   analyze:
     name: analyze javascript
     runs-on: ubuntu-latest
     permissions:
+      # Upload results to code scanning. On a fork's pull request GitHub caps the token to
+      # read-only regardless of this line.
       security-events: write
-      actions: read
-      contents: read
+      actions: read     # CodeQL reads the workflow run it is part of
+      contents: read    # check out the code to analyse
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v4
+        uses: github/codeql-action/init@b96794f015dfd88f77b49b1c93e0fa7110f94c63 # v4.38.0
         with:
           # The only code in this repo is the Node build and validation toolchain
           # under tools/ and tests/. There is no other language to scan.
@@ -33,9 +37,9 @@ jobs:
           queries: security-and-quality
 
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v4
+        uses: github/codeql-action/autobuild@b96794f015dfd88f77b49b1c93e0fa7110f94c63 # v4.38.0
 
       - name: Perform CodeQL analysis
-        uses: github/codeql-action/analyze@v4
+        uses: github/codeql-action/analyze@b96794f015dfd88f77b49b1c93e0fa7110f94c63 # v4.38.0
         with:
           category: "/language:javascript-typescript"

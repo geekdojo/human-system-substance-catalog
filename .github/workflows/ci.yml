@@ -1,5 +1,9 @@
 name: ci
 
+# Read .github/workflows/README.md before editing any workflow here. This repository takes
+# pull requests from forks, so CI runs code and text strangers wrote; the rules in that file
+# are what keep that safe, and the `workflows` job below enforces them.
+
 on:
   push:
     branches: [main]
@@ -9,8 +13,10 @@ on:
   # that does not validate.
   workflow_call:
 
-permissions:
-  contents: read
+# Empty here; each job asks for what it needs. A fork's pull request gets a read-only
+# token and no secrets whatever is written below, but a push to main does not, and a
+# grant nobody asked for is a grant a compromised step inherits.
+permissions: {}
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -20,13 +26,19 @@ jobs:
   validate:
     name: validate, test and build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '26'
-          cache: npm
+          # No dependency cache. The tree is two packages, so a cache saves seconds, and
+          # a cache shared between runs is a way for one run to poison another's inputs.
+          package-manager-cache: false
 
       - name: Install dependencies
         run: npm ci
@@ -48,8 +60,10 @@ jobs:
           echo "version=$(node -p "require('./$BUNDLE').version")" >> "$GITHUB_OUTPUT"
 
       - name: Verify the published sha256 matches a recomputation
+        # Step outputs reach the script through env, never as `${{ }}` inside it.
+        env:
+          BUNDLE: ${{ steps.build.outputs.bundle }}
         run: |
-          BUNDLE='${{ steps.build.outputs.bundle }}'
           node -e '
             const fs = require("fs"), crypto = require("crypto");
             const b = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
@@ -66,6 +80,8 @@ jobs:
           ' "$BUNDLE"
 
       - name: Assert no off-allowlist licence reached the bundle
+        env:
+          BUNDLE: ${{ steps.build.outputs.bundle }}
         run: |
           node -e '
             const b = require("./" + process.argv[1]);
@@ -75,12 +91,34 @@ jobs:
               if (!ALLOW.includes(src.license)) bad.push(`${s.key}: ${src.id} -> ${src.license}`);
             if (bad.length) { console.error("LICENCE GATE FAILED:\n" + bad.join("\n")); process.exit(1); }
             console.log(`licence gate: OK across ${b.substances.length} substances`);
-          ' '${{ steps.build.outputs.bundle }}'
+          ' "$BUNDLE"
 
       - name: Upload dist
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: catalog-${{ steps.build.outputs.version }}
           path: dist/
           if-no-files-found: error
           retention-days: 30
+
+  workflows:
+    # zizmor audits the workflows themselves: template injection, broad permissions,
+    # unpinned actions, persisted credentials, cache poisoning. It is a check rather
+    # than a review item because that class of bug is invisible in review. Its first
+    # run on rasputin-app-catalog found an injection in the one file that lectured
+    # about injections. Same tool, same version, same invocation as that repository.
+    name: audit the workflows (zizmor)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - name: audit the workflows
+        run: |
+          pip install --quiet zizmor==1.29.0
+          zizmor --format plain .github/workflows/
