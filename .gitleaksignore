@@ -1,0 +1,15 @@
+# gitleaks false positives (geekdojo/geekdojo-brain#105).
+#
+# Each fingerprint is commit:file:rule:line and silences exactly one finding in
+# one commit; the same text added again in a new commit is a new finding. Every
+# entry is preceded by the reason it was judged a false positive. Add entries
+# only after verifying the value is not a credential. Never disable a rule.
+
+# generic-api-key in data/marker-keys.json:90 — false match: a snake_case marker key (a catalog identifier), not a credential
+6320ece5ce6701c0b59aa29ffb8f2af49e20431f:data/marker-keys.json:generic-api-key:90
+
+# generic-api-key in data/substances/vitamin_b12_supplement.json:3 — false match: the substance's snake_case catalog key, same as its file name
+6320ece5ce6701c0b59aa29ffb8f2af49e20431f:data/substances/vitamin_b12_supplement.json:generic-api-key:3
+
+# generic-api-key in data/substances/vitamin_d3.json:47 — false match: a snake_case marker key (a catalog identifier), not a credential
+6320ece5ce6701c0b59aa29ffb8f2af49e20431f:data/substances/vitamin_d3.json:generic-api-key:47

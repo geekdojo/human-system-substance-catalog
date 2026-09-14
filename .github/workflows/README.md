@@ -28,7 +28,7 @@ even where the value is trusted today, because a gate that has exceptions is not
 ## 2. Permissions start empty
 
 Every workflow sets `permissions: {}` at the top, and each job grants itself only what it
-uses. `ci.yml` needs `contents: read`, and `codeql.yml` adds `security-events: write` to
+uses. `ci.yml` and `gitleaks.yml` need `contents: read`, and `codeql.yml` adds `security-events: write` to
 upload results. Only the publish job in `release.yml` holds `contents: write`, which it
 needs to create the release.
 
@@ -65,6 +65,7 @@ dependency tree is two packages; the cache was saving seconds.
 |---|---|---|---|
 | `ci.yml` | Yes, on `pull_request` | read-only | None. GitHub passes no secrets to a fork's `pull_request` run. |
 | `codeql.yml` | Yes, on `pull_request` | read-only (GitHub caps a fork's token regardless of the job's grant) | None |
+| `gitleaks.yml` | Yes, on `pull_request` | read-only | None. It calls the reusable secret-scanning workflow in `geekdojo/.github`, which only reads the repository. |
 | `release.yml` | **No.** Only a tag push or a manual dispatch, and both need write access to this repository. | — | — |
 
 No workflow here uses `pull_request_target`, `workflow_run` or `issue_comment`. Those
