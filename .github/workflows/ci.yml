@@ -51,6 +51,13 @@ jobs:
       - name: Test with coverage (>= 70% required)
         run: npm test
 
+      # release.yml's publish step runs tools/release-target-guard.sh before and
+      # after `gh release create` to prove the tag is on the commit the bundle was
+      # built from. Every exit status, against a throwaway git remote with
+      # lightweight, annotated and nested tags. No network.
+      - name: Release target guard tests
+        run: bash tests/release-target-guard.test.sh
+
       - name: Build the bundle
         id: build
         run: |
