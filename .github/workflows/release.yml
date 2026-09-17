@@ -50,6 +50,16 @@ jobs:
           # .git/config, where every later step could read it.
           persist-credentials: false
 
+      # The exact commit this job checked out and builds the bundle from. The
+      # release tag must land HERE, not on whatever main points at when the
+      # publish step runs: with no explicit target, GitHub creates a new tag
+      # (or, for a draft, the tag at publication) from the default branch, so
+      # a merge landing mid-run would tag a commit the bundle was never built
+      # from.
+      - name: Record built commit
+        id: src
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '26'
@@ -128,17 +138,71 @@ jobs:
           VERSION: ${{ steps.v.outputs.version }}
           EVENT_NAME: ${{ github.event_name }}
           INPUT_DRAFT: ${{ inputs.draft }}
+          # --target pins the tag to the built commit. On a tag push the tag
+          # already exists and GitHub ignores it; on a dispatch it places the
+          # new tag, or, for a draft, the tag GitHub creates on publication.
+          TARGET_SHA: ${{ steps.src.outputs.sha }}
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}.git
         run: |
           DRAFT=""
           if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$INPUT_DRAFT" = "true" ]; then
             DRAFT="--draft"
           fi
+
+          # Before publishing: a tag already on ANOTHER commit would make gh
+          # ignore --target and release this bundle under it. Refuse (status 1),
+          # and refuse if the remote cannot be read (2). Status 0 is the
+          # tag-push path (the tag is the checked-out commit); 3 means this run
+          # creates the tag (or, for a draft, fixes where it will be created).
+          created_tag=false
+          rc=0
+          ./tools/release-target-guard.sh "$REPO_URL" "$VERSION" "$TARGET_SHA" || rc=$?
+          case "$rc" in
+            0) ;;
+            3) created_tag=true ;;
+            *) echo "::error::refusing to release $VERSION: see release-target-guard above"; exit 1 ;;
+          esac
+
           gh release create "$VERSION" \
+            --target "$TARGET_SHA" \
             --title "human-system-substance-catalog $VERSION" \
             --notes-file RELEASE_NOTES.md \
             $DRAFT \
             "dist/catalog-${VERSION}.json" \
             "dist/catalog-${VERSION}.json.sha256"
+
+          # A draft creates no tag until it is published, and GitHub then
+          # creates it on the draft's target. Prove that target is the built
+          # commit; a draft aimed anywhere else is deleted (it holds no tag).
+          if [ -n "$DRAFT" ] && [ "$created_tag" = true ]; then
+            target="$(gh api "repos/$GH_REPO/releases?per_page=100" \
+              | jq -r --arg v "$VERSION" 'map(select(.draft and .tag_name == $v)) | .[0].target_commitish // ""')"
+            if [ "$target" != "$TARGET_SHA" ]; then
+              echo "::error::draft $VERSION targets '$target', but this run built $TARGET_SHA; deleting the draft"
+              gh release delete "$VERSION" --yes \
+                || echo "::error::could not delete draft $VERSION; delete it by hand"
+              exit 1
+            fi
+            echo "draft $VERSION targets the built commit $TARGET_SHA"
+            exit 0
+          fi
+
+          # After publishing: prove the tag landed on the built commit. A tag
+          # this run created on the wrong commit is deleted with its release so
+          # nothing mis-tagged stays published. A tag that existed before this
+          # step was pushed by a person and is never deleted. Only a proven
+          # mismatch (1) deletes; an unreadable remote fails without touching
+          # the release.
+          rc=0
+          ./tools/release-target-guard.sh "$REPO_URL" "$VERSION" "$TARGET_SHA" || rc=$?
+          if [ "$rc" != 0 ]; then
+            if [ "$rc" = 1 ] && [ "$created_tag" = true ]; then
+              echo "::error::deleting release $VERSION and its tag: this run created them on the wrong commit"
+              gh release delete "$VERSION" --cleanup-tag --yes \
+                || echo "::error::could not delete release $VERSION; delete it and its tag by hand"
+            fi
+            exit 1
+          fi
 
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
